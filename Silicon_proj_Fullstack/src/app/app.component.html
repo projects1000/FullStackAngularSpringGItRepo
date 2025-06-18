@@ -1,6 +1,25 @@
-Hello This is my first comment
-This is india ... 
-In india the capital is Delhi...
-Welcome 
+<!-- app.component.html -->
+<div class="container">
+  <!-- Toggle button for mobile -->
+  <button class="toggle-button" (click)="toggleSidebar()">☰</button>
 
-Test pull
+  <nav class="sidebar" [class.closed]="isSidebarClosed">
+    <h2 class="sidebar-title">SILICON Teams</h2>
+    <ul>
+      <li><a routerLink="/team1" routerLinkActive="active">Team 1</a></li>
+      <li><a routerLink="/team2" routerLinkActive="active">Team 2</a></li>
+      <li><a routerLink="/team3" routerLinkActive="active">Team 3</a></li>
+      <li><a routerLink="/team4" routerLinkActive="active">Team 4</a></li>
+      <li><a routerLink="/team5" routerLinkActive="active">Team 5</a></li>
+      <li><a routerLink="/team6" routerLinkActive="active">Team 6</a></li>
+      <li><a routerLink="/team7" routerLinkActive="active">Team 7</a></li>
+      <li><a routerLink="/team8" routerLinkActive="active">Team 8</a></li>
+      <li><a routerLink="/team9" routerLinkActive="active">Team 9</a></li>
+      <li><a routerLink="/team10" routerLinkActive="active">Team 10</a></li>
+    </ul>
+  </nav>
+
+  <main class="content" (click)="closeSidebarOnMobile()">
+    <router-outlet></router-outlet>
+  </main>
+</div>
