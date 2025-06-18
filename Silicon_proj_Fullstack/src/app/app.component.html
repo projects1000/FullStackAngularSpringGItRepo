@@ -1,25 +1,6 @@
-<div class="layout">
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <h2 class="sidebar-title" routerLink = "">Teams</h2>
-    <nav class="team-nav">
-      <a *ngFor="let num of [1,2,3,4,5,6,7,8,9,10]" 
-         [routerLink]="'/team' + num" 
-         class="team-button">
-        Team {{ num }}
-      </a>
-    </nav>
-  </aside>
+Hello This is my first comment
+This is india ... 
+In india the capital is Delhi...
+Welcome 
 
-  <!-- Main Content Area -->
-  <main class="content">
-    <!-- Home content directly here -->
-    <div *ngIf="!currentRoute.startsWith('/team')">
-      <h1 class="main-title">Welcome to Silicon Teams Project</h1>
-      <p>Select a team from the sidebar to explore their work.</p>
-    </div>
-
-    <!-- Router outlet for team components -->
-    <router-outlet *ngIf="currentRoute.startsWith('/team')"></router-outlet>
-  </main>
-</div>
+Test pull

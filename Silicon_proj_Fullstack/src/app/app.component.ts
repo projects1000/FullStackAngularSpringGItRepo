@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +6,5 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentRoute: string = '';
-
-  constructor(private router: Router) {
-    this.router.events.subscribe(() => {
-      this.currentRoute = this.router.url;
-    });
-  }
+  title = 'Silicon_proj_Fullstack';
 }
