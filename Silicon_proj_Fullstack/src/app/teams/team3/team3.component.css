@@ -1,0 +1,21 @@
+.topbar {
+  display: flex;
+  gap: 24px;
+  background: #1f2937;
+  padding: 16px 32px;
+}
+
+.topbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.topbar a.active,
+.topbar a:hover {
+  border-bottom: 2px solid #60a5fa;
+}
+
+.content {
+  padding: 32px;
+}
