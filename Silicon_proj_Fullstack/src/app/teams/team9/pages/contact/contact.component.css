@@ -1,0 +1,11 @@
+.contact-container {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+}
+
+.contact-container h2 {
+  text-align: center;
+  color: #003366;
+}
+
+/* Style form elements here */
