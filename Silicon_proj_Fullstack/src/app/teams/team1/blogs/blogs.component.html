@@ -1,0 +1,13 @@
+<div class="blogs-container">
+  <h2 class="blogs-title">Latest Blog Posts</h2>
+  <div class="blog-grid">
+    <div class="blog-card" *ngFor="let blog of blogs">
+      <img class="blog-image" [src]="blog.image" alt="Blog Image" />
+      <div class="blog-content">
+        <h3 class="blog-title">{{ blog.title }}</h3>
+        <p class="blog-desc">{{ blog.description }}</p>
+        <a class="read-more" href="#">Read more →</a>
+      </div>
+    </div>
+  </div>
+</div>
