@@ -7,7 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { ContactComponent } from './pages/contact/contact.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { ContactComponent } from './pages/contact/contact.component';
   ],
   imports: [
     CommonModule,
-    Team3RoutingModule
+    Team3RoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class Team3Module { }
