@@ -1,0 +1,68 @@
+/* ======= TOPBAR WRAPPER ======= */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f172a; /* Navy-dark background */
+  padding: 12px 24px;
+  border-bottom: 1px solid #1e293b;
+  flex-wrap: wrap;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* ======= NAV LINKS ======= */
+.topbar a {
+  color: #e2e8f0; /* Soft gray */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 8px 12px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* ======= HOVER & ACTIVE STATES ======= */
+.topbar a:hover {
+  background-color: #1e293b; /* Slightly lighter than bg */
+  color: #93c5fd; /* Soft blue */
+}
+
+.topbar a.active {
+  background-color: #2563eb; /* Blue highlight */
+  color: white;
+  font-weight: 500;
+}
+
+/* ======= RESPONSIVE FOR MOBILE ======= */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .topbar a {
+    width: 85%;
+    margin: 6px 0;
+    font-size: 15px;
+  }
+}
+.topbar {
+  animation: slideIn 0.6s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

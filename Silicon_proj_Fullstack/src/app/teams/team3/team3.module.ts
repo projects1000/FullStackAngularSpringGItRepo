@@ -7,7 +7,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { ContactComponent } from './pages/contact/contact.component';
+<<<<<<< HEAD
 import { ReactiveFormsModule } from '@angular/forms';
+=======
+import { SharedModule } from 'src/app/shared/shared.module';
+
+>>>>>>> main
 
 @NgModule({
   declarations: [
@@ -20,7 +25,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     Team3RoutingModule,
+<<<<<<< HEAD
     ReactiveFormsModule
+=======
+    SharedModule,
+>>>>>>> main
   ]
 })
 export class Team3Module { }
