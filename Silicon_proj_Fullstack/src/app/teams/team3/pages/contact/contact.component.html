@@ -33,7 +33,7 @@
       <span *ngIf="contactForm.controls['mobile'].errors['required']">Mobile number is required.</span>
       <span *ngIf="contactForm.controls['mobile'].errors['pattern']">Only digits allowed.</span>
       <span *ngIf="contactForm.controls['mobile'].errors['minlength']">At least 10 digits required.</span>
-      <span *ngIf="contactForm.controls['mobile'].errors['maxlength']">Maximum 15 digits allowed.</span>
+      <span *ngIf="contactForm.controls['mobile'].errors['maxlength']">Only 10 digits allowed.</span>
     </div>
 
     <label>State</label>

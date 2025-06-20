@@ -7,7 +7,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-<<<<<<< HEAD
   contactForm: FormGroup;
   countries = [
     { name: 'India', code: '+91' },
@@ -19,9 +18,7 @@ export class ContactComponent {
   states = ['Odisha', 'Maharashtra', 'Karnataka', 'California', 'Texas'];
   submitted = false;
   message = '';
-=======
   
->>>>>>> main
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
@@ -32,7 +29,7 @@ export class ContactComponent {
         Validators.required,
         Validators.pattern(/^[0-9]+$/),
         Validators.minLength(10),
-        Validators.maxLength(15)
+        Validators.maxLength(10)
       ]],
       state: ['', Validators.required],
       dob: ['', Validators.required],
