@@ -1,0 +1,158 @@
+/* Main container */
+.form-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 35px;
+  background: linear-gradient(to right, #f0f8ff, #e0ffff);
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Section title */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #0b5394;
+  font-size: 26px;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #a8d0e6;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin: 15px 0 6px;
+  font-weight: 600;
+  color: #083b66;
+}
+
+/* Inputs, selects, and textarea */
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  background: #fff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #00bfff;
+  box-shadow: 0 0 8px #00bfff88;
+  background-color: #f9fcff;
+  outline: none;
+}
+
+/* Country code + mobile field styling */
+.mobile-field {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-field span {
+  padding: 14px 16px;
+  font-size: 15px;
+  background: #cce7ff;
+  color: #003366;
+  border: 2px solid #b0d4f1;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  min-width: 60px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mobile-field input {
+  flex: 1;
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+}
+
+/* Submit button */
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #00bcd4, #2196f3);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #0288d1, #1e88e5);
+  transform: scale(1.02);
+}
+
+/* Error messages */
+.error {
+  color: #d8000c;
+  font-size: 13px;
+  margin-top: 4px;
+  background: #ffd2d2;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 4px solid #d8000c;
+}
+
+/* Success message animation */
+.output {
+  margin-top: 25px;
+  padding: 18px;
+  background: #e0ffe0;
+  border-left: 6px solid #2ecc71;
+  color: #256029;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.output.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  .mobile-field {
+    flex-direction: column;
+  }
+
+  .mobile-field span, .mobile-field input {
+    width: 100%;
+    border-radius: 10px !important;
+    margin-bottom: 8px;
+    border: 2px solid #ccc !important;
+  }
+
+  .mobile-field input {
+    border-left: 2px solid #ccc !important;
+  }
+}
+
+/* Entry animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

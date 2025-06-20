@@ -1,1 +1,9 @@
-<p>gallery works!</p>
+<div class="gallery-container">
+  <h2>Tech Gallery</h2>
+  <div class="gallery-grid">
+    <div class="gallery-card" *ngFor="let img of images">
+      <img [src]="img.url" [alt]="img.title" />
+      <p>{{ img.title }}</p>
+    </div>
+  </div>
+</div>
