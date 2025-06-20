@@ -7,8 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { ErpComponent } from './erp/erp.component';
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,11 +16,12 @@ import { ErpComponent } from './erp/erp.component';
     ContactComponent,
     AboutComponent,
     GalleryComponent,
-    ErpComponent
+    ContactComponent
   ],
   imports: [
     CommonModule,
-    Team4RoutingModule
+    Team4RoutingModule,
+    SharedModule
   ]
 })
 export class Team4Module { }
