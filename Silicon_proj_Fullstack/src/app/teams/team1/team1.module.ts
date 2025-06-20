@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { Team1RoutingModule } from './team1-routing.module';
 import { Team1Component } from './team1.component';
-
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
-import { SharedModule } from "../../shared/shared.module";
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -23,8 +21,7 @@ import { SharedModule } from "../../shared/shared.module";
   imports: [
     CommonModule,
     Team1RoutingModule,
-    SharedModule
-]
-
+    SharedModule,
+  ]
 })
 export class Team1Module { }
