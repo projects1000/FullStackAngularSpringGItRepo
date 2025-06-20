@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { Team1RoutingModule } from './team1-routing.module';
 import { Team1Component } from './team1.component';
+import { SharedModule } from "../../shared/shared.module";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { Team1Component } from './team1.component';
   ],
   imports: [
     CommonModule,
-    Team1RoutingModule
-  ]
+    Team1RoutingModule,
+    SharedModule
+]
 })
 export class Team1Module { }
