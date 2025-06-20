@@ -3,20 +3,28 @@ import { CommonModule } from '@angular/common';
 
 import { Team1RoutingModule } from './team1-routing.module';
 import { Team1Component } from './team1.component';
-import { MembersComponent } from './members/members.component';
-import { BlogsComponent } from './blogs/blogs.component';
+
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { ContactComponent } from './contact/contact.component';
+import { SharedModule } from "../../shared/shared.module";
+
 
 
 @NgModule({
   declarations: [
-    MembersComponent,
-    BlogsComponent,
-    Team1Component
+    Team1Component,
+    HomeComponent,
+    AboutComponent,
+    GalleryComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
     Team1RoutingModule,
-    
-  ],
+    SharedModule
+]
+
 })
 export class Team1Module { }

@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ContactComponent } from './pages/contact/contact.component';
   ],
   imports: [
     CommonModule,
-    Team3RoutingModule
+    Team3RoutingModule,
+    SharedModule,
   ]
 })
 export class Team3Module { }
