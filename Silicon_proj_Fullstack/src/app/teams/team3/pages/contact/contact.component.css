@@ -28,10 +28,49 @@ label {
   color: #083b66;
 }
 
+/* FORM GROUP ICON WRAPPER */
+/* General icon container inside input wrapper */
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group .icon {
+  position: absolute;
+  top: 67.5%;
+  left: 12px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 24px;
+  color: #0077b6;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.form-group input,
+.form-group select {
+  padding-left: 44px; /* keep icon space for input and select */
+}
+
+.form-group textarea {
+  min-height: 80px;
+  padding-left: 44px;  /* space for icon */
+  padding-top: 18px;   /* make it more spacious */
+  resize: vertical;    /* allow user to resize if needed */
+}
+
+.form-group.message .icon {
+  top: 51%;
+  transform: translateY(-50%);
+}
+
 /* Inputs, selects, and textarea */
 input, select, textarea {
   width: 100%;
-  padding: 14px;
+  padding: 14px 14px 14px 42px; /* leave space for icons */
   font-size: 15px;
   border-radius: 10px;
   border: 2px solid #ddd;
@@ -48,28 +87,37 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* Country code + mobile field styling */
-.mobile-field {
+.mobile-group .mobile-field {
   display: flex;
-  align-items: center;
+  align-items: stretch;  /* Ensures both elements have the same height */
+  margin-top: 6px;
 }
 
-.mobile-field span {
-  padding: 14px 16px;
+.mobile-group .mobile-field span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44.5px;
+  padding: 0 14px;
   font-size: 15px;
   background: #cce7ff;
   color: #003366;
   border: 2px solid #b0d4f1;
   border-right: none;
   border-radius: 10px 0 0 10px;
-  min-width: 60px;
-  text-align: center;
+  min-width: 80px;
   font-weight: bold;
+  gap: 6px; /* spacing between icon and number */
 }
 
-.mobile-field input {
+.mobile-group .mobile-field input {
   flex: 1;
+  height: 48px;  /* Match span height */
   border-radius: 0 10px 10px 0;
+  border: 2px solid #ddd;
   border-left: none;
+  padding: 14px;
+  box-sizing: border-box;
 }
 
 /* Submit button */
@@ -123,28 +171,6 @@ button:hover {
   transform: translateY(0);
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
-  .form-container {
-    padding: 20px;
-  }
-
-  .mobile-field {
-    flex-direction: column;
-  }
-
-  .mobile-field span, .mobile-field input {
-    width: 100%;
-    border-radius: 10px !important;
-    margin-bottom: 8px;
-    border: 2px solid #ccc !important;
-  }
-
-  .mobile-field input {
-    border-left: 2px solid #ccc !important;
-  }
-}
-
 /* Entry animation */
 @keyframes fadeIn {
   from {
@@ -154,5 +180,34 @@ button:hover {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  .form-group .icon {
+    top: 42px;     /* slightly higher for smaller inputs */
+    font-size: 16px;
+    left: 10px;
+  }
+
+  .mobile-group .mobile-field {
+    flex-direction: column;
+  }
+
+  .mobile-group .mobile-field span,
+  .mobile-group .mobile-field input {
+    width: 100%;
+    border-radius: 10px !important;
+    margin-bottom: 8px;
+    border: 2px solid #ccc !important;
+  }
+
+  .mobile-group .mobile-field input {
+    border-left: 2px solid #ccc !important;
   }
 }
