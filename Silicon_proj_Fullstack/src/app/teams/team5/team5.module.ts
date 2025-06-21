@@ -13,14 +13,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [
     Team5Component,
     AboutComponent,
-    ContactComponent,
     GalleryComponent,
     HomeComponent
   ],
   imports: [
     CommonModule,
     Team5RoutingModule,
-    SharedModule
+    SharedModule,
+    ContactComponent
   ]
 })
 export class Team5Module { }
