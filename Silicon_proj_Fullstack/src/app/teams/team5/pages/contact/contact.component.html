@@ -1,1 +1,43 @@
-<p>contact works!</p>
+<div class="contact-container">
+  <h1 class="glow-heading">
+  <ng-container *ngFor="let letter of headingText.split(''); let i = index">
+    <span class="letter" [style.animationDelay]="(0.05 * i) + 's'">
+      {{ letter }}
+    </span>
+  </ng-container>
+</h1>
+
+
+
+  <div class="contact-wrapper">
+    <div class="contact-info section">
+      <h2>Get in Touch</h2>
+      <p><strong>Email:</strong> team5&#64;siliconproject.com</p>
+      <p><strong>Phone:</strong> +91-9876543210</p>
+      <p><strong>Address:</strong> SIT Campus, Bhubaneswar, Odisha</p>
+    </div>
+
+    <div class="contact-form section">
+      <h2>Send a Message</h2>
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" ngForm>
+        <input type="text" name="name" placeholder="Your Name" required ngModel />
+        <input type="email" name="email" placeholder="Your Email" required ngModel />
+        <textarea name="message" rows="5" placeholder="Your Message" required ngModel></textarea>
+        <!-- <button type="submit">Send</button> -->
+         <button type="submit" [disabled]="isSubmitting">
+          <ng-container *ngIf="!isSubmitting; else loading">
+            Send
+          </ng-container>
+          <ng-template #loading>
+          <span class="spinner"></span> Sending...
+          </ng-template>
+        </button>
+
+      </form>
+
+      <p *ngIf="showError" class="error-message">❗ Please fill out all the fields.</p>
+      <p *ngIf="messageSent" class="success-message">✅ Message sent successfully! We will contact you soon.</p>
+
+    </div>
+  </div>
+</div>
