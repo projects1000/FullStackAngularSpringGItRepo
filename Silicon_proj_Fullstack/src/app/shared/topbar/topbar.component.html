@@ -14,7 +14,7 @@
     [routerLink]="['/', teamRoute, item.route]"
   >
     <i [class]="item.iconClass"></i>
-    <span class="nav-label">{{ item.route }}</span>
+    <span style="font-size: small;">{{ item.route }}</span>
     <div class="indicator" *ngIf="activeIndex === i"></div>
   </div>
 </div>
