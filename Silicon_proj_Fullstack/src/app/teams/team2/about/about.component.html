@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Team 2</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      background: linear-gradient(90deg, #6e8efb, #a777e3);
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background: linear-gradient(to right, #8e9eab, #eef2f3);
+      border-radius: 0 0 50px 50px;
+      color: #333;
+      animation: slideInTop 1s ease-in-out;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .about-info {
+      text-align: center;
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #444;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .about-info h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #5b5b5b;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin: 3rem 0 2rem;
+      color: #333;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0 2rem 4rem;
+    }
+
+    .member-card {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 1.5rem;
+      width: 230px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.4s ease;
+      animation: fadeIn 0.6s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    .member-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .member-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .member-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .member-card h4 {
+      font-size: 1.2rem;
+      margin: 0;
+      color: #444;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #6e8efb, #a777e3);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+
+    /* Animations */
+    @keyframes slideInTop {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .member-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#"><i class="fas fa-users me-2"></i>Team 2</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1>Welcome to Team 2</h1>
+    <p>We are a dynamic group of developers focused on creating full-stack web applications using Angular and Spring Boot. Innovation drives us.</p>
+  </section>
+
+  <!-- About Info Section -->
+  <section class="about-info">
+    <h2>About Our Team</h2>
+    <p>
+      Team 2 is composed of eight passionate students from Silicon University. We specialize in crafting modern, responsive web applications.
+      Currently, we are collaborating on a full-stack **e-commerce rental platform** using Angular for the frontend and Spring Boot for the backend.
+    </p>
+    <p>
+      Our goal is to streamline rental processes by delivering user-friendly interfaces, real-time data synchronization, and secure backend APIs. 
+      We believe in continuous learning, agile development, and building software that makes life easier for everyone.
+    </p>
+  </section>
+
+  <!-- Team Members -->
+  <h2 class="section-title">Meet the Team</h2>
+  <div class="card-container">
+    <div class="member-card">
+      <img src="https://ui-avatars.com/api/?name=Shrutiarya+Biswal&background=6e8efb&color=fff" alt="Shrutiarya">
+      <h4>Shrutiarya Biswal</h4>
+    </div>
+    <div class="member-card">
+      <img src="https://ui-avatars.com/api/?name=Roshni&background=6e8efb&color=fff" alt="Roshni">
+      <h4>Roshni</h4>
+    </div>
+    <div class="member-card">
+      <img src="https://ui-avatars.com/api/?name=Khusi&background=6e8efb&color=fff" alt="Khusi">
+      <h4>Khusi</h4>
+    </div>
+    <div class="member-card">
+      <img src="https://ui-avatars.com/api/?name=Dishant&background=6e8efb&color=fff" alt="Dishant">
+      <h4>Dishant</h4>
+    </div>
+    <div class="member-card">
+      <img src="https://ui-avatars.com/api/?name=Girija&background=6e8efb&color=fff" alt="Girija">
+      <h4>Girija</h4>
+    </div>
+    <div class="member-card">
+      <img src="https://ui-avatars.com/api/?name=Chinmayee&background=6e8efb&color=fff" alt="Chinmayee">
+      <h4>Chinmayee</h4>
+    </div>
+    <div class="member-card">
+      <img src="https://ui-avatars.com/api/?name=Athar&background=6e8efb&color=fff" alt="Athar">
+      <h4>Athar</h4>
+    </div>
+    <div class="member-card">
+      <img src="https://ui-avatars.com/api/?name=Swastik&background=6e8efb&color=fff" alt="Swastik">
+      <h4>Swastik</h4>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p class="mb-0">© 2025 Team 2 | Built with ❤️ using Angular & Spring Boot</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
