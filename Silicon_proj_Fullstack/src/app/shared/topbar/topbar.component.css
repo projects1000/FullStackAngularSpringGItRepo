@@ -1,9 +1,10 @@
+<<<<<<< HEAD
 /* ======= TOPBAR WRAPPER ======= */
-.topbar {
+/* .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0f172a; /* Navy-dark background */
+  background-color: #0f172a; 
   padding: 12px 24px;
   border-bottom: 1px solid #1e293b;
   flex-wrap: wrap;
@@ -11,11 +12,11 @@
   position: relative;
   top: 0;
   z-index: 999;
-}
+} */
 
 /* ======= NAV LINKS ======= */
-.topbar a {
-  color: #e2e8f0; /* Soft gray */
+/* .topbar a {
+  color: #e2e8f0; 
   text-decoration: none;
   font-weight: 500;
   font-size: 16px;
@@ -23,22 +24,22 @@
   padding: 8px 16px;
   border-radius: 6px;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
+} */
 
 /* ======= HOVER & ACTIVE STATES ======= */
-.topbar a:hover {
-  background-color: #1e293b; /* Slightly lighter than bg */
-  color: #93c5fd; /* Soft blue */
-}
+/* .topbar a:hover {
+  background-color: #1e293b; 
+  color: #93c5fd; 
+} */
 
-.topbar a.active {
-  background-color: #2563eb; /* Blue highlight */
+/* .topbar a.active {
+  background-color: #2563eb; 
   color: white;
   font-weight: 500;
-}
+} */
 
 /* ======= RESPONSIVE FOR MOBILE ======= */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .topbar {
     flex-direction: column;
     align-items: flex-start;
@@ -65,4 +66,73 @@
     transform: translateY(0);
   }
 }
+ */
+.navbar {
+  background-color: #d6f6ec;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 20px;
+  width: auto;
+  margin: 20px auto;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+=======
+>>>>>>> 2392b891e66382e0450c29f9ec15a88a82afafbb
 
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #a8c1b9;
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.nav-item.active {
+  color: #000;
+}
+
+.indicator {
+  width: 24px;
+  height: 4px;
+  background-color: #4a8cff;
+  border-radius: 2px;
+  margin-top: 6px;
+  display: none;
+}
+
+.nav-item.active .indicator {
+  display: block;
+}
+
+/* ✅ MOBILE VIEW FIX */
+@media (max-width: 480px) {
+  .navbar {
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-item {
+    font-size: 20px;
+  }
+
+  .indicator {
+    width: 20px;
+    height: 3px;
+    margin-top: 4px;
+  }
+}
