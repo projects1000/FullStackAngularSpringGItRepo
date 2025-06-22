@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { Team10RoutingModule } from './team10-routing.module';
 import { Team10Component } from './team10.component';
+import { HomeComponent } from './home/home.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    Team10Component
+    Team10Component,
+    HomeComponent
   ],
   imports: [
     CommonModule,
-    Team10RoutingModule
+    Team10RoutingModule,
+      SharedModule,
   ]
 })
 export class Team10Module { }
