@@ -1,31 +1,35 @@
-<div class="contact-container" style="font-family: Arial, sans-serif; padding: 2rem;">
+<div class="contact-container" [ngStyle]="{ 'background': backgroundStyle }">
   <h2 style="text-align: center; color: #003366;">Contact Silicon University</h2>
 
   <div style="max-width: 800px; margin: auto;">
     <p style="font-size: 1.1rem;">
       We are here to help you. Reach out to us through any of the methods below and we’ll respond as soon as possible.
     </p>
+  </div>
+   <div class="contact-container">
+  
 
-    <div style="margin-top: 2rem;">
-      <h3 style="color: #0055aa;">📍 Address</h3>
+  <div class="cards-wrapper">
+    <!-- Contact Details Card -->
+    <div class="card" [ngStyle]="{ 'background-color': contactCardColor }">
+      <h3>📍 Address</h3>
       <p>Silicon University, Tech Park Road, Bhubaneswar, Odisha - 751024, India</p>
 
-      <h3 style="color: #0055aa;">📞 Phone</h3>
+      <h3>📞 Phone</h3>
       <p>+91 98765 43210</p>
 
-      <h3 style="color: #0055aa;">✉️ Email</h3>
-      
+      <h3>✉️ Email</h3>
+      <p>info&#64;siliconuniversity.edu.in</p>
     </div>
 
-    <div style="margin-top: 2rem;">
-      <h3 style="color: #0055aa;">📬 Send us a message</h3>
-      <form style="display: flex; flex-direction: column; gap: 1rem;">
-        <input type="text" placeholder="Your Name" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;" />
-        <input type="email" placeholder="Your Email" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;" />
-        <textarea rows="5" placeholder="Your Message" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
-        <button style="background-color: #003366; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">
-          Send Message
-        </button>
+    <!-- Message Form Card -->
+    <div class="card" [ngStyle]="{ 'background-color': formCardColor }">
+      <h3>📬 Send us a message</h3>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button>Send Message</button>
       </form>
     </div>
   </div>
