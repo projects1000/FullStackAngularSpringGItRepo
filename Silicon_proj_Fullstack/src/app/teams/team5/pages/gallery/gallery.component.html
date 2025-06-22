@@ -1,1 +1,15 @@
-<p>gallery works!</p>
+<div class="gallery-wrapper">
+  <h2 class="gallery-heading">Our Projects</h2>
+  <div class="gallery-container" [@galleryAnim]>
+    <div
+      class="project-card"
+      *ngFor="let project of projects"
+    >
+      <div class="project-info">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+        <a *ngIf="project.link" [href]="project.link" target="_blank">View Project</a>
+      </div>
+    </div>
+  </div>
+</div>
