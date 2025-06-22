@@ -1,11 +1,157 @@
+<!-- team2.component.html -->
 <app-topbar [teamRoute]="'team2'"></app-topbar>
 
+<div class="team-dashboard">
+  <div class="dashboard-header">
+    <h1>Team 2 Analytics Dashboard</h1>
+    <div class="header-actions">
+      <button class="btn-primary">
+        <i class="fas fa-download"></i> Export Report
+      </button>
+      <button class="btn-secondary">
+        <i class="fas fa-cog"></i> Settings
+      </button>
+    </div>
+  </div>
 
+  <div class="dashboard-grid">
+    <!-- Stats Cards Row -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #4e73df;">
+          <i class="fas fa-calendar"></i>
+        </div>
+        <div class="stat-info">
+          <p class="stat-label">Projects</p>
+          <h3 class="stat-value">24</h3>
+        </div>
+      </div>
 
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #1cc88a;">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="stat-info">
+          <p class="stat-label">Completed</p>
+          <h3 class="stat-value">18</h3>
+        </div>
+      </div>
 
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #f6c23e;">
+          <i class="fas fa-tasks"></i>
+        </div>
+        <div class="stat-info">
+          <p class="stat-label">In Progress</p>
+          <h3 class="stat-value">5</h3>
+        </div>
+      </div>
 
+      <div class="stat-card">
+        <div class="stat-icon" style="background: #e74a3b;">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="stat-info">
+          <p class="stat-label">Issues</p>
+          <h3 class="stat-value">3</h3>
+        </div>
+      </div>
+    </div>
 
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <div class="project-overview card">
+        <div class="card-header">
+          <h3>Project Timeline</h3>
+          <select class="time-selector">
+            <option>This Week</option>
+            <option>This Month</option>
+            <option>This Quarter</option>
+          </select>
+        </div>
+        <div class="chart-placeholder">
+          <!-- Would contain a chart component -->
+          <img src="assets/chart-placeholder.png" alt="Project timeline chart">
+        </div>
+      </div>
 
+      <div class="team-activity card">
+        <div class="card-header">
+          <h3>Recent Activity</h3>
+        </div>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="avatar">SB</div>
+            <div class="activity-details">
+              <p><strong>Shruti</strong> completed project setup</p>
+              <small>2 hours ago</small>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="avatar">DS</div>
+            <div class="activity-details">
+              <p><strong>Dishant</strong> reported an issue</p>
+              <small>5 hours ago</small>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="avatar">CD</div>
+            <div class="activity-details">
+              <p><strong>Chinmayee</strong> pushed new code</p>
+              <small>Yesterday</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="team-members card">
+        <div class="card-header">
+          <h3>Team Members</h3>
+          <button class="btn-icon">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <div class="member-list">
+          <div class="member">
+            <div class="avatar online">GD</div>
+            <span>Girija</span>
+          </div>
+          <div class="member">
+            <div class="avatar online">DS</div>
+            <span>Dishant</span>
+          </div>
+          <div class="member">
+            <div class="avatar">SB</div>
+            <span>shruti</span>
+          </div>
+          <div class="member">
+            <div class="avatar">CD</div>
+            <span>Chinmayee</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-actions card">
+        <div class="card-header">
+          <h3>Quick Actions</h3>
+        </div>
+        <div class="action-buttons">
+          <button class="btn-action">
+            <i class="fas fa-file-alt"></i> New Report
+          </button>
+          <button class="btn-action">
+            <i class="fas fa-users"></i> Add Member
+          </button>
+          <button class="btn-action">
+            <i class="fas fa-project-diagram"></i> New Project
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <app-footer></app-footer>
