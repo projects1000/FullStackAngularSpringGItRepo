@@ -1,0 +1,20 @@
+
+<!-- <nav class="topbar">
+  <a [routerLink]="['/', teamRoute, 'home']" routerLinkActive="active">Home</a>
+  <a [routerLink]="['/', teamRoute, 'about']" routerLinkActive="active">About&nbsp;Us</a>
+  <a [routerLink]="['/', teamRoute, 'gallery']" routerLinkActive="active">Gallery</a>
+  <a [routerLink]="['/', teamRoute, 'contact']" routerLinkActive="active">Contact&nbsp;Us</a>
+</nav> -->
+<div class="navbar">
+  <div
+    class="nav-item"
+    *ngFor="let item of navItems; let i = index"
+    [class.active]="activeIndex === i"
+    (click)="setActive(i)"
+    [routerLink]="['/', teamRoute, item.route]"
+  >
+    <i [class]="item.iconClass"></i>
+    <span style="font-size: small;">{{ item.route }}</span>
+    <div class="indicator" *ngIf="activeIndex === i"></div>
+  </div>
+</div>

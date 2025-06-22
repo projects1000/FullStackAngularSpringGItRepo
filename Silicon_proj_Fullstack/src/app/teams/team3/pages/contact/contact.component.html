@@ -1,1 +1,97 @@
-<p>contact works!</p>
+<div class="form-container">
+  <h2>Contact Us</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+    <!-- Name -->
+    <div class="form-group">
+      <label>Name</label>
+      <i class="fas fa-user icon"></i>
+      <input formControlName="name" placeholder="Enter your name" />
+      <div *ngIf="submitted && contactForm.controls['name'].errors" class="error">
+        <span *ngIf="contactForm.controls['name'].errors['required']">Name is required.</span>
+        <span *ngIf="contactForm.controls['name'].errors['pattern']">Only letters and spaces allowed.</span>
+      </div>
+    </div>
+
+    <!-- Country -->
+    <div class="form-group">
+      <label>Country</label>
+      <i class="fas fa-globe icon"></i>
+      <select formControlName="country" (change)="onCountryChange($event)">
+        <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+      </select>
+      <div *ngIf="submitted && contactForm.controls['country'].invalid" class="error">
+        Please select a country.
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label>Email</label>
+      <i class="fas fa-envelope icon"></i>
+      <input formControlName="email" placeholder="Enter your email" />
+      <div *ngIf="submitted && contactForm.controls['email'].errors" class="error">
+        <span *ngIf="contactForm.controls['email'].errors['required']">Email is required.</span>
+        <span *ngIf="contactForm.controls['email'].errors['email']">Please enter a valid email.</span>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="form-group mobile-group">
+      <label>Mobile</label>
+      <i class="fas fa-phone icon"></i>
+      <div class="mobile-field">
+        <span>{{ countryCode }}</span>
+        <input formControlName="mobile" placeholder="Enter mobile number" />
+      </div>
+      <div *ngIf="submitted && contactForm.controls['mobile'].errors" class="error">
+        <span *ngIf="contactForm.controls['mobile'].errors['required']">Mobile number is required.</span>
+        <span *ngIf="contactForm.controls['mobile'].errors['pattern']">Only digits allowed.</span>
+        <span *ngIf="contactForm.controls['mobile'].errors['minlength']">At least 10 digits required.</span>
+        <span *ngIf="contactForm.controls['mobile'].errors['maxlength']">Only 10 digits allowed.</span>
+      </div>
+    </div>
+
+    <!-- State -->
+    <div class="form-group">
+      <label>State</label>
+      <i class="fas fa-location-dot icon"></i>
+      <select formControlName="state">
+        <option value="">Select State</option>
+        <option *ngFor="let s of states" [value]="s">{{ s }}</option>
+      </select>
+      <div *ngIf="submitted && contactForm.controls['state'].invalid" class="error">
+        Please select a state.
+      </div>
+    </div>
+
+    <!-- DOB -->
+    <div class="form-group">
+      <label>Date of Birth</label>
+      <i class="fas fa-calendar icon"></i>
+      <input type="date" formControlName="dob" />
+      <div *ngIf="submitted && contactForm.controls['dob'].invalid" class="error">
+        Please select your date of birth.
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div class="form-group message">
+      <label>Message</label>
+      <i class="fas fa-comment-dots icon"></i>
+      <textarea formControlName="message" placeholder="Your message"></textarea>
+      <div *ngIf="submitted && contactForm.controls['message'].invalid" class="error">
+        Please enter a message.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+
+    <!-- Output message -->
+    <div class="output" [class.show]="message">
+      <strong>{{ message }}</strong>
+    </div>
+
+  </form>
+</div>

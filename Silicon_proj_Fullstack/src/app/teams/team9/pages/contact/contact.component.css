@@ -1,0 +1,62 @@
+.contact-container {
+ font-family: Arial, sans-serif;
+  padding: 2rem;
+  min-height: 100vh;
+  transition: background 0.31s ease;
+}
+
+.contact-container h2 {
+  text-align: center;
+  color: #003366;
+}
+
+.contact-container {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+}
+
+h2 {
+  text-align: center;
+  color: #003366;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card {
+  width: 350px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.5s ease;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #003366;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* changed by sibun */
