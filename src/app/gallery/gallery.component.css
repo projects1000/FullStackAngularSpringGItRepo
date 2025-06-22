@@ -1,0 +1,70 @@
+/* Vibrant gradient background */
+.gallery-wrapper {
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ffecd2, #fcb69f); /* soft peach gradient */
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Button styling */
+.tab-buttons {
+  margin-bottom: 30px;
+}
+
+.tab-buttons button {
+  margin: 0 10px;
+  padding: 10px 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff6a00, #ee0979);
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.tab-buttons button:hover {
+  transform: scale(1.05);
+}
+
+/* Grid styling */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card styling */
+.gallery-card {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Uniform image style */
+.gallery-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Name styling */
+.gallery-card p {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
