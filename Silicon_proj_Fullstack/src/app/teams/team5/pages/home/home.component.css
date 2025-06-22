@@ -1,6 +1,6 @@
 /* Container with sidebar + navbar accounted for */
 .team5-container {
-  position: absolute;
+
   top: 60px;         /* adjust if your navbar height is different */
   left: 285px;       /* sidebar width */
   right: 0;
