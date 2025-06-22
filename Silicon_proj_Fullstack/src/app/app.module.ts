@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
-import { LightboxModule } from 'ngx-lightbox';
+
 import { GalleryComponent } from './teams/team5/pages/gallery/gallery.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
@@ -19,7 +19,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    LightboxModule,
     BrowserAnimationsModule
   ],
   providers: [],

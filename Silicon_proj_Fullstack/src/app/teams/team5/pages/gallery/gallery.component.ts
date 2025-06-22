@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Lightbox } from 'ngx-lightbox';
 import {
   trigger,
   transition,
@@ -68,14 +67,16 @@ export class GalleryComponent {
   
   ];
 
-  constructor(private lightbox: Lightbox) {}
+  constructor() {}
+
 
   open(index: number): void {
-    const album = this.projects.map(project => ({
-      src: project.backgroundUrl,
-      caption: `${project.title} - ${project.description}`,
-      thumb: project.backgroundUrl
-    }));
-    this.lightbox.open(album, index);
-  }
+  const images = this.projects.map(project => ({
+    src: project.backgroundUrl,
+    caption: `${project.title} - ${project.description}`,
+    thumb: project.backgroundUrl
+  }));
+  console.log('Opening image:', images[index]);
+}
+
 }
