@@ -1,1 +1,120 @@
-<h2>Welcome to Team 9 - Home Page</h2>
+<body>
+<div class="hero">
+  <div class="flow-column left-flow">
+    <img class="flow-img" src="https://silicon.ac.in/wp-content/uploads/2023/09/1.-Silicon-University-1.jpeg" alt="Book" style="animation-delay: 0s;" />
+    <img class="flow-img" src="https://silicon.ac.in/wp-content/uploads/2024/02/DSC_0305.jpg" alt="Lab" style="animation-delay: 1.5s;" />
+    <img class="flow-img" src="https://th.bing.com/th/id/OIP.IS88hrnUp6L0xIDsjoLEkgHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Student" style="animation-delay: 3s;" />
+  
+    <img class="flow-img" src="https://th.bing.com/th/id/OIP.FQydkqETWGS8u-HcPVO9ygHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Computer" style="animation-delay: 4.5s;" />
+    <img class="flow-img" src="https://th.bing.com/th/id/OIP.fBqOvHh5AMIDdUZw9DmpLwHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Microscope" style="animation-delay: 6s;" />
+    <img class="flow-img" src="https://erp.silicon.ac.in/estcampus/images/slider/6955f1f0ea478674432c63cc45bb91bb.jpg" alt="Globe" style="animation-delay: 7.5s;" />
+   </div>
+<div class="hero-content">
+    <img src="https://th.bing.com/th/id/OIP.uM5-dZNxe-ZrARPaGD2_xwHaF4?w=223&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Silicon Logo" class="logo-corner" style="border-radius: 7px;"/>
+    <h1>Silicon University, Bhubaneswar</h1>
+    <p>Empowering innovation and excellence since 2001 🇮🇳</p>
+    <a routerLink="/apply" class="btn-primary">Apply Now – Admissions 2025‑26</a>
+</div>
+
+
+<div class="flow-column right-flow">
+    <img class="flow-img" src="https://th.bing.com/th/id/OIP.FQydkqETWGS8u-HcPVO9ygHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Computer" style="animation-delay: 4.5s;" />
+    <img class="flow-img" src="https://th.bing.com/th/id/OIP.fBqOvHh5AMIDdUZw9DmpLwHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Microscope" style="animation-delay: 6s;" />
+    <img class="flow-img" src="https://erp.silicon.ac.in/estcampus/images/slider/6955f1f0ea478674432c63cc45bb91bb.jpg" alt="Globe" style="animation-delay: 7.5s;" />
+   <img class="flow-img" src="https://silicon.ac.in/wp-content/uploads/2023/09/1.-Silicon-University-1.jpeg" alt="Book" style="animation-delay: 0s;" />
+    <img class="flow-img" src="https://silicon.ac.in/wp-content/uploads/2024/02/DSC_0305.jpg" alt="Lab" style="animation-delay: 1.5s;" />
+    <img class="flow-img" src="https://th.bing.com/th/id/OIP.IS88hrnUp6L0xIDsjoLEkgHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Student" style="animation-delay: 3s;" />
+  
+  </div>
+  
+</div>
+
+
+
+<section class="programs">
+  <h2>Academic Programs</h2>
+  <div class="program-list">
+    <div
+      class="program-card"
+      *ngFor="let p of programs"
+      [ngStyle]="{ 'background-color': p.color }"
+    >
+      <div class="program-icon">{{ p.icon }}</div>
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.level }} • {{ p.duration }}</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Admissions -->
+<section class="admissions">
+  <h2>Admissions &amp; Fees</h2>
+  <p>Admissions via <strong>JEE Main + OJEE</strong>. Lateral entry through OJEE counselling.</p>
+  <ul>
+    <li>B.Tech: ₹2.3 L / year</li>
+    <li>M.Tech / M.Sc / MCA: ₹1.6 L / year</li>
+    <li>Ph.D.: ₹0.41–0.61 L / year</li>
+  </ul>
+  <a routerLink="/contact" class="btn-secondary">Learn More</a>
+</section>
+
+<section class="placements">
+  <h2>Top Recruiters</h2>
+  <div class="company-card-container">
+    <div class="company-card">
+      <img src="https://th.bing.com/th/id/OIP.iz0l2PLYQDTZgy32ELt1UAHaEa?w=278&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="TCS" />
+    </div>
+    <div class="company-card">
+      <img src="https://1000logos.net/wp-content/uploads/2021/05/Wipro-logo.png" alt="Wipro" />
+    </div>
+    <div class="company-card">
+      <img src="https://static.vecteezy.com/system/resources/previews/020/336/451/large_2x/infosys-logo-infosys-icon-free-free-vector.jpg" alt="Infosys" />
+    </div>
+    <div class="company-card">
+      <img src="https://th.bing.com/th/id/R.38a06754015be2263f4f54d47496b4bf?rik=LYQq09GaSSzfdw&riu=http%3a%2f%2ftous-logos.com%2fwp-content%2fuploads%2f2018%2f05%2fEmbl%C3%A8me-Capgemini.jpg&ehk=1FmWxjFZNYzgAhU4Xa1jaTGRJ7KcPN4x4Kg0fxPNIGQ%3d&risl=&pid=ImgRaw&r=0" alt="Capgemini" />
+    </div>
+    <div class="company-card">
+      <img src="https://contentstatic.techgig.com/photo/90461551/cognizant-announces-new-logo-tagline-aims-at-accelerating-digital-business.jpg?8902" alt="Cognizant" />
+    </div>
+    </div>
+  <h2>Placements</h2>
+  <p>74% students placed • ₹32.5 L Highest Package • ₹5.16 L Average CTC • 70+ recruiters</p>
+</section>
+
+<!-- Campus Life -->
+<section class="campus">
+  <h2>Campus Life</h2>
+  <p>18.5-acre lush campus at Patia: smart labs, library, auditorium, gym, clubs, and a vibrant student culture.</p>
+ <h2>Campus Life at Silicon University</h2>
+
+  <div class="campus-image-row">
+    <img src="https://silicon.ac.in/wp-content/uploads/2024/02/DSC_0305.jpg" alt="Campus 1" />
+    <img src="https://ccpis.in/common/images/silicon/silicon-2.webp" alt="Campus 2" />
+    <img src="https://th.bing.com/th/id/OIP.JyiSuG6aFojhtNP9AgxkXQHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Campus 3" />
+    <img src="https://media.getmyuni.com/azure/college-images-test/silicon-institute-of-technology-sit-bhubaneswar/111f3943b00d4aa98f8df253c206be17.jpeg" alt="Campus 4" />
+    <img src="https://th.bing.com/th/id/OIP.BC1xuFPJcpGURuQDRJtXFgHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Campus 5" />
+  </div>
+  
+  <a routerLink="/gallery" class="btn-secondary">Explore Campus</a>
+</section>
+
+<section class="events">
+  <h2>Events & News</h2>
+  <div class="card-list">
+    <div class="card bg1">
+      <h3>🎓 Tech Fest 2025</h3>
+      <p>Join us for 3 days of innovation, hackathons, and workshops from July 12–14.</p>
+    </div>
+    <div class="card bg2">
+      <h3>🏅 Placement Drive</h3>
+      <p>Top MNCs visiting campus for hiring on August 5. Register on the portal.</p>
+    </div>
+    <div class="card bg3">
+      <h3>📢 New MCA Batch</h3>
+      <p>Orientation for MCA students begins July 1st. Welcome, freshers!</p>
+    </div>
+  </div>
+</section>
+
+</body>
