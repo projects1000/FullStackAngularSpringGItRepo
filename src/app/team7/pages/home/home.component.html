@@ -1,0 +1,25 @@
+
+<div class="home-wrapper">
+  <h1 class="team-heading">{{ teamName }}</h1>
+
+  <div class="lead-card">
+    <img [src]="teamLead.image" alt="Team Lead" class="lead-photo" />
+    <h2 class="lead-name">{{ teamLead.name }}</h2>
+    <p class="lead-title">Team Lead</p>
+  </div>
+
+  <div class="mission-box">
+    <h3>🚀 Our Mission</h3>
+    <p>{{ mission }}</p>
+  </div>
+
+  <div class="members-section">
+    <!-- <a href="#">👩‍💻 Meet the Team</a> -->
+    <div class="member-grid">
+      <div class="member-card" *ngFor="let member of teamMembers">
+        <h4>{{ member.name }}</h4>
+        <p>{{ member.role }}</p>
+      </div>
+    </div>
+  </div>
+</div>

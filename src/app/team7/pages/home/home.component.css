@@ -1,0 +1,182 @@
+ 
+ .home-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #9ca3af;
+  /* background: linear-gradient(to bottom right, #e0f7fa, #fce4ec);  */
+  background: linear-gradient(to bottom right, #e0f7fa, #111827); 
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+.team-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #512da8;
+  font-weight: bold;
+  background: linear-gradient(to right, #512da8, #1976d2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.lead-card {
+  text-align: center;
+  background: linear-gradient(to bottom right, #ffffff, #e3f2fd);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.lead-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.lead-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #42a5f5;
+  margin-bottom: 1rem;
+}
+
+.lead-name {
+  font-size: 1.6rem;
+  color: #1a237e;
+  margin: 0;
+}
+
+.lead-title {
+  color: #546e7a;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+
+.mission-box {
+  background: linear-gradient(to right, #f3e5f5, #e8f5e9);
+  border-left: 6px solid #66bb6a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.mission-box h3 {
+  color: #2e7d32;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.mission-box p {
+  font-size: 1.05rem;
+  color: #37474f;
+  line-height: 1.6;
+}
+
+
+.members-section {
+  text-align: center;
+}
+
+.members-section h3 {
+  font-size: 1.6rem;
+  color: #0288d1;
+  margin-bottom: 1rem;
+}
+
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  padding: 0 1rem;
+}
+
+.member-card {
+  background: linear-gradient(to top left, #ffffff, #e1f5fe);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.member-card h4 {
+  margin: 0;
+  color: #0d47a1;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.member-card p {
+  margin-top: 0.4rem;
+  color: #607d8b;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .team-heading {
+    font-size: 2.3rem;
+  }
+
+  .lead-photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .lead-name {
+    font-size: 1.4rem;
+  }
+
+  .mission-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .mission-box p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-wrapper {
+    padding: 1rem;
+  }
+
+  .team-heading {
+    font-size: 1.9rem;
+  }
+
+  .lead-photo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+  .member-card h4 {
+    font-size: 1rem;
+  }
+
+  .member-card p {
+    font-size: 0.9rem;
+  }
+} 
