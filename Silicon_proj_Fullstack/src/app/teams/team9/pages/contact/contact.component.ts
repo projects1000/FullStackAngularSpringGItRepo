@@ -26,7 +26,7 @@ export class ContactComponent implements OnInit {
     this.changeBackground();
     this.contactCardColor = this.getRandomColor();
     this.formCardColor = this.getRandomColor();
-    setInterval(() => this.changeBackground(), 4000); // Change every 4 seconds
+    setInterval(() => this.changeBackground(), 4000); 
   }
 
   private changeBackground(): void {
