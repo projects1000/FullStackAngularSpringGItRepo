@@ -1,5 +1,5 @@
+import { Component, Input } from '@angular/core'; 
 
-<<<<<<< HEAD
 @Component({
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
@@ -22,5 +22,3 @@ export class TopbarComponent {
   }
 
 }
-=======
->>>>>>> 2392b891e66382e0450c29f9ec15a88a82afafbb
