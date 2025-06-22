@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GalleryComponent } from './teams/team9/pages/gallery/gallery.component';
+import { HomeComponent } from './teams/team9/pages/home/home.component';
+import { ContactComponent } from './teams/team9/pages/contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'team1', pathMatch: 'full' },
-
+  { path: '', component: HomeComponent },
+  { path: 'gallery', component: GalleryComponent },
+  {path:'contact',component:ContactComponent},
   {
     path: 'team1',
     loadChildren: () =>

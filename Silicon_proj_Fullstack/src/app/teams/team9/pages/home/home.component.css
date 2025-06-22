@@ -1,0 +1,289 @@
+/* Animated Light Background */
+body {
+  animation: changeBg 20s infinite;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 1s ease;
+}
+@keyframes changeBg {
+  0% { background-color: #fdf6e3; }
+  25% { background-color: #e3f2fd; }
+  50% { background-color: #f3e5f5; }
+  75% { background-color: #e8f5e9; }
+  100% { background-color: #fdf6e3; }
+  75%  { background-color: #fff9c4; } 
+  100% { background-color: #ede7f6; }  
+  0%   { background-color: #fdf6e3; }  
+  12%  { background-color: #e3f2fd; }   
+  25%  { background-color: #f3e5f5; }   
+  37%  { background-color: #e8f5e9; }    
+  50%  { background-color: #fff8e1; }   
+  62%  { background-color: #fce4ec; }    
+  75%  { background-color: #ede7f6; }    
+  87%  { background-color: #e0f7fa; }    
+  100% { background-color: #fdf6e3; }    
+  25%  { background-color: #fce4ec; }  
+
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)),
+              url('https://upload.wikimedia.org/wikipedia/commons/3/3c/Silicon_Institute_of_Technology_campus.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+
+.flow-column {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.flow-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.flow-track img {
+  width: 60px;
+  height: 60px;
+  margin: 10px auto;
+  opacity: 0;
+  animation: flowVertical 6s ease-in-out infinite;
+}
+
+/* Assign different delays to simulate randomness */
+.flow-track img:nth-child(1) {
+  animation-delay: 0s;
+}
+.flow-track img:nth-child(2) {
+  animation-delay: 2s;
+}
+.flow-track img:nth-child(3) {
+  animation-delay: 4s;
+}
+.flow-track img:nth-child(4) {
+  animation-delay: 1s;
+}
+.flow-track img:nth-child(5) {
+  animation-delay: 3s;
+}
+
+.left-flow {
+  left: 10px;
+}
+
+.right-flow {
+  right: 10px;
+}
+
+/* New top-to-bottom animation */
+@keyframes flowVertical {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  background: white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+
+
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Sections */
+section {
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  margin: 1rem auto;
+  max-width: 1000px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.stats li {
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 150px;
+  font-weight: bold;
+}
+
+.program-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.program-card {
+  padding: 1rem;
+  width: 240px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.program-card:hover {
+  transform: scale(1.05);
+}
+
+.program-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.btn-secondary {
+  background-color: #17a2b8;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+/* Campus Image */
+.campus-img {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.events {
+  padding: 2rem;
+  background-color: #f0f4f8;
+  text-align: center;
+}
+.card-list {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+/* Section Styling with Animation */
+.campus-life-section {
+  padding: 2rem;
+  text-align: center;
+  animation: colorFade 20s infinite alternate;
+  transition: background-color 1s ease;
+}
+
+@keyframes colorFade {
+  0%   { background-color: #e8f5e9; } /* Light Green */
+  25%  { background-color: #e3f2fd; } /* Light Blue */
+  50%  { background-color: #fff3e0; } /* Light Orange */
+  75%  { background-color: #f3e5f5; } /* Light Purple */
+  100% { background-color: #fce4ec; } /* Light Pink */
+}
+
+/* Image Card Layout */
+.campus-image-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.campus-image-row img {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.campus-image-row img:hover {
+  transform: scale(1.05);
+}
+
+/* Button Styling */
+.explore-btn {
+  background-color: #0066cc;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #004c99;
+}

@@ -1,1 +1,115 @@
-<h2>Welcome to Team 9 - Home Page</h2>
+
+<body>
+  
+
+<div class="hero">
+  
+  <div class="flow-column left-flow">
+    <div class="flow-track">
+      <img src="https://silicon.ac.in/wp-content/uploads/2023/09/1.-Silicon-University-1.jpeg" alt="Book" />
+      <img src="https://silicon.ac.in/wp-content/uploads/2021/07/1-1-1.jpg" alt="Lab" />
+      <img src="https://media.getmyuni.com/azure/college-images-test/silicon-institute-of-technology-sit-bhubaneswar/111f3943b00d4aa98f8df253c206be17.jpeg" />
+      <img src="https://th.bing.com/th/id/OIP.FQydkqETWGS8u-HcPVO9ygHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Computer" />
+      <img src="https://media.getmyuni.com/azure/college-images-test/silicon-institute-of-technology-sit-bhubaneswar/902afcac8e1848428d7a2f1cf3b5fc98.jpeg" alt="Microscope" />
+      <img src="https://th.bing.com/th/id/OIP.P1ulSDGnQvJIllsfY-bJswHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Globe" />
+          
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <h1>Silicon University, Bhubaneswar</h1>
+    <p>Empowering innovation and excellence since 2001 🇮🇳</p>
+    <a routerLink="/apply" class="btn-primary">Apply Now – Admissions 2025‑26</a>
+  </div>
+
+  
+  <div class="flow-column right-flow">
+    <div class="flow-track">
+      <img src="https://th.bing.com/th/id/OIP.FQydkqETWGS8u-HcPVO9ygHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Computer" />
+      <img src="https://media.getmyuni.com/azure/college-images-test/silicon-institute-of-technology-sit-bhubaneswar/902afcac8e1848428d7a2f1cf3b5fc98.jpeg" alt="Microscope" />
+      <img src="https://th.bing.com/th/id/OIP.P1ulSDGnQvJIllsfY-bJswHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Globe" />
+      <img src="https://silicon.ac.in/wp-content/uploads/2023/09/1.-Silicon-University-1.jpeg" alt="Book" />
+      <img src="https://silicon.ac.in/wp-content/uploads/2021/07/1-1-1.jpg" alt="Lab" />
+      <img src="https://media.getmyuni.com/azure/college-images-test/silicon-institute-of-technology-sit-bhubaneswar/111f3943b00d4aa98f8df253c206be17.jpeg" />
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Academic Programs -->
+<section class="programs">
+  <h2>Academic Programs</h2>
+  <div class="program-list">
+    <div
+      class="program-card"
+      *ngFor="let p of programs"
+      [ngStyle]="{ 'background-color': p.color }"
+    >
+      <div class="program-icon">{{ p.icon }}</div>
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.level }} • {{ p.duration }}</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Admissions -->
+<section class="admissions">
+  <h2>Admissions &amp; Fees</h2>
+  <p>Admissions via <strong>JEE Main + OJEE</strong>. Lateral entry through OJEE counselling.</p>
+  <ul>
+    <li>B.Tech: ₹2.3 L / year</li>
+    <li>M.Tech / M.Sc / MCA: ₹1.6 L / year</li>
+    <li>Ph.D.: ₹0.41–0.61 L / year</li>
+  </ul>
+  <a routerLink="/contact" class="btn-secondary">Learn More</a>
+</section>
+
+<!-- Placements -->
+<section class="placements">
+  <h2>Placements</h2>
+  <p>2024: 74% students placed • ₹32.5 L Highest Package • ₹5.16 L Average CTC • 70+ recruiters</p>
+</section>
+
+<!-- Campus Life -->
+<section class="campus">
+  <h2>Campus Life</h2>
+  <p>18.5-acre lush campus at Patia: smart labs, library, auditorium, gym, clubs, and a vibrant student culture.</p>
+  
+<div class="campus-image-row">
+  <img class="campus-img" src="https://silicon.ac.in/wp-content/uploads/2025/02/8.jpg" alt="Campus" style="width: 90px; height: 90px;" />
+  <img class="campus-img" src="https://silicon.ac.in/wp-content/uploads/2021/07/Header-Photo-14-1-1.jpg" alt="Campus" style="width: 90px; height: 90px;" />
+  <img class="campus-img" src="https://silicon.ac.in/wp-content/uploads/2021/05/1-1-3.jpg" alt="Campus" style="width: 90px; height: 90px;" />
+  <img class="campus-img" src="https://silicon.ac.in/wp-content/uploads/2021/05/2-1.jpg" alt="Campus" style="width: 90px; height: 90px;" />
+  <img class="campus-img" src="https://silicon.ac.in/wp-content/uploads/2021/05/4-7.jpg" alt="Campus" style="width: 90px; height: 90px;" />
+</div>
+  <button routerLink="/gallery" class="explore-btn">Explore Campus</button>
+</section>
+
+<section class="events">
+  <h2>Events & News</h2>
+  <div class="card-list">
+    <div class="card">
+      <h3>🎓 Tech Fest 2025</h3>
+      <p>Join us for 3 days of innovation, hackathons, and workshops from July 12–14.</p>
+    </div>
+    <div class="card">
+      <h3>🏅 Placement Drive</h3>
+      <p>Top MNCs visiting campus for hiring on August 5. Register on the portal.</p>
+    </div>
+    <div class="card">
+      <h3>📢 New MCA Batch</h3>
+      <p>Orientation for MCA students begins July 1st. Welcome, freshers!</p>
+    </div>
+  </div>
+</section>
+
+
+</body>
+
+
+
