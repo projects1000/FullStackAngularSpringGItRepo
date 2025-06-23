@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class AboutComponent {
   port: string = window.location.port;
   hostname: string = window.location.hostname;
-  contactUrl: string;
+  contactUrl: string =` http://${this.hostname}:${this.port}/team10/contact`;
+
 
   constructor() {
     this.contactUrl = `http://${this.hostname}:${this.port}/team10/contact`;
