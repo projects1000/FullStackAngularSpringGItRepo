@@ -9,4 +9,5 @@ export class AboutComponent {
   port: string = window.location.port;
   hostname: string = window.location.hostname;
   contactUrl: string = `http://${this.hostname}:${this.port}/team10/contact`;
+
 }
