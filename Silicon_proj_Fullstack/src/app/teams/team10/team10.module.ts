@@ -5,6 +5,7 @@ import { Team10RoutingModule } from './team10-routing.module';
 import { Team10Component } from './team10.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 import { FormsModule } from '@angular/forms';
 import { ContactComponent } from './contact/contact.component';
 
@@ -14,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
   declarations: [
     Team10Component,
     HomeComponent,
+    AboutComponent,
     ContactComponent
   ],
   imports: [
