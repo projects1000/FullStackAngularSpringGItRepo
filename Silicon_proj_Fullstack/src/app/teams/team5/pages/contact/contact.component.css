@@ -228,3 +228,10 @@ button[disabled] {
 }
 
 
+.invalid-field {
+  border: 2px solid #ff4d4d !important;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.8) !important;
+  animation: shake 0.5s ease;
+}
+
+
