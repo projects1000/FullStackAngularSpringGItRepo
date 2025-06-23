@@ -1,0 +1,187 @@
+/* ===== Base ===== */
+.home-landing {
+  background-color: #0f172a; /* deep navy */
+  color: #f1f5f9; /* slate-50 */
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #38bdf8; /* sky blue */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+}
+
+.explore-btn {
+  margin-top: 20px;
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #3b82f6;
+}
+
+/* ===== Vibes Section ===== */
+.vibes {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.vibes h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #facc15; /* yellow-400 */
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #1e293b;
+  color: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  min-width: 180px;
+  font-size: 1rem;
+  transition: transform 0.2s ease-in-out;
+  opacity: 0;
+  animation: slideUp 0.7s ease-out forwards;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  background-color: #334155;
+}
+
+.card:nth-child(1) { animation-delay: 0.3s; }
+.card:nth-child(2) { animation-delay: 0.5s; }
+.card:nth-child(3) { animation-delay: 0.7s; }
+.card:nth-child(4) { animation-delay: 0.9s; }
+
+/* ===== Tech Stack Section ===== */
+.tech {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.tech h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #34d399; /* emerald-400 */
+  opacity: 0;
+  animation: fadeInTop 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 10px;
+  overflow: visible;
+}
+
+.icons img {
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+  animation: fadeInTop 0.6s ease-out forwards;  /* <-- add “forwards” */
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.icons img:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+
+}
+
+.icons img:nth-child(1) { animation-delay: 0.3s; }
+.icons img:nth-child(2) { animation-delay: 0.5s; }
+.icons img:nth-child(3) { animation-delay: 0.7s; }
+.icons img:nth-child(4) { animation-delay: 0.9s; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+}
+
+/* === Animations === */
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translate3d(50px, 70px, 100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0,40px);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typewriter {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #38bdf8;
+  white-space: wrap;
+  overflow: hidden;
+  border-right: 3px solid #38bdf8;
+  width: fit-content;
+  margin: 0 auto;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%   { border-color: #38bdf8; }
+  50%  { border-color: transparent; }
+  100% { border-color: #38bdf8; }
+}
