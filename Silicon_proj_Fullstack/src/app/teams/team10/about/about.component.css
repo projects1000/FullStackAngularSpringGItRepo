@@ -99,3 +99,9 @@ html {
     font-size: 1rem;
   }
 }
+.get-started {
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
