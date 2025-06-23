@@ -5,12 +5,14 @@ import { Team10RoutingModule } from './team10-routing.module';
 import { Team10Component } from './team10.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
   declarations: [
     Team10Component,
-    HomeComponent
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,
