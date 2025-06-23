@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About | SpringBoot & Angular</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .about-hero {
+      background: linear-gradient(135deg, #a777e3, #6e8efb);
+      color: white;
+      padding: 6rem 0;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .about-hero::after {
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .about-content {
+      position: relative;
+      z-index: 1;
+    }
+    .about-card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      background: #fff;
+    }
+    .about-card:hover {
+      transform: translateY(-10px);
+    }
+    .about-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #a777e3;
+    }
+    .tech-stack {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .tech-icon {
+      font-size: 2rem;
+      margin: 0 0.5rem;
+      color: #6e8efb;
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #a777e3;
+    }
+    .feature-card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+      padding: 2rem;
+      background: #fff;
+      height: 100%;
+      text-align: center;
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #6e8efb, #a777e3);">
+    <div class="container">
+      <a class="navbar-brand display-6 fw-bold" href="/">
+        <i class="fas fa-laptop-code me-2"></i>SpringBoot & Angular
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section (About Us heading only) -->
+  <section class="about-hero">
+    <div class="container about-content text-center">
+      <h1 class="display-4 fw-bold mb-4">About Us</h1>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="about-card">
+          <div class="about-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h2 class="mb-3">Our Vision</h2>
+          <p>We believe in building powerful, scalable, and maintainable web applications. Our mission is to combine the best of backend and frontend technologies to deliver seamless digital experiences.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="about-card">
+          <div class="about-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h2 class="mb-3">Why SpringBoot & Angular?</h2>
+          <p>SpringBoot provides a fast, reliable, and secure backend, while Angular enables dynamic, responsive, and interactive frontends. Together, they form a perfect stack for modern web development.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="container tech-stack text-center my-5">
+    <h2 class="mb-4">Our Tech Stack</h2>
+    <div class="d-flex justify-content-center flex-wrap">
+      <div class="mx-3 my-2">
+        <i class="fab fa-java tech-icon"></i>
+        <p class="mb-0">Java</p>
+      </div>
+      <div class="mx-3 my-2">
+        <i class="fas fa-server tech-icon"></i>
+        <p class="mb-0">SpringBoot</p>
+      </div>
+      <div class="mx-3 my-2">
+        <i class="fab fa-angular tech-icon"></i>
+        <p class="mb-0">Angular</p>
+      </div>
+      <div class="mx-3 my-2">
+        <i class="fab fa-bootstrap tech-icon"></i>
+        <p class="mb-0">Bootstrap</p>
+      </div>
+      <div class="mx-3 my-2">
+        <i class="fas fa-database tech-icon"></i>
+        <p class="mb-0">Database</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Features Section -->
+  <div class="container my-5">
+    <h2 class="text-center mb-5">Key Features</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>High Performance</h3>
+          <p>Optimized for speed and efficiency, ensuring a smooth user experience.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Secure</h3>
+          <p>Built with security best practices to protect your data and users.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Responsive</h3>
+          <p>Works flawlessly on all devices, from desktops to smartphones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
