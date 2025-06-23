@@ -63,7 +63,7 @@ export class ContactComponent {
   // Hide message after 5 seconds
   setTimeout(() => {
     this.message = '';
-  }, 5000);
+  }, 1000);
 }
  else {
       this.message = 'Please fill all fields correctly before submitting.';
