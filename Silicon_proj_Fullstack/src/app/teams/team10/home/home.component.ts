@@ -9,6 +9,11 @@ export class HomeComponent {
   fadingOut: string | null = null;
   timeoutId: any = null;
 
+port: string = window.location.port;
+hostname: string = window.location.hostname;
+contactUrl: string = `http://${this.hostname}:${this.port}/team10/contact`;
+
+
   members = [
     {
       name: 'Pratyush',
