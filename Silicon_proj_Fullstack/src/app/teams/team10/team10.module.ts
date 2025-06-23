@@ -6,18 +6,23 @@ import { Team10Component } from './team10.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { FormsModule } from '@angular/forms';
+import { ContactComponent } from './contact/contact.component';
+
 
 
 @NgModule({
   declarations: [
     Team10Component,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
         Team10RoutingModule,
         SharedModule,
+        FormsModule
   ]
 })
 export class Team10Module { }
