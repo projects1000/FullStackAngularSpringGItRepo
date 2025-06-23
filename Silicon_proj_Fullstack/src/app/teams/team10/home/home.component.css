@@ -280,3 +280,41 @@ border-radius: 20px;
   height: 20px;
   filter: invert(1);
 }
+.microcard {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  border: 1px solid #444;
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.microcard.fade-out {
+  opacity: 0;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.github-link img {
+  width: 18px;
+  height: 18px;
+  filter: invert(1);
+}
