@@ -1,0 +1,123 @@
+.about-container {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom right, #e0f7fa, #ede7f6);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.team-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #3f51b5;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.team-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 40px;
+  max-width: 400px;
+}
+
+.team-list li {
+  font-size: 1.2rem;
+  padding: 8px 0;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  transition: color 0.3s ease;
+}
+
+.team-list li:hover {
+  color: #00796b;
+}
+
+.tech-title {
+  font-size: 2rem;
+  color: #00796b;
+  margin-bottom: 30px;
+  animation: slideIn 1s ease;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.tech-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  width: 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  animation: zoomIn 0.5s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.tech-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.tech-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.tech-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
