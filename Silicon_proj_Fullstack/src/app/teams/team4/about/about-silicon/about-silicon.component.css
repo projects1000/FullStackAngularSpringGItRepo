@@ -1,0 +1,12 @@
+.stats {
+display: flex;
+justify-content: space-around;
+margin: 40px 0;
+}
+.stats div {
+text-align: center;
+}
+.stats div span {
+display: block;
+color: #666;
+}
