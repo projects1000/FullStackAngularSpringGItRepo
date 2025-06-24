@@ -33,5 +33,7 @@ export class ContactComponent {
       this.submitted = false;
       console.warn('Form is invalid. Please fill all required fields.');
     }
+
+    
   }
 }
