@@ -1,7 +1,68 @@
 /* team2.component.scss */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+.team2-posts-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
 
+.title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+
+  .post-item {
+    background-color: #fafafa;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 4px solid #007bff;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+
+    h4 {
+      margin: 0 0 0.5rem;
+      color: #007bff;
+    }
+
+    p {
+      margin: 0;
+      color: #555;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      background-color: #f1f8ff;
+    }
+  }
+}
+
+.action-button {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.6rem 1.2rem;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #218838;
+  }
+}
+//original
 .team-dashboard {
   font-family: 'Poppins', sans-serif;
   color: #333;
