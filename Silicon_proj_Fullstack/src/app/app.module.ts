@@ -10,6 +10,9 @@ import { LightboxModule } from 'ngx-lightbox';
 import { Team5Module } from './teams/team5/team5.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,10 +22,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    HttpClientModule,        // ✅ Add this line
+    HttpClientModule,        
     LightboxModule,
     BrowserAnimationsModule,
     Team5Module
+
   ],
   providers: [],
   bootstrap: [AppComponent]

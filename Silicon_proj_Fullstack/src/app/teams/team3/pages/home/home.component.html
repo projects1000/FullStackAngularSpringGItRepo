@@ -1,10 +1,12 @@
 <div class="home-landing">
+  <!-- 🔥 Hero Section -->
   <section class="hero">
     <h1 class="typewriter"></h1>
     <p>We code. We innovate. We make impact.</p>
     <a routerLink="/team3/about" class="explore-btn">Explore Our Journey</a>
   </section>
 
+  <!-- 🎨 Vibes Section -->
   <section class="vibes">
     <h2>Our Team Vibe</h2>
     <div class="cards">
@@ -15,15 +17,32 @@
     </div>
   </section>
 
+  <!-- ⚙️ Tech Stack Section -->
   <section class="tech">
     <h2>Tech Stack</h2>
     <div class="icons">
-        <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular" />
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML" />
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" />
-        <img src="https://cdn.prod.website-files.com/5f10ed4b2ae6bc09c03f5d7a/64959d5f65a257fb51a4259c_github.png" alt="Git" />
-
-
+      <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular" />
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML" />
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" />
+      <img src="https://cdn.prod.website-files.com/5f10ed4b2ae6bc09c03f5d7a/64959d5f65a257fb51a4259c_github.png" alt="Git" />
     </div>
+  </section>
+
+  <!-- 📡 Cloud Data Section -->
+  <section class="cloud-data">
+    <h2>📡 Cloud Users (Live JSON)</h2>
+    <div *ngIf="users.length > 0; else loading">
+      <ul>
+        <li *ngFor="let user of users | slice:0:5">
+          <strong>{{ user.name }}</strong> ({{ user.username }})<br />
+          📧 {{ user.email }}<br />
+          🏙️ {{ user.address.city }}
+          <hr />
+        </li>
+      </ul>
+    </div>
+    <ng-template #loading>
+      <p>⏳ Loading user data from cloud...</p>
+    </ng-template>
   </section>
 </div>

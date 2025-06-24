@@ -185,3 +185,55 @@
   50%  { border-color: transparent; }
   100% { border-color: #38bdf8; }
 }
+
+
+/* ===== Cloud Data Section ===== */
+.cloud-data {
+  margin-top: 60px;
+  text-align: center;
+  color: #f8fafc;
+}
+
+.cloud-data h2 {
+  font-size: 2rem;
+  color: #60a5fa; /* light blue */
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInTop 0.7s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.cloud-data ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cloud-data li {
+  background-color: #1e293b; /* blue-gray background */
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+  animation: slideUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.cloud-data li:hover {
+  transform: scale(1.03);
+  background-color: #334155;
+}
+
+.cloud-data li strong {
+  color: #facc15; /* yellow */
+  font-size: 1.1rem;
+}
+
+.cloud-data hr {
+  border: 0;
+  border-top: 1px solid #475569;
+  margin-top: 10px;
+}
