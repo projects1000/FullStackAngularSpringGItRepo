@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 import { Team4RoutingModule } from './team4-routing.module';
 import { Team4Component } from './team4.component';
@@ -21,7 +23,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     Team4RoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class Team4Module { }
