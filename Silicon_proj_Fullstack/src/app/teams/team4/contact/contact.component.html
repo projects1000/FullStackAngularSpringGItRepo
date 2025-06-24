@@ -1,1 +1,116 @@
 <p>contact works!</p>
+<div class="contact-container">
+  <h2>Contact Us</h2>
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <div>
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        ngModel
+        required
+        #name="ngModel"
+      />
+      <div *ngIf="name.invalid && name.touched" class="error">
+        Name is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        ngModel
+        required
+        email
+        #email="ngModel"
+      />
+      <div *ngIf="email.invalid && email.touched" class="error">
+        Enter a valid email.
+      </div>
+    </div>
+
+    <div>
+      <label for="subject">Subject:</label>
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        ngModel
+        required
+        #subject="ngModel"
+      />
+      <div *ngIf="subject.invalid && subject.touched" class="error">
+        Subject is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="message">Message:</label>
+      <textarea
+        id="message"
+        name="message"
+        ngModel
+        required
+        #message="ngModel"
+      ></textarea>
+      <div *ngIf="message.invalid && message.touched" class="error">
+        Message is required.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="contactForm.invalid">Send</button>
+  </form>
+
+  <p *ngIf="submitted" class="success-message">
+    Thank you for contacting us! We’ll get back to you soon.
+  </p>
+</div>
+<footer class="custom-footer">
+  <div class="footer-container">
+
+    <!-- Contact Details -->
+    <div class="footer-column">
+      <h3>Contact Details</h3>
+      <p>Silicon University, Silicon Hills, Patia,<br>
+         Bhubaneswar- 751024<br>
+         Odisha, India.</p>
+      <p>Phone no :- 9937289499<br>06742725448</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <p><a href="https://jeemain.nta.ac.in/" target="_blank">JEE MAIN</a></p>
+      <p><a href="https://ojee.nic.in/" target="_blank">OJEE</a></p>
+      <p>Email :- 
+        <a href="mailto:info@silicon.ac.in">info@silicon.ac.in</a><br>
+        <a href="mailto:admission@silicon.ac.in">admission@silicon.ac.in</a>
+      </p>
+    </div>
+
+    <!-- Social Media Links -->
+     <!-- Social Media Links -->
+<div class="footer-social">
+  <a href="https://www.facebook.com/share/1BrN477Rxd/" target="_blank" aria-label="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://twitter.com/siliconuniv" target="_blank" aria-label="Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.linkedin.com/school/silicontech-bbs" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://www.instagram.com/silicontech_bbs" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+</div>
+
+
+  </div>
+</footer>
+
+

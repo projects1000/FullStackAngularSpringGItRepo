@@ -1,0 +1,104 @@
+.contact-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #1976d2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #aaa;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  color: green;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.custom-footer {
+  background-color: #131414;
+  color: white;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-column p, .footer-column a {
+  font-size: 16px;
+  color: white;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+  color: #e0f7fa;
+}
+
+
+.footer-social {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  color: white;
+  font-size: 22px;
+  display: inline-block;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #00e5ff;
+  transform: scale(1.2);
+}
