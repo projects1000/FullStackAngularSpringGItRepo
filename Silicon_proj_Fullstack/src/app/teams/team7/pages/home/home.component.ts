@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -7,13 +7,6 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent{
-  // users: any[] = [];
-  // constructor(private dataService: DataService) {}
-  // ngOnInit(): void {
-  //   this.dataService.getUsers().subscribe(data => {
-  //     this.users = data;
-  //   });
-  // }
 
   users: any[] = [];
   dataLoaded = false;
