@@ -1,1 +1,18 @@
-home works !
+<div class="login-container">
+  <img src="assets/team4Img/sit_logo.png" alt="logo" class="logo" />
+
+  <h1 class="main-heading">Welcome to Silicon</h1>
+  <h2 class="sub-heading">Secure Login Portal</h2>
+
+  <form (ngSubmit)="checkLogin()">
+    <label for="username">Username:</label>
+    <input type="text" id="username" [(ngModel)]="username" name="username" required />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" [(ngModel)]="password" name="password" required />
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p class="error-message">{{ message }}</p>
+</div>
