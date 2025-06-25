@@ -1,0 +1,52 @@
+<div class="bg-gray-50 min-h-screen py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Portfolio</h2>
+      <p class="text-xl text-gray-600">
+        Real-world projects built with Angular and Spring Boot
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-1 gap-8">
+      <div 
+        *ngFor="let project of projects; let i = index" 
+        class="portfolio-item p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-2 bg-cyan-50 border border-cyan-100 relative overflow-hidden">
+        
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-bold text-cyan-800">{{ project.title }}</h3>
+          <i class="fas fa-microchip text-cyan-600 text-2xl"></i>
+        </div>
+        
+        <p class="text-cyan-900 mb-6">{{ project.description }}</p>
+        
+        <div class="mb-6">
+          <h4 class="text-lg font-semibold text-cyan-800 mb-3">Technologies Used:</h4>
+          <div class="flex flex-wrap gap-2">
+            <span 
+              *ngFor="let tech of project.tech" 
+              class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm hover:bg-cyan-200 transition-colors">
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-cyan-800 mb-3">Key Features:</h4>
+          <div class="grid md:grid-cols-2 gap-2">
+            <div 
+              *ngFor="let feature of project.features" 
+              class="flex items-center text-cyan-900">
+              <i class="fas fa-star text-cyan-500 mr-2"></i>
+              {{ feature }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Special Visual Effect: Background Animation -->
+        <div class="absolute inset-0 bg-cyan-200 opacity-30 transform scale-110 transition-transform duration-500 group-hover:scale-125"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

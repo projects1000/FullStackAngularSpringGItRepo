@@ -6,7 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
-import { SharedModule } from 'src/app/shared/shared.module'; 
+import { SharedModule } from 'src/app/shared/shared.module'; // ✅ Correct path to where topbar/footer are declared
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     Team9RoutingModule,
-    SharedModule 
+    SharedModule, // ✅ Add this
   ]
 })
 export class Team9Module {}

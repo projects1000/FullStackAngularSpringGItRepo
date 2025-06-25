@@ -1,0 +1,77 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+}
+
+.login-container {
+  background-color: #ffffff;
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 360px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.logo {
+  width: 90px;
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #333333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+  text-align: left;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #0078d4;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.1);
+}
+
+button {
+  padding: 12px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+.error-message {
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}

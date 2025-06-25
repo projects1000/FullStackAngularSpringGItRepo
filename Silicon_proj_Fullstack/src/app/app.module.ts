@@ -1,26 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
+import { HttpClientModule } from '@angular/common/http'; // ✅ Required for HttpClient
 import { LightboxModule } from 'ngx-lightbox';
-import { GalleryComponent } from './teams/team5/pages/gallery/gallery.component';
+import { Team5Module } from './teams/team5/team5.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule,
+    HttpClientModule,        
     LightboxModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    Team5Module
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,19 @@
 <!-- team2.component.html -->
 <app-topbar [teamRoute]="'team2'"></app-topbar>
+<div class="team2-posts-container">
+  <h2 class="title">📄 Team 2 - Cloud Posts</h2>
+
+  <ul class="post-list">
+    <li *ngFor="let post of posts" class="post-item">
+      <h4>{{ post.title }}</h4>
+      <p>{{ post.body }}</p>
+    </li>
+  </ul>
+
+  <button (click)="doSomething()" class="action-button">Click Me</button>
+</div>
+
+
 
 <div class="team-dashboard">
   <div class="dashboard-header">

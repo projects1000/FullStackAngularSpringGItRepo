@@ -1,13 +1,11 @@
 <div class="contact-container">
   <h1 class="glow-heading">
     <ng-container *ngFor="let letter of headingText.split(''); let i = index">
-    <span class="letter" [style.animationDelay]="(0.05 * i) + 's'">
-      {{ letter }}
-    </span>
+      <span class="letter" [style.animationDelay]="(0.05 * i) + 's'">
+        {{ letter }}
+      </span>
     </ng-container>
   </h1>
-
-
 
   <div class="contact-wrapper">
     <div class="contact-info section">
@@ -19,27 +17,49 @@
 
     <div class="contact-form section" [class.shake]="showError">
       <h2>Send a Message</h2>
-      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" ngForm>
-        <input type="text" name="name" placeholder="Your Name" required ngModel />
-        <input type="email" name="email" placeholder="Your Email" required ngModel />
-        <textarea name="message" rows="5" placeholder="Your Message" required ngModel></textarea>
-        
-         <button type="submit" [disabled]="isSubmitting">
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" ngForm>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          [(ngModel)]="formData.name"
+          required
+          [ngClass]="{ 'invalid-field': showNameError }"
+        />
+        <div *ngIf="showNameError" class="error-message">❗ Invalid name (letters and spaces only).</div>
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          [(ngModel)]="formData.email"
+          required
+          [ngClass]="{ 'invalid-field': showEmailError }"
+        />
+        <div *ngIf="showEmailError" class="error-message">❗ Invalid email format.</div>
+
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Your Message"
+          [(ngModel)]="formData.message"
+          required
+        ></textarea>
+
+        <button type="submit" [disabled]="isSubmitting">
           <ng-container *ngIf="!isSubmitting; else loading">
             Send
           </ng-container>
           <ng-template #loading>
-          <span class="spinner"></span> Sending...
+            <span class="spinner"></span> Sending...
           </ng-template>
         </button>
-
       </form>
 
       <p *ngIf="showError" class="error-message">❗ Please fill out all the fields.</p>
       <p *ngIf="messageSent" class="success-message bounce-in">
         ✅ Message sent successfully! We will contact you soon.
       </p>
-
     </div>
   </div>
 </div>

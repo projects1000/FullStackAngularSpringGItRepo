@@ -1,0 +1,76 @@
+/* General styles for the body */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f3f4f6; /* Light gray background */
+margin: 0;
+}
+
+/* Centering the form container */
+.min-h-screen {
+  min-height: 100vh; /* Full height of the viewport */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+/* Styling the form container */
+.bg-white {
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 5rem; /* Padding inside the form */
+  width: 100%; /* Full width */
+  max-width: 400px; /* Maximum width for the form */
+}
+
+/* Styling the input fields */
+input, textarea {
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 12px; /* Padding for input fields */
+  width: 100%; /* Full width */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Focus styles for input fields */
+input:focus, textarea:focus {
+  border-color: #3b82f6; /* Blue border on focus */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Blue shadow on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Styling the labels */
+label {
+  font-weight: 500; /* Medium font weight */
+  color: #374151; /* Dark gray color */
+}
+
+/* Styling the submit button */
+button {
+  background: linear-gradient(90deg, #3b82f6, #9333ea); /* Gradient background */
+  color: white; /* White text */
+  padding: 12px; /* Padding for button */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+/* Button hover effect */
+button:hover {
+  background: linear-gradient(90deg, #2563eb, #7e22ce); /* Darker gradient on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Error message styles */
+.text-red-500 {
+  color: #ef4444; /* Red color for error messages */
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .max-w-md {
+    width: 100%; /* Full width on small screens */
+  }
+}
+
