@@ -61,10 +61,18 @@
 
     <div class="stats-right">
       <div class="summary-box">
-        <h4>Work Summary</h4>
-        <p><strong>Total Time Worked</strong><br />20 Hr 30 Min</p>
-        <img src="https://via.placeholder.com/250x100?text=Graph" />
-        <small>20 Aug, 2024 – <strong>630 Hr 52 Min Total Time</strong></small>
+        <h4>Git Commits on <code>team10</code> Branch</h4>
+        <p><strong>Total Commits:</strong> {{ commits.length }}</p>
+        <ul class="commit-list">
+          <li *ngFor="let commit of commits">
+            <span class="commit-message">{{ commit.message }}</span
+            ><br />
+            <small class="commit-meta">
+              by <strong>{{ commit.author }}</strong>
+              <span class="commit-hash">#{{ commit.hash }}</span>
+            </small>
+          </li>
+        </ul>
       </div>
 
       <div class="assignment-card">
