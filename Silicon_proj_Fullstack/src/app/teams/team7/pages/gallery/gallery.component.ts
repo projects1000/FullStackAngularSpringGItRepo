@@ -12,13 +12,13 @@ export class GalleryComponent {
 
   galleryData: Record<TabType, { name?: string; image: string }[]> = {
     Team: [
-      { name: 'Arpita', image: 'assets/team7-gallery/teams/arpita.jpg'},
+      { name: 'Arpita - Team Leader', image: 'assets/team7-gallery/teams/arpita.jpg'},
       { name: 'Jyoti', image: 'assets/team7-gallery/teams/jyoti.avif' },
       { name: 'Sobha', image: 'assets/team7-gallery/teams/sobha.webp' },
-      { name: 'sajeya', image: 'assets/team7-gallery/teams/sajeya.avif' },
-      { name: 'akanshay', image: 'assets/team7-gallery/teams/akanshay.avif' },
-      { name: 'ipsita', image: 'assets/team7-gallery/teams/ipsita.avif'},
-      { name: 'soma', image: 'assets/team7-gallery/teams/anjali.avif' },
+      { name: 'Sajeya', image: 'assets/team7-gallery/teams/sajeya.avif' },
+      { name: 'Akansha', image: 'assets/team7-gallery/teams/akanshay.avif' },
+      { name: 'Ipsita', image: 'assets/team7-gallery/teams/ipsita.avif'},
+      { name: 'Soma', image: 'assets/team7-gallery/teams/anjali.avif' },
       
       
     ],
