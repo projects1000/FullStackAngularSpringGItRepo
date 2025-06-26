@@ -60,7 +60,8 @@ export class GalleryComponent {
   }
 ];
 
-//   constructor(private lightbox: Lightbox) {}
+
+ constructor(private lightbox: Lightbox) {}
 
   open(index: number): void {
     const album = this.products.map(product => ({
