@@ -1,18 +1,35 @@
-<div class="login-container">
-  <img src="assets/team4Img/sit_logo.png" alt="logo" class="logo" />
+<div class="main-container">
+  <div class="login-container">
+    <img src="assets/team4Img/sit_logo.png" alt="logo" class="logo" />
 
-  <h1 class="main-heading">Welcome to Silicon</h1>
-  <h2 class="sub-heading">Secure Login Portal</h2>
+    <h1 class="main-heading">Welcome to Silicon</h1>
+    <h2 class="sub-heading">Secure Login Portal</h2>
 
-  <form (ngSubmit)="checkLogin()">
-    <label for="username">Username:</label>
-    <input type="text" id="username" [(ngModel)]="username" name="username" required />
+    <form (ngSubmit)="checkLogin()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required />
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" [(ngModel)]="password" name="password" required />
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required />
 
-    <button type="submit">Login</button>
-  </form>
+      <button type="submit">Login</button>
+    </form>
 
-  <p class="error-message">{{ message }}</p>
+    <p class="error-message">{{ message }}</p>
+  </div>
+
+  <!-- Horizontal user feed -->
+  <div class="user-feed-row">
+    <ul *ngIf="users.length > 0; else loading">
+      <li *ngFor="let user of users | slice:0:5" class="user-card">
+        <strong>{{ user.name }}</strong><br />
+        <span>👤 {{ user.username }}</span><br />
+        <span>📧 {{ user.email }}</span><br />
+        <span>🏙️ {{ user.address.city }}</span>
+      </li>
+    </ul>
+    <ng-template #loading>
+      <p>⏳ Fetching latest user data...</p>
+    </ng-template>
+  </div>
 </div>
