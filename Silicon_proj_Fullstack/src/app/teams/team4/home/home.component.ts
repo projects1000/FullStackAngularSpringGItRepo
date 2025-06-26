@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,17 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  users: any[] = [];
+  constructor( private router: Router,private dataService: DataService) {}
+  ngOnInit(): void {
+    this.dataService.getUsers().subscribe(data => {
+      this.users = data;
+    });
+  }
   username = '';
   password = '';
   message = '';
-
-  constructor(private router: Router) {}
 
   checkLogin() {
     // Check for empty fields first
