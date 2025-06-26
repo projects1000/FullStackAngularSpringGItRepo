@@ -6,6 +6,12 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
 
+//child packages
+import { AboutSiliconComponent } from './about/about-silicon/about-silicon.component';
+import { CollaborationsComponent } from './about/collaborations/collaborations.component';
+import { RankingRecognitionComponent } from './about/ranking-recognition/ranking-recognition.component';
+import { MandatoryDisclosureComponent } from './about/mandatory-disclosure/mandatory-disclosure.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -13,7 +19,17 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      { path: 'about', component: AboutComponent },
+      {
+        path: 'about',
+        component: AboutComponent,
+        children: [
+          { path: '', redirectTo: 'about-silicon', pathMatch: 'full' },
+          { path: 'about-silicon', component: AboutSiliconComponent },
+          { path: 'collaborations', component: CollaborationsComponent },
+          { path: 'ranking-recognition', component: RankingRecognitionComponent },
+          { path: 'mandatory-disclosure', component: MandatoryDisclosureComponent }
+        ]
+      },
       { path: 'gallery', component: GalleryComponent },
       { path: 'contact', component: ContactComponent },
     ]

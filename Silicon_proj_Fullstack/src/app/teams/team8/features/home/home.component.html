@@ -1,30 +1,57 @@
-<div class="hero-section">
-  <div class="overlay">
-    <div class="content move-up">
-      <h1>Welcome to Silicon University</h1>
-      <p>Empowering Innovation. Inspiring Excellence.</p>
-      <div class="buttons">
-        <a routerLink="/students" class="btn">Students</a>
-        <a routerLink="/staff" class="btn">Staff</a>
-        <a routerLink="/teams" class="btn">Teams</a>
+<div class="team8-landing">
+
+  <!-- 🚀 Hero Section -->
+  <section class="hero-section">
+    <h1 class="typewriter"></h1>
+    <p class="hero-subtitle">Empowering Ideas. Engineering Excellence. Elevating Impact.</p>
+    <a routerLink="/team8/about" class="btn-explore">Discover Team 8</a>
+  </section>
+
+  <!-- 🧠 Marquee Fun Fact -->
+  <marquee behavior="scroll" direction="left" class="fun-fact-banner">
+    💡 Did you know? Team 8 once debugged 127 errors in a single night! | Python is our spirit animal 🐍 | We trust in MySQL, not luck 😎
+  </marquee>
+
+  <!-- 🎉 Team Culture -->
+  <section class="team-culture">
+    <h2>Team 8 Culture</h2>
+    <div class="culture-cards">
+      <div class="culture-card">🔍 Analytical Minds</div>
+      <div class="culture-card">💻 Passionate Coders</div>
+      <div class="culture-card">🚀 Agile Developers</div>
+      <div class="culture-card">🧩 Smart Collaborators</div>
+    </div>
+  </section>
+
+  <!-- 💻 Technologies -->
+  <section class="tech-stack">
+    <h2>Technologies We Love</h2>
+    <div class="tech-icons">
+      <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular" />
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="JavaScript" />
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" alt="Python" />
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" alt="MySQL" />
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML" />
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" />
+      <img src="https://cdn.prod.website-files.com/5f10ed4b2ae6bc09c03f5d7a/64959d5f65a257fb51a4259c_github.png" alt="GitHub" />
+    </div>
+  </section>
+
+  <!-- ☁️ Live User Data -->
+  <section class="live-data">
+    <h2>☁️ Cloud User Feed</h2>
+    <div *ngIf="users.length > 0; else loading">
+      <div class="user-cards">
+        <div class="user-card" *ngFor="let user of users | slice: 0:5">
+          <h3>{{ user.name }} <span>({{ user.username }})</span></h3>
+          <p>📧 {{ user.email }}</p>
+          <p>🏙️ {{ user.address.city }}</p>
+        </div>
       </div>
     </div>
-  </div>
+    <ng-template #loading>
+      <p>⏳ Fetching latest user data...</p>
+    </ng-template>
+  </section>
+
 </div>
-
-<section class="info-section">
-  <div class="info-box">
-    <h2>Departments</h2>
-    <p>We offer various undergraduate and postgraduate programs in Computer Science, Electronics, Mechanical, Civil, and more.</p>
-  </div>
-
-  <div class="info-box">
-    <h2>Why Choose Us?</h2>
-    <ul>
-      <li>Experienced Faculty</li>
-      <li>Modern Infrastructure</li>
-      <li>Research Driven Approach</li>
-      <li>Strong Placement Record</li>
-    </ul>
-  </div>
-</section>

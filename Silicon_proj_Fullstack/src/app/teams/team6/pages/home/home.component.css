@@ -1,0 +1,66 @@
+.home-container {
+  padding: 40px;
+  background: linear-gradient(to right, #4a90e2, #50e3c2);
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  text-align: left;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fee86d; /* Light Yellow */
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+
+

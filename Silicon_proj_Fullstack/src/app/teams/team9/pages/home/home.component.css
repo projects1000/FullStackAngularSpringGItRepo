@@ -1,0 +1,390 @@
+/* Animated Light Background */
+body {
+margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  animation: changeBg 30s infinite;
+  transition: background-color 1s ease;
+}
+@keyframes changeBg {
+  0% { background-color: #fdf6e3; }
+  25% { background-color: #e3f2fd; }
+  50% { background-color: #f3e5f5; }
+  75% { background-color: #e8f5e9; }
+  100% { background-color: #fdf6e3; }
+  0%   { background-color: #fdf6e3; }    /* Light beige */
+  12%  { background-color: #e3f2fd; }    /* Light blue */
+  25%  { background-color: #f3e5f5; }    /* Lavender */
+  37%  { background-color: #e8f5e9; }    /* Mint green */
+  50%  { background-color: #fff8e1; }    /* Light yellow */
+  62%  { background-color: #fce4ec; }    /* Pinkish */
+  75%  { background-color: #ede7f6; }    /* Lilac */
+  87%  { background-color: #e0f7fa; }    /* Aqua */
+  100% { background-color: #fdf6e3; } 
+}
+
+/* Hero Section */
+
+.hero {
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)),
+              url('https://upload.wikimedia.org/wikipedia/commons/3/3c/Silicon_Institute_of_Technology_campus.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
+}
+.hero-flow {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+  z-index: 1;
+}
+.logo-corner {
+  position: absolute;
+  top: 12px;
+  left: 12px; /* 👈 changed from right: 12px */
+  width: 60px;
+  height: auto;
+  z-index: 10;
+  /* background-color: red; */
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  z-index: 5;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.hero-content {
+background-color: rgba(0, 0, 0, 0.7);
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  position: relative; /* enables absolute inside */
+  z-index: 5;
+  
+}
+
+.flow-column {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.flow-track {
+  display: flex;
+  flex-direction: column;
+}
+
+ .flow-track img {
+  width: 60px;
+  height: 60px;
+  margin: 10px auto;
+  opacity: 0.9;
+} 
+
+.left-flow {
+  left: 10px;
+}
+.left-track {
+  animation: flowVertical 4s linear infinite;
+}
+
+
+.right-flow {
+  right: 10px;
+}
+.right-track {
+  animation: flowVertical 4s linear infinite;
+  animation-delay: 4s; 
+}
+
+
+/* Individual Image Animation */
+.flow-img {
+  width: 60px;
+  height: 60px;
+  margin: 10px auto;
+  opacity: 0;
+  animation: fadeSlide 1.5s ease-in-out infinite;
+}
+
+/* Animation Keyframe */
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+
+
+
+
+/* Sections */
+/* section {
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  margin: 1rem auto;
+  max-width: 1000px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+} */
+/* ===== Global Section Style ===== */
+section {
+  padding: 2rem;
+  text-align: center;
+  color: #111;
+  animation: sectionColorCycle 15s infinite alternate;
+  transition: background-color 1s ease;
+  border-radius: 12px;
+  margin: 1rem auto;
+  width: 90%;
+}
+
+/* ===== Color Changing Animation for Section ===== */
+@keyframes sectionColorCycle {
+  0% { background-color: #e3f2fd; }   /* Light Blue */
+  25% { background-color: #f1f8e9; }  /* Light Green */
+  50% { background-color: #fff3e0; }  /* Light Orange */
+  75% { background-color: #fce4ec; }  /* Light Pink */
+  100% { background-color: #ede7f6; } /* Light Purple */
+  50% { background-color: #e1f5fe; }  /* Light Cyan */
+75% { background-color: #f9fbe7; }  /* Light Lime */
+95% { background-color: #ffe0b2; }  /* Light Peach */
+100% { background-color: #f8bbd0; }  /* Light Rose */
+60% { background-color: #d1c4e9; }  /* Light Lavender */
+}
+
+
+
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.stats li {
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 150px;
+  font-weight: bold;
+}
+
+.program-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.program-card {
+  padding: 1rem;
+  width: 240px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.program-card:hover {
+  transform: scale(1.05);
+}
+
+.program-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn-secondary {
+  background-color: #17a2b8;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 1rem;
+  display: inline-block;
+}
+/* Placement Section Style */
+.section-placement {
+  padding: 2rem;
+  text-align: center;
+  animation: sectionColorCycle 15s infinite alternate;
+}
+
+/* Container for cards */
+.company-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Company card */
+.company-card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 150px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.company-card:hover {
+  transform: scale(1.05);
+}
+
+/* Image styling */
+.company-card img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+/* Section Styling with Animation */
+.campus-life-section {
+  padding: 2rem;
+  text-align: center;
+  animation: colorFade 20s infinite alternate;
+  transition: background-color 1s ease;
+}
+
+@keyframes colorFade {
+  0%   { background-color: #e8f5e9; } /* Light Green */
+  25%  { background-color: #e3f2fd; } /* Light Blue */
+  50%  { background-color: #fff3e0; } /* Light Orange */
+  75%  { background-color: #f3e5f5; } /* Light Purple */
+  100% { background-color: #fce4ec; } /* Light Pink */
+}
+
+/* Image Card Layout */
+.campus-image-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.campus-image-row img {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.campus-image-row img:hover {
+  transform: scale(1.05);
+}
+
+/* Button Styling */
+.explore-btn {
+  background-color: #0066cc;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #004c99;
+}
+
+
+/* Events Section */
+.events {
+  padding: 2rem;
+  background-color: #f0f4f8;
+  text-align: center;
+}
+.card-list {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card.bg1 { background-color: #e1f5fe; }  /* Light Cyan */
+.card.bg3 { background-color: #f8bbd0; }  /* Light Rose */
+.card.bg2 { background-color: #d1c4e9; }  /* Light Lavender */
+
+.campus-life {
+  background-color: #f1f9ff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.btn-explore {
+  background-color: #0066cc;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-explore:hover {
+  background-color: #004c99;
+}

@@ -1,0 +1,26 @@
+
+<section class="cloud-data">
+<h2>📡 Cloud Users (Live JSON)</h2>
+
+<!-- Show button if users not loaded -->
+<div *ngIf="!dataLoaded">
+<button (click)="loadUsers()">Load Users</button>
+</div>
+
+<!-- Show users after button is clicked -->
+<div *ngIf="dataLoaded && users.length > 0; else loading">
+<ul>
+    <li *ngFor="let user of users | slice:0:5">
+    <strong>{{ user.name }}</strong> ({{ user.username }})<br />
+    📧 {{ user.email }}<br />
+    🏙️ {{ user.address.city }}
+    <hr />
+    </li>
+</ul>
+</div>
+
+<!-- Template for loading or empty state -->
+<ng-template #loading>
+<p *ngIf="dataLoaded">⚠️ No users found.</p>
+</ng-template>
+</section>
