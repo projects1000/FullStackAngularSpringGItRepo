@@ -2,18 +2,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
   background: linear-gradient(135deg, #e0eafc, #cfdef3);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+/* Login Box Styling */
 .login-container {
   background-color: #ffffff;
   padding: 45px 40px;
   border-radius: 16px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  max-width: 95%;
+  width: 100%;
+  max-width: 400px;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
 }
@@ -95,4 +106,52 @@ button:hover {
   font-weight: bold;
   color: #d9534f;
   font-size: 14px;
+}
+
+/* Horizontal User Feed Styling */
+.user-feed-row {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 15px 0;
+  margin-top: 10px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.user-feed-row ul {
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+  margin: 0;
+  list-style: none;
+  min-width: max-content;
+}
+
+.user-card {
+  min-width: 250px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.user-card strong {
+  font-size: 16px;
+  color: #004080;
+}
+
+.user-card span {
+  color: #555;
+  display: block;
+  margin-top: 4px;
 }
