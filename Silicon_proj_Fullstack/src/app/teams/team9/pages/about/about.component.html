@@ -1,1 +1,17 @@
-<p>about works!</p>
+<div class="about-container">
+  <h1 class="team-title">👨‍💻 Team 9</h1>
+  <p class="subtitle">Our Amazing Team Members</p>
+
+  <ul class="team-list">
+    <li *ngFor="let member of teamMembers">{{ member }}</li>
+  </ul>
+
+  <h2 class="tech-title">💡 Our Tech Stack</h2>
+  <div class="card-container">
+    <div class="tech-card" *ngFor="let tech of techStack">
+      <img [src]="tech.icon" [alt]="tech.name" />
+      <h3>{{ tech.name }}</h3>
+      <p>{{ tech.description }}</p>
+    </div>
+  </div>
+</div>

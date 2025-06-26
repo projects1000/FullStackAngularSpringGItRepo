@@ -1,1 +1,56 @@
-<p>contact works!</p>
+<body>
+  
+
+<div class="contact-section">
+  <div class="contact-header">
+    <div class="contact-actions"><button class="ghost" style="border-radius: 25px; padding-left: 10px; padding-right: 10px; padding-top: 0px; padding-bottom: 0px;"><p><i class="fas fa-lightbulb"></i> Let’s Connect & Create Something Amazing</p></button></div>
+    <h1>Get in Touch</h1>
+    <p>Ready to start your journey with us? We're here to help you every step of the way. Let’s turn your ideas into reality.</p>
+    <div class="contact-actions">
+      <button  style="border-radius: 25px;">Start Conversation</button>
+      <button class="ghost" style="border-radius: 25px;">View Contact Info</button>
+    </div>
+  </div>
+
+  <div class="contact-content">
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="contact-form">
+      <h2>Send Message</h2>
+      <p>Share your thoughts with us and we'll respond within 24 hours</p>
+
+      <div class="form-row">
+        <input type="text" name="firstName" placeholder="First Name *" required ngModel />
+        <input type="text" name="lastName" placeholder="Last Name *" required ngModel />
+      </div>
+      <input type="email" name="email" placeholder="your@email.com *" required ngModel />
+      <input type="text" name="phone" placeholder="+91 9876543210" ngModel />
+      <select name="subject" required ngModel>
+        <option value="" disabled selected>Choose your inquiry type</option>
+        <option>Admission</option>
+        <option>Collaboration</option>
+        <option>Feedback</option>
+      </select>
+      <textarea name="message" rows="4" placeholder="Tell us more about your inquiry..." required ngModel></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p><i class="fas fa-map-marker-alt"></i> Silicon University, Silicon Hills<br>Patia, Bhubaneswar - 751024<br>Odisha, India</p><br>
+      <p><i class="fas fa-envelope"></i>info@silicon.ac.in<br>admission@silicon.ac.in</p><br>
+      <p><i class="fas fa-phone"></i> +91 9937289499<br>+91 6742725448</p><br>
+      <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM – 6:00 PM<br>Sat: 8:00 AM – 2:00 PM </p>
+
+      
+    </div>
+    <div class="social-icons contact-info">
+        <h3>Connect With Us</h3>
+        <div style="border: 0px; margin-top: 3vh;">
+        <span class="links" ><a href="https://www.facebook.com/siliconite/" target="_blank"><i class="fab fa-facebook-f"></i></a></span>
+        <span class="links" ><a href="https://twitter.com/Silicontech_bbs?s=08" target="_blank"><i class="fab fa-twitter"></i></a></span>
+        <span class="links" ><a href="https://www.linkedin.com/school/silicontech-bbs" target="_blank"><i class="fab fa-linkedin-in"></i></a></span>
+        <span class="links insta"><a href="https://www.instagram.com/silicontech_bbs/" target="_blank"><i class="fab fa-instagram"></i></a></span>
+    </div></div>
+  </div>
+</div>
+</body>
