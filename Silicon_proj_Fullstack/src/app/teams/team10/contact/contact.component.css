@@ -1,0 +1,155 @@
+:root {
+  --main-blue: #0077cc;
+  --hover-blue: #005fa3;
+  --navy-blue: #002B5B;
+  --light-grey: #4e47478f;
+  --hover-grey: #ebebeb;
+  --error-red: #e63946;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  padding: 40px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #eef2f7;
+}
+
+.institution-details {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  background-color:#002B5B;
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.institution-details:hover {
+  transform: translateY(-4px);
+}
+
+.institution-details h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: #ffe066;
+}
+
+.institution-details p {
+  font-size: 17px;
+  margin: 30px 0;
+  line-height: 1.5;
+}
+
+.contact-form-container {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: skyblue;
+  padding: 55px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.contact-form-container:hover {
+  transform: scale(1.01);
+}
+
+.contact-form-container h2 {
+  text-align: center;
+  color: var(--navy-blue);
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--main-blue);
+  background-color: #f9fbfd;
+  outline: none;
+}
+
+.error {
+  color: var(--error-red);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color:#002B5B;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(black);
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.thank-you-message {
+  text-align: center;
+  padding: 20px;
+  background-color: #d0f0ff;
+  border: 1px solid #4dd0e1;
+  border-radius: 8px;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease-in;
+  color: #006064;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
