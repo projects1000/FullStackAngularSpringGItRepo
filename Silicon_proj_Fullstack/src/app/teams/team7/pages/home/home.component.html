@@ -1,26 +1,25 @@
 
-<section class="cloud-data">
-<h2>📡 Cloud Users (Live JSON)</h2>
+<div class="home-wrapper">
+  <h1 class="team-heading">{{ teamName }}</h1>
 
-<!-- Show button if users not loaded -->
-<div *ngIf="!dataLoaded">
-<button (click)="loadUsers()">Load Users</button>
+  <div class="lead-card">
+    <img [src]="teamLead.image" alt="Team Lead" class="lead-photo" />
+    <h2 class="lead-name">{{ teamLead.name }}</h2>
+    <p class="lead-title">Team Lead</p>
+  </div>
+
+  <div class="mission-box">
+    <h3>🚀 Our Mission</h3>
+    <p>{{ mission }}</p>
+  </div>
+
+  <div class="members-section">
+    <!-- <a href="#">👩‍💻 Meet the Team</a> -->
+    <div class="member-grid">
+      <div class="member-card" *ngFor="let member of teamMembers">
+        <h4>{{ member.name }}</h4>
+        <p>{{ member.role }}</p>
+      </div>
+    </div>
+  </div>
 </div>
-
-<!-- Show users after button is clicked -->
-<div *ngIf="dataLoaded && users.length > 0; else loading">
-<ul>
-    <li *ngFor="let user of users | slice:0:5">
-    <strong>{{ user.name }}</strong> ({{ user.username }})<br />
-    📧 {{ user.email }}<br />
-    🏙️ {{ user.address.city }}
-    <hr />
-    </li>
-</ul>
-</div>
-
-<!-- Template for loading or empty state -->
-<ng-template #loading>
-<p *ngIf="dataLoaded">⚠️ No users found.</p>
-</ng-template>
-</section>
