@@ -10,7 +10,6 @@ import { LightboxModule } from 'ngx-lightbox';
 import { Team5Module } from './teams/team5/team5.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({

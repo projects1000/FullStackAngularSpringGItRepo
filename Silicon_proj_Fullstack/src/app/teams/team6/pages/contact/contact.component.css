@@ -1,76 +1,126 @@
-/* General styles for the body */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f3f4f6; /* Light gray background */
-margin: 0;
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
 }
 
-/* Centering the form container */
-.min-h-screen {
-  min-height: 100vh; /* Full height of the viewport */
-  display: flex; /* Use flexbox for centering */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+.form-section,
+.info-section {
+  flex: 1 1 42%;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  transition: transform 0.2s ease;
 }
 
-/* Styling the form container */
-.bg-white {
-  background-color: #ffffff; /* White background for the form */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  padding: 5rem; /* Padding inside the form */
-  width: 100%; /* Full width */
-  max-width: 400px; /* Maximum width for the form */
+.form-section:hover,
+.info-section:hover {
+  transform: translateY(-3px);
 }
 
-/* Styling the input fields */
-input, textarea {
-  border: 1px solid #d1d5db; /* Light gray border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 12px; /* Padding for input fields */
-  width: 100%; /* Full width */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+h2 {
+  margin-bottom: 1.5rem;
+  color: #222;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.4rem;
 }
 
-/* Focus styles for input fields */
-input:focus, textarea:focus {
-  border-color: #3b82f6; /* Blue border on focus */
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Blue shadow on focus */
-  outline: none; /* Remove default outline */
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Styling the labels */
-label {
-  font-weight: 500; /* Medium font weight */
-  color: #374151; /* Dark gray color */
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  color: #444;
 }
 
-/* Styling the submit button */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
 button {
-  background: linear-gradient(90deg, #3b82f6, #9333ea); /* Gradient background */
-  color: white; /* White text */
-  padding: 12px; /* Padding for button */
-  border: none; /* Remove border */
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
 button:hover {
-  background: linear-gradient(90deg, #2563eb, #7e22ce); /* Darker gradient on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
+  background-color: #0056b3;
 }
+/* 
+.info-section p {
+  font-size: 1rem;
+  margin: 0.8rem 0;
+  line-height: 1.6;
+  color: #555;
+} */
 
-/* Error message styles */
-.text-red-500 {
-  color: #ef4444; /* Red color for error messages */
-}
-
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .max-w-md {
-    width: 100%; /* Full width on small screens */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
   }
+
+  .form-section {
+    width: 100%;
+    max-width: 95%;
+  }
+}
+.company-site {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.company-site:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.35);
+}
+
+.company-site a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: inline-block;
+}
+
+.company-site a:hover {
+  text-decoration: underline;
 }
 

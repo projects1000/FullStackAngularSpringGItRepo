@@ -2,35 +2,66 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+/* Login Box Styling */
 .login-container {
   background-color: #ffffff;
-  padding: 40px 35px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  width: 360px;
-  max-width: 90%;
+  padding: 45px 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
   text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .logo {
   width: 90px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
-h2 {
-  font-size: 24px;
-  margin-bottom: 25px;
-  color: #333333;
+.main-heading {
+  font-size: 26px;
+  color: #004080;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.sub-heading {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 label {
@@ -51,7 +82,7 @@ input {
 input:focus {
   border-color: #0078d4;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.15);
 }
 
 button {
@@ -73,5 +104,54 @@ button:hover {
 .error-message {
   margin-top: 15px;
   font-weight: bold;
-  color: green;
+  color: #d9534f;
+  font-size: 14px;
+}
+
+/* Horizontal User Feed Styling */
+.user-feed-row {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 15px 0;
+  margin-top: 10px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.user-feed-row ul {
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+  margin: 0;
+  list-style: none;
+  min-width: max-content;
+}
+
+.user-card {
+  min-width: 250px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.user-card strong {
+  font-size: 16px;
+  color: #004080;
+}
+
+.user-card span {
+  color: #555;
+  display: block;
+  margin-top: 4px;
 }
