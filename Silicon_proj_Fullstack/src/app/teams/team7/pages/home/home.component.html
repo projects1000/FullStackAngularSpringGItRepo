@@ -2,19 +2,44 @@
 <div class="home-wrapper">
   <h1 class="team-heading">{{ teamName }}</h1>
 
-  <div class="lead-card">
-    <img [src]="teamLead.image" alt="Team Lead" class="lead-photo" />
-    <h2 class="lead-name">{{ teamLead.name }}</h2>
-    <p class="lead-title">Team Lead</p>
-  </div>
-
   <div class="mission-box">
-    <h3>🚀 Our Mission</h3>
+    <h3>Our Mission</h3>
     <p>{{ mission }}</p>
   </div>
 
+  <section class="tech-stack-section">
+  <h2 class="section-heading">Our Tech Stack</h2>
+  <div class="tech-icon-grid">
+    <div class="tech-icon-card">
+      <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Logo" />
+      <p>Angular</p>
+    </div>
+    <div class="tech-icon-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo" />
+      <p>HTML5</p>
+    </div>
+    <div class="tech-icon-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Logo" />
+      <p>CSS3</p>
+    </div>
+    <div class="tech-icon-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript Logo" />
+      <p>TypeScript</p>
+    </div>
+    <div class="tech-icon-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Logo" />
+      <p>GitHub</p>
+    </div>
+    <div class="tech-icon-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL Logo" />
+      <p>MySQL</p>
+    </div>
+  </div>
+</section>
+
   <div class="members-section">
-    <!-- <a href="#">👩‍💻 Meet the Team</a> -->
+    <h2 class="section-heading">Our Team</h2>
+
     <div class="member-grid">
       <div class="member-card" *ngFor="let member of teamMembers">
         <h4>{{ member.name }}</h4>
@@ -23,3 +48,25 @@
     </div>
   </div>
 </div>
+
+
+<section class="cloud-data">
+  <h2>📡 Cloud Users (Live JSON)</h2>
+
+  <button class="fetch-button" (click)="loadUsers()">Fetch Cloud Users</button>
+
+  <div *ngIf="users.length > 0; else loading" class="user-list">
+    <ul>
+      <li *ngFor="let user of users | slice:0:5">
+        <strong>{{ user.name }}</strong> ({{ user.username }})<br />
+        📧 {{ user.email }}<br />
+        🏙️ {{ user.address.city }}
+        <hr />
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #loading>
+    <p *ngIf="showLoading">⏳ Loading user data from cloud...</p>
+  </ng-template>
+</section>

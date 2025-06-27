@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f1f5f9; /* Light outer background */
+  background: linear-gradient(to right, #ffecd2, #fcb69f); /* Soft peach gradient */
 }
 
 /* Enhanced About Container */
@@ -13,9 +13,9 @@ body {
   border-radius: 16px;
   position: relative;
   overflow: hidden;
-  color: #f9fafb;
-  background-color: #1e293b;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   animation: slideUp 1s ease;
 }
 
@@ -29,8 +29,8 @@ body {
   height: 100%;
   background: url("https://images.unsplash.com/photo-1605902711622-cfb43c4437f1?auto=format&fit=crop&w=1000&q=80")
     no-repeat center center / cover;
-  opacity: 0.2;
-  filter: blur(3px);
+  opacity: 0.15;
+  filter: blur(4px);
   z-index: 0;
 }
 
@@ -44,8 +44,7 @@ body {
 .about-header {
   text-align: center;
   margin-bottom: 40px;
-  background: linear-gradient(135deg, #6366f1, #3b82f6, #06b6d4);
-
+  background: linear-gradient(to right, #ff6a00, #ee0979); /* Vibrant button gradient */
   color: #fff;
   padding: 30px 20px;
   border-radius: 12px;
@@ -60,8 +59,8 @@ body {
 
 .subheading {
   font-size: 18px;
-  opacity: 0.9;
-  color: #e0e7ff;
+  opacity: 0.95;
+  color: #ffe2e2; /* Light pastel pinkish for contrast */
 }
 
 /* Section Styling */
@@ -72,9 +71,9 @@ section {
 
 section h2 {
   font-size: 24px;
-  color: #facc15; /* warm yellow */
+  color: #ee0979; /* Magenta highlight */
   margin-bottom: 15px;
-  border-bottom: 2px solid #cbd5e1;
+  border-bottom: 2px solid #fcb69f; /* Peach border */
   padding-bottom: 8px;
   transition: transform 0.2s ease;
 }
@@ -87,7 +86,7 @@ section p,
 section ul {
   font-size: 16px;
   line-height: 1.6;
-  color: #e2e8f0;
+  color: #555;
 }
 
 section ul {
