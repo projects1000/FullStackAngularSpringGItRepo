@@ -18,7 +18,7 @@ export class HomeComponent {
   members = [
     {
       name: 'Pratyush',
-      img: '../../../../assets/team10/assets/Memeber1.jpg',
+      img: '../../../../assets/team10/assets/Member1.jpg',
       github: 'https://github.com/pratyushkumar-04',
       key: 'pratyush',
       username: 'pratyushkumar-04',
@@ -46,21 +46,21 @@ export class HomeComponent {
     },
     {
       name: 'Swetalina',
-      img: '../../../../assets/team10/assets/Memeber4.jpg',
+      img: '../../../../assets/team10/assets/Member4.jpg',
       github: 'https://github.com/Swetalina-cyber',
       key: 'swetalina',
       username: 'Swetalina-cyber',
     },
     {
       name: 'Arjun',
-      img: '../../../../assets/team10/assets/Memeber6.jpg',
+      img: '../../../../assets/team10/assets/Member6.jpg',
       github: 'https://github.com/ArjuMallick',
       key: 'Arjun',
       username: 'ArjuMallick',
     },
     {
       name: 'Anindita',
-      img: '../../../../assets/team10/assets/Memeber6.jpg',
+      img: '../../../../assets/team10/assets/Member5.jpg',
       github: 'https://github.com/aninditaparida',
       key: 'Anindita',
       username: 'aninditaparida',
