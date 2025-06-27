@@ -1,12 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/enviroment/enviroment';
+import { GitHubService } from '../github.service';
+interface CommitInfo {
+  message: string;
+  date: string;
+}
+
+interface Member {
+  name: string;
+  username: string;
+  img: string;
+  github: string;
+  key: string;
+  status: string;
+  rating: number;
+  contribution: number;
+  commits: CommitInfo[];
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+[x: string]: any;
   selected: string | null = null;
   fadingOut: string | null = null;
   timeoutId: any = null;
@@ -70,7 +88,7 @@ export class HomeComponent {
   hoveredCommitKey: string | null = null;
   hoveredUser: any = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private githubService: GitHubService) {}
 
   fetchUser(username: string, commitKey: string) {
     this.hoveredCommitKey = commitKey;
@@ -92,12 +110,64 @@ export class HomeComponent {
         },
       });
   }
+  totalCommits: number = 0;
+  filteredCommits: { message: string; username: string; sha: string }[] = [];
+
 
   ngOnInit(): void {
-    this.http.get<any[]>('assets/commits.json').subscribe((data) => {
-      this.commits = data;
+    this.githubService.getBranchCommits().subscribe({
+      next: (commits) => {
+        if (commits && Array.isArray(commits)) {
+          // first, get all usernames you want
+          const allowedUsernames = this.members.map((m) =>
+            m.username.toLowerCase()
+          );
+
+          // filter out only commits done by team members
+          this.filteredCommits = commits
+            .filter(
+              (commit) =>
+                commit.author &&
+                allowedUsernames.includes(commit.author.login.toLowerCase())
+            )
+            .map((commit) => ({
+              message: commit.commit.message,
+              username: commit.author.login,
+              sha: commit.sha.slice(0, 7),
+            }));
+
+          this.totalCommits = this.filteredCommits.length;
+
+          console.log(this.filteredCommits);
+        } else {
+          console.warn('No commits found in team10');
+        }
+      },
+      error: (err) => {
+        console.error('Failed to fetch commits:', err);
+      },
     });
   }
+hoveredCommitFilesKey: string | null = null;
+hoveredCommitFiles: { filename: string; additions: number; deletions: number }[] | null = null;
+
+fetchCommitFiles(sha: string) {
+  this.hoveredCommitFilesKey = sha;
+  this.githubService.getCommitDetails(sha).subscribe({
+    next: (commitDetail) => {
+      this.hoveredCommitFiles = commitDetail.files.map((f: { filename: any; additions: any; deletions: any; }) => ({
+        filename: f.filename,
+        additions: f.additions,
+        deletions: f.deletions
+      }));
+    },
+    error: (err) => {
+      console.error(`Failed to fetch files for commit ${sha}`, err);
+    }
+  });
+}
+
+
   showGitHub(key: string) {
     this.selected = key;
     this.fadingOut = null;

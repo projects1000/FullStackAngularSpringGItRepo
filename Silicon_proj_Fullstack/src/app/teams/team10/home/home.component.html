@@ -23,7 +23,7 @@
       </ng-container>
 
       <span style="margin-left: 0.75rem; font-weight: 600">
-         <span style="color: #000">Our Team</span>
+        <span style="color: #000">Our Team</span>
       </span>
     </p>
 
@@ -60,67 +60,83 @@
     </div>
 
     <div class="stats-right">
-      <div class="summary-box">
-        <h4>Git Commits on <code>team10</code> Branch</h4>
-        <p><strong>Total Commits:</strong> {{ commits.length }}</p>
-        <ul class="commit-list">
-          <li *ngFor="let commit of commits">
-            <span class="commit-message">{{ commit.message }}</span
-            ><br />
-            <small class="commit-meta" style="position: relative">
-              by
-              <strong
-                (mouseenter)="fetchUser(commit.author, commit.hash)"
-                (mouseleave)="hoveredCommitKey = null"
-                style="cursor: pointer"
-              >
-                {{
-                  hoveredCommitKey === commit.hash && hoveredUser?.login
-                    ? hoveredUser.login
-                    : commit.author
-                }}
-              </strong>
+ <div class="summary-box">
+  <h4>Git Commits on <code>team10</code> Branch</h4>
+  <p><strong>Total Commits:</strong> {{ totalCommits }}</p>
+  <ul class="commit-list">
+    <li *ngFor="let commit of filteredCommits" class="commit-item">
+      <span class="commit-message">{{ commit.message }}</span><br />
 
-              <span class="commit-hash">#{{ commit.hash }}</span>
+      <small class="commit-meta" style="position: relative">
+        by
+        <strong
+          (mouseenter)="fetchUser(commit.username, commit.sha)"
+          (mouseleave)="hoveredCommitKey = null"
+          style="cursor: pointer"
+        >
+          <a
+            [href]="'https://github.com/' + commit.username"
+            target="_blank"
+            style="text-decoration: none; color: #0969da"
+          >
+            {{
+              hoveredCommitKey === commit.sha && hoveredUser?.login
+                ? hoveredUser.login
+                : commit.username
+            }}
+          </a>
+        </strong>
 
-              <div
-                class="hover-card"
-                *ngIf="hoveredCommitKey === commit.hash && hoveredUser"
-                style="
-                  position: absolute;
-                  top: 20px;
-                  left: 0;
-                  background: #161b22;
-                  color: #c9d1d9;
-                  border: 1px solid #30363d;
-                  border-radius: 6px;
-                  padding: 10px;
-                  width: 250px;
-                  z-index: 10;
-                "
-              >
-                <div style="font-weight: bold">
-                  {{ hoveredUser.login }}
-                  <span *ngIf="hoveredUser.name">({{ hoveredUser.name }})</span>
-                </div>
-                <div style="font-size: 0.9em">
-                  {{ hoveredUser.bio || "No bio available" }}
-                </div>
-                <div style="margin-top: 4px">
-                  <img
-                    [src]="hoveredUser.avatar_url"
-                    alt="avatar"
-                    style="width: 32px; height: 32px; border-radius: 50%"
-                  />
-                </div>
-                <div style="margin-top: 4px; font-size: 0.8em">
-                  Fetched from GitHub
-                </div>
+        <span
+          class="commit-hash"
+          (mouseenter)="fetchCommitFiles(commit.sha)"
+          (mouseleave)="hoveredCommitFiles = null"
+        >
+          #{{ commit.sha }}
+        </span>
+
+        <!-- Hover card -->
+        <div class="hover-card" *ngIf="hoveredCommitKey === commit.sha">
+          <div class="hover-header">
+            <img
+              [src]="hoveredUser.avatar_url"
+              alt="avatar"
+              class="hover-avatar"
+            />
+            <div>
+              <strong>{{ hoveredUser.login }}</strong>
+              <div *ngIf="hoveredUser.name" class="hover-name">
+                ({{ hoveredUser.name }})
               </div>
-            </small>
-          </li>
-        </ul>
-      </div>
+            </div>
+          </div>
+          <div class="hover-bio">
+            {{ hoveredUser.bio || "No bio available" }}
+          </div>
+          <div class="hover-footer">
+            <small>Fetched from GitHub</small>
+          </div>
+        </div>
+
+        <!-- FILES hover card -->
+        <div
+          class="hover-card file-card"
+          *ngIf="hoveredCommitFilesKey === commit.sha && hoveredCommitFiles"
+        >
+          <div style="font-weight: bold;">Files Changed:</div>
+          <ul>
+            <li *ngFor="let file of hoveredCommitFiles">
+              <code>{{ file.filename }}</code>
+              <span style="color: green;">+{{ file.additions }}</span>
+              <span style="color: red;">-{{ file.deletions }}</span>
+            </li>
+          </ul>
+        </div>
+      </small>
+    </li>
+  </ul>
+</div>
+
     </div>
   </section>
 </main>
