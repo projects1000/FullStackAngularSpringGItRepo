@@ -9,7 +9,6 @@ import { AboutComponent } from './about/about.component';
 import { FormsModule } from '@angular/forms';
 import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
-import { GalleryComponent } from './gallery/gallery.component';
 
 
 
@@ -18,8 +17,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     Team10Component,
     HomeComponent,
     AboutComponent,
-    ContactComponent,
-    GalleryComponent
+    ContactComponent
   ],
   imports: [
     CommonModule,
