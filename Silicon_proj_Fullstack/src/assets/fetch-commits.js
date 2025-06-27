@@ -17,15 +17,41 @@ axios
     },
   })
   .then((res) => {
-    const commits = res.data.commits.map((c) => ({
-      hash: c.sha.slice(0, 7),
-      author: c.commit.author.name,
-      message: c.commit.message,
-    }));
+    const commits = res.data.commits.map((c) => {
+      // pick GitHub login if available
+      let author = c.author?.login || c.commit.author.name;
 
-    const outputPath = path.join(__dirname,"commits.json");
-    fs.writeFileSync(outputPath, JSON.stringify(commits, null, 2));
-    console.log(`✔ ${commits.length} unique commits saved to ${outputPath}`);
+      // handle manual replacements
+      if (author.toLowerCase() === "aditya sharma") {
+        author = "Adityasharma0709";
+      } else if (author.toLowerCase() === "sweta") {
+        author = "swetalina-cyber";
+      } else if (author.toLowerCase() === "pratyush kumar") {
+        author = "pratyushkumar-04";
+      }
+
+      return {
+        hash: c.sha.slice(0, 7),
+        author,
+        message: c.commit.message,
+      };
+    });
+
+    const outputPath = path.join(__dirname, "commits.json");
+
+    let existingCommits = [];
+    if (fs.existsSync(outputPath)) {
+      existingCommits = JSON.parse(fs.readFileSync(outputPath, "utf-8"));
+    }
+
+    const allHashes = new Set(existingCommits.map((c) => c.hash));
+    const mergedCommits = [
+      ...existingCommits,
+      ...commits.filter((c) => !allHashes.has(c.hash)),
+    ];
+
+    fs.writeFileSync(outputPath, JSON.stringify(mergedCommits, null, 2));
+    console.log(`✔ ${mergedCommits.length} total commits saved to ${outputPath}`);
   })
   .catch((err) => {
     console.error("❌ Failed to fetch commits:", err.message);

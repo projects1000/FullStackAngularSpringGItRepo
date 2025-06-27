@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/enviroment/enviroment';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -50,10 +51,47 @@ export class HomeComponent {
       key: 'swetalina',
       username: 'Swetalina-cyber',
     },
+    {
+      name: 'Arjun',
+      img: '../../../../assets/team10/assets/Memeber6.jpg',
+      github: 'https://github.com/ArjuMallick',
+      key: 'Arjun',
+      username: 'ArjuMallick',
+    },
+    {
+      name: 'Anindita',
+      img: '../../../../assets/team10/assets/Memeber6.jpg',
+      github: 'https://github.com/aninditaparida',
+      key: 'Anindita',
+      username: 'aninditaparida',
+    },
   ];
   commits: any[] = [];
+  hoveredCommitKey: string | null = null;
+  hoveredUser: any = null;
 
   constructor(private http: HttpClient) {}
+
+  fetchUser(username: string, commitKey: string) {
+    this.hoveredCommitKey = commitKey;
+    this.http
+      .get(`https://api.github.com/users/${username}`, {
+        headers: {
+          Authorization: `token ${environment.githubToken}`,
+        },
+      })
+      .subscribe({
+        next: (user) => {
+          // only assign if still hovering that commit
+          if (this.hoveredCommitKey === commitKey) {
+            this.hoveredUser = user;
+          }
+        },
+        error: () => {
+          this.hoveredUser = null;
+        },
+      });
+  }
 
   ngOnInit(): void {
     this.http.get<any[]>('assets/commits.json').subscribe((data) => {

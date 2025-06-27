@@ -1,5 +1,5 @@
-<!-- Hero Section -->
 <main>
+  <!-- Hero Section -->
   <section class="hero">
     <p class="badge">
       <ng-container *ngFor="let member of members">
@@ -23,7 +23,7 @@
       </ng-container>
 
       <span style="margin-left: 0.75rem; font-weight: 600">
-        Trusted by <span style="color: #000">5000+ users</span>
+         <span style="color: #000">Our Team</span>
       </span>
     </p>
 
@@ -67,9 +67,56 @@
           <li *ngFor="let commit of commits">
             <span class="commit-message">{{ commit.message }}</span
             ><br />
-            <small class="commit-meta">
-              by <strong>{{ commit.author }}</strong>
+            <small class="commit-meta" style="position: relative">
+              by
+              <strong
+                (mouseenter)="fetchUser(commit.author, commit.hash)"
+                (mouseleave)="hoveredCommitKey = null"
+                style="cursor: pointer"
+              >
+                {{
+                  hoveredCommitKey === commit.hash && hoveredUser?.login
+                    ? hoveredUser.login
+                    : commit.author
+                }}
+              </strong>
+
               <span class="commit-hash">#{{ commit.hash }}</span>
+
+              <div
+                class="hover-card"
+                *ngIf="hoveredCommitKey === commit.hash && hoveredUser"
+                style="
+                  position: absolute;
+                  top: 20px;
+                  left: 0;
+                  background: #161b22;
+                  color: #c9d1d9;
+                  border: 1px solid #30363d;
+                  border-radius: 6px;
+                  padding: 10px;
+                  width: 250px;
+                  z-index: 10;
+                "
+              >
+                <div style="font-weight: bold">
+                  {{ hoveredUser.login }}
+                  <span *ngIf="hoveredUser.name">({{ hoveredUser.name }})</span>
+                </div>
+                <div style="font-size: 0.9em">
+                  {{ hoveredUser.bio || "No bio available" }}
+                </div>
+                <div style="margin-top: 4px">
+                  <img
+                    [src]="hoveredUser.avatar_url"
+                    alt="avatar"
+                    style="width: 32px; height: 32px; border-radius: 50%"
+                  />
+                </div>
+                <div style="margin-top: 4px; font-size: 0.8em">
+                  Fetched from GitHub
+                </div>
+              </div>
             </small>
           </li>
         </ul>
