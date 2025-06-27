@@ -44,4 +44,4 @@ Thumbs.db
 .env
 src/assets/.env
 
-src/enviroment
+src/app/token.ts
