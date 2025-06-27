@@ -1,1 +1,37 @@
-<p>about works!</p>
+<div class="about-wrapper">
+  <!-- Header Banner -->
+  <div class="header-banner">
+    <h1>👥 Team 3</h1>
+  </div>
+
+  <!-- Welcome Section -->
+  <div class="welcome-section">
+    <h2>Welcome to Team 3</h2>
+    <p>
+      We are a creative and motivated group of students, building full-stack web applications using Angular and other modern tools. We believe in learning by doing and growing together.
+    </p>
+  </div>
+
+  <!-- About Section -->
+  <div class="about-section">
+    <h2>About Our Team</h2>
+    <p>
+      Team 3 is made up of enthusiastic students from Silicon University. Our goal is to design clean, responsive, and user-friendly digital solutions that make a difference. We work together to build smart applications, combining frontend design with backend functionality.
+    </p>
+    <p>
+      We believe in teamwork, experimentation, and hands-on experience. Our journey is about learning from each other and pushing our limits every day to become better developers.
+    </p>
+  </div>
+
+  <!-- Meet the Team Section -->
+  <div class="team-section">
+    <h2>Meet the Team</h2>
+    <div class="team-grid">
+      <div class="team-card" *ngFor="let member of teamMembers">
+        <img [src]="member.image" alt="Team member" />
+        <h3>{{ member.name }}</h3>
+        <p>{{ member.role }}</p>
+      </div>
+    </div>
+  </div>
+</div>
