@@ -43,5 +43,3 @@ Thumbs.db
 
 .env
 src/assets/.env
-
-src/app/token.ts

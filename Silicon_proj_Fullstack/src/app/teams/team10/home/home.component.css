@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #f3f2f8;
   color: #1a1a1a;
 }
@@ -47,34 +47,34 @@ body {
   border-radius: 30px;
   font-weight: 600;
 }
-main {
-  background: url("https://img.freepik.com/free-vector/realistic-glassmorphism-background_52683-87286.jpg")
-    center/cover no-repeat;
-  border-radius: 20px;
+main{
+    background: url('https://img.freepik.com/free-vector/realistic-glassmorphism-background_52683-87286.jpg') center/cover no-repeat;
+border-radius: 20px;
 }
 .hero {
   text-align: center;
   padding: 4rem 2rem;
   color: #000;
   position: relative;
+ 
 }
 
 .hero .badge {
   background: rgba(255, 255, 255, 0.25); /* semi-transparent */
-  backdrop-filter: blur(10px); /* frosted glass effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  backdrop-filter: blur(10px);           /* frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   display: inline-flex;
   padding: 0.5rem 1rem;
   border-radius: 30px;
   align-items: center;
-  font-size: 0.9rem;
+    font-size: 0.9rem;
   font-weight: 500;
   color: #000;
   position: relative; /* Required for pseudo-elements */
   /* overflow: hidden;   */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 .badge:hover {
@@ -83,18 +83,14 @@ main {
 }
 .hero .badge::before,
 .hero .badge::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.5) 10%,
-    transparent 10%
-  );
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 10%);
   background-size: 10px 10px;
   animation: particle-animation 3s linear infinite;
 }
@@ -172,6 +168,7 @@ main {
   color: #333;
 }
 
+
 .stats {
   background: #000;
   color: #fff;
@@ -213,14 +210,12 @@ main {
   gap: 1.5rem;
 }
 
-.summary-box,
-.assignment-card {
+.summary-box, .assignment-card {
   background: #fff;
   color: #000;
   border-radius: 16px;
   padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  height: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .assignment-card {
@@ -233,7 +228,7 @@ main {
   list-style-type: none;
   padding: 0;
   margin-top: 1rem;
-  max-height: 400px;
+  max-height: 200px;
   overflow-y: auto;
 }
 
@@ -269,48 +264,6 @@ main {
   font-size: 0.75rem;
 }
 
-.hover-card {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  background: #161b22;
-  color: #c9d1d9;
-  border: 1px solid #30363d;
-  border-radius: 6px;
-  padding: 10px;
-  width: 250px;
-  z-index: 999;
-}
-
-.hover-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.hover-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-right: 8px;
-}
-
-.hover-name {
-  font-size: 0.85em;
-  color: #c9d1d9;
-}
-
-.hover-bio {
-  margin-top: 5px;
-  font-size: 0.85em;
-}
-
-.hover-footer {
-  margin-top: 6px;
-  font-size: 0.75em;
-  color: #8b949e;
-}
-
 .badge img {
   border-radius: 20px;
   width: 24px;
@@ -324,6 +277,7 @@ main {
   margin-left: 0; /* don't overlap the first image */
 }
 
+
 .github-star-btn {
   display: inline-flex;
   align-items: center;
@@ -336,13 +290,13 @@ main {
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .github-star-btn:hover {
   background: linear-gradient(to right, #333, #000);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
 
 .github-star-btn img {
@@ -387,44 +341,4 @@ main {
   width: 18px;
   height: 18px;
   filter: invert(1);
-}
-.file-card {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  background: #161b22;         /* dark background */
-  border: 1px solid #30363d;   /* subtle border */
-  color: #c9d1d9;              /* light gray text */
-  padding: 8px;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  width: auto;
-  z-index: 999;
-  font-size: 0.8rem;
-}
-
-.file-card ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.file-card li {
-  margin: 4px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.file-card code {
-  background: #21262d;         /* slightly lighter than card background */
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-family: monospace;
-  color: #c9d1d9;
-}
-
-.file-card span {
-  margin-left: 4px;
-  font-size: 0.8em;
 }
