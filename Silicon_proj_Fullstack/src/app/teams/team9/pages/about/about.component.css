@@ -1,122 +1,261 @@
-about-container {
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(to bottom right, #e0f7fa, #ede7f6);
-  min-height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
+/* === GLOBAL ANIMATIONS & THEMES === */
+@keyframes backgroundWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.team-title {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #3f51b5;
-  margin-bottom: 10px;
-  animation: fadeIn 1s ease-in-out;
+@keyframes glow {
+  0% { box-shadow: 0 0 15px #1e90ff; }
+  50% { box-shadow: 0 0 25px #00bfff; }
+  100% { box-shadow: 0 0 15px #1e90ff; }
 }
 
-.subtitle {
-  font-size: 1.5rem;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-.team-list {
-  list-style: none;
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
   padding: 0;
-  margin: 0 auto 40px;
-  max-width: 400px;
+  background: #0f172a;
+  color: #fff;
 }
 
-.team-list li {
-  font-size: 1.2rem;
-  padding: 8px 0;
-  color: #333;
-  border-bottom: 1px solid #ccc;
-  transition: color 0.3s ease;
-}
-
-.team-list li:hover {
-  color: #00796b;
-}
-
-.tech-title {
-  font-size: 2rem;
-  color: #00796b;
-  margin-bottom: 30px;
-  animation: slideIn 1s ease;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-
-.tech-card {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  padding: 25px;
-  width: 280px;
-  transition: transform 0.3s, box-shadow 0.3s;
+/* === BANNER === */
+.banner {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  background-size: 400% 400%;
+  animation: backgroundWave 15s ease infinite;
+  padding: 100px 20px;
   text-align: center;
-  animation: zoomIn 0.5s ease;
+  border-radius: 60px 60px 60px 60px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
-.tech-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+.banner .overlay {
+   background: linear-gradient(135deg, rgba(30,58,138,0.9), rgba(59,130,246,0.9));
+  border: 3px solid rgba(255,255,255,0.1);
+  padding: 40px;
+  border-radius: 20px;
+  display: inline-block;
+  backdrop-filter: blur(12px);
+  animation: glow 6s infinite;
+  box-shadow: 0 0 30px rgba(59,130,246,0.6);
+  transition: 
+    background 1.2s ease-in-out,
+    transform 0.6s ease,
+    box-shadow 0.8s ease;
 }
 
-.tech-card img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+.banner .overlay:hover {
+  background: linear-gradient(135deg, rgba(59,130,246,1), rgba(30,58,138,1));
+  transform: scale(1.05);
+  box-shadow: 0 0 45px rgba(59,130,246,0.9), 0 0 25px rgba(255,255,255,0.2);
+}
+
+.banner h1 {
+  font-size: 4rem;
+  font-weight: bold;
   margin-bottom: 15px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeSlideIn 1s ease-in forwards;
+  animation-delay: 0.3s;
 }
 
-.tech-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.tech-card p {
-  font-size: 1rem;
-  color: #555;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
+@keyframes fadeSlideIn {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+
+
+.banner p {
+  font-size: 1.3rem;
+  opacity: 0.9;
 }
 
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+/* === MISSION SECTION === */
+.mission-section {
+  background: #1e293b;
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.content-box h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.content-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #cbd5e1;
+}
+
+/* === TECHNOLOGY STACK === */
+.technology-section {
+  background: #1e293b;
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.technology-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #60a5fa;
+}
+
+.technology-section p {
+  color: #93c5fd;
+  margin-bottom: 40px;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  width: 160px;
+  color: #e0f2fe;
+  font-weight: bold;
+  transition: transform 0.5s, box-shadow 0.5s;
+  backdrop-filter: blur(8px);
+  animation: glow 4s infinite;
+}
+
+.tech-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #38bdf8;
+}
+
+.tech-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: glow 6s infinite;
+}
+
+/* === STRENGTH SECTION === */
+.strengths-section {
+  background: #1e293b;
+  padding: 80px 30px;
+  text-align: center;
+  color: white;
+}
+
+.strengths-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #3b82f6;
+}
+
+.sub-heading {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  margin-bottom: 40px;
+}
+
+.strength-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.strength-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 25px;
+  width: 280px;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.strength-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
+}
+
+.strength-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: glow 6s infinite;
+  color: #93c5fd;
+}
+
+/* === TEAM SECTION === */
+.team-section {
+  background: #1e293b;
+  padding: 80px 30px;
+  text-align: center;
+  color: #f1f5f9;
+}
+
+.team-section h2 {
+  font-size: 2.7rem;
+  margin-bottom: 10px;
+  color: #60a5fa;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 25px;
+  width: 260px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  animation: glow 5s infinite;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.card-img img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.4s;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+}
+
+.card:hover .card-img img {
+  transform: scale(1.06);
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.5);
+}
+
+.card-body h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #f3f4f6;
+}
+
+.card-body p {
+  font-size: 1rem;
+  color: #cbd5e1;
 }
