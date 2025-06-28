@@ -1,17 +1,54 @@
-<div class="about-container">
-  <h1 class="team-title">👨‍💻 Team 9</h1>
-  <p class="subtitle">Our Amazing Team Members</p>
+<section class="banner">
+  <div class="overlay">
+    <h1>Welcome to Our Innovation Hub</h1>
+    <p>Crafting cutting-edge web experiences with creativity and precision</p>
+  </div>
+</section>
 
-  <ul class="team-list">
-    <li *ngFor="let member of teamMembers">{{ member }}</li>
-  </ul>
+<section class="mission-section">
+  <div class="content-box">
+    <h2>Driven by Purpose, Powered by Technology</h2>
+    <p>
+      We specialize in building dynamic, scalable, and aesthetically striking web applications. Our mission is to blend performance and design in harmony, ensuring intuitive user experiences and rock-solid reliability for businesses and communities alike.
+    </p>
+  </div>
+</section>
 
-  <h2 class="tech-title">💡 Our Tech Stack</h2>
-  <div class="card-container">
-    <div class="tech-card" *ngFor="let tech of techStack">
-      <img [src]="tech.icon" [alt]="tech.name" />
-      <h3>{{ tech.name }}</h3>
-      <p>{{ tech.description }}</p>
+<section class="technology-section">
+  <h2>Our Tools of Innovation</h2>
+  <p>We use the most modern tech stack to ensure your project is fast, secure, and scalable</p>
+  <div class="tech-grid">
+    <div class="tech-card" *ngFor="let tech of technologies">
+      <div class="tech-icon">{{ tech.icon }}</div>
+      <span>{{ tech.name }}</span>
     </div>
   </div>
-</div>
+</section>
+
+<section class="strengths-section">
+  <h2>Why Choose Us?</h2>
+  <p class="sub-heading">We don't just build software, we create solutions that matter</p>
+  <div class="strength-cards">
+    <div class="strength-card" *ngFor="let item of strengths">
+      <div class="strength-icon">{{ item.icon }}</div>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.desc }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="team-section">
+  <h2>Meet Our Creators</h2>
+  <p class="sub-heading">A team of innovators, designers, and developers driving digital excellence</p>
+  <div class="card-grid">
+    <div class="card" *ngFor="let member of members">
+      <div class="card-img">
+        <img [src]="member.img" [alt]="member.name" />
+      </div>
+      <div class="card-body">
+        <h3>{{ member.name }}</h3>
+        <p>{{ member.role }}</p>
+      </div>
+    </div>
+  </div>
+</section>
