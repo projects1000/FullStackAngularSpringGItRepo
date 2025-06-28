@@ -1,0 +1,79 @@
+/* Hero Section */
+.hero-background {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  padding: 4rem 0 3rem 0;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+/* Feature Cards */
+.feature-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #fff;
+}
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(110, 142, 251, 0.15);
+}
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #6e8efb;
+  transition: color 0.3s;
+}
+.feature-card:hover .feature-icon {
+  color: #a777e3;
+}
+
+/* Student List Card */
+.card {
+  border-radius: 18px;
+}
+
+.table {
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Cloud Data Section */
+.cloud-data {
+  background: linear-gradient(120deg, #f8fafc 80%, #e0e7ff 100%);
+  border-radius: 18px;
+}
+
+.list-group-item {
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  background: #f4f7fa;
+  box-shadow: 0 2px 8px rgba(110, 142, 251, 0.05);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .hero-background {
+    padding: 2rem 0 1.5rem 0;
+    border-radius: 0 0 18px 18px;
+  }
+  .feature-icon {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .hero-background {
+    padding: 1.2rem 0 1rem 0;
+    border-radius: 0 0 10px 10px;
+  }
+  .feature-card {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1rem !important;
+  }
+}
