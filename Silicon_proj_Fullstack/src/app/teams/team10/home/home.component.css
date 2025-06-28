@@ -342,3 +342,18 @@ border-radius: 20px;
   height: 18px;
   filter: invert(1);
 }
+
+:host ::ng-deep main, main {
+  padding-top: 64px; /* Height of fixed header */
+  scroll-padding-top: 64px;
+  min-height: calc(100vh - 64px);
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  :host ::ng-deep main, main {
+    padding-top: 52px;
+    scroll-padding-top: 52px;
+    min-height: calc(100vh - 52px);
+  }
+}
