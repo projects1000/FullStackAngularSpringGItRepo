@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Student, StudentService } from '../student.service';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -14,10 +13,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
   students: Student[] = [];
   newStudent: Student = { name: '', age: 0, email: '' };
 
-  constructor(private studentService: StudentService) {}
+  constructor(
+    private studentService: StudentService,
+    private dataService: DataService
+  ) {}
 
   ngOnInit() {
     this.getStudents();
+
+    this.dataService.getUsers().subscribe(data => {
+      this.users = data;
+    });
   }
 
   addStudent() {
@@ -30,12 +36,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   getStudents() {
     this.studentService.getAllStudents().subscribe(data => {
       this.students = data;
-    });
-  constructor(private dataService: DataService) {}
-
-  ngOnInit(): void {
-    this.dataService.getUsers().subscribe(data => {
-      this.users = data;
     });
   }
 

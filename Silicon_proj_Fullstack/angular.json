@@ -5,13 +5,12 @@
   "projects": {
     "Silicon_proj_Fullstack": {
       "projectType": "application",
-      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@ngx-env/builder:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/silicon-proj-fullstack",
             "index": "src/index.html",
@@ -61,15 +60,18 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
+                  "with": "src/environments/environment.prod.ts"
                 }
               ]
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
-          "builder": "@ngx-env/builder:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "Silicon_proj_Fullstack:build"
+          },
           "configurations": {
             "production": {
               "browserTarget": "Silicon_proj_Fullstack:build:production"
@@ -78,17 +80,16 @@
               "browserTarget": "Silicon_proj_Fullstack:build:development"
             }
           },
-          "defaultConfiguration": "development",
-          "options": {}
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@ngx-env/builder:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "Silicon_proj_Fullstack:build"
           }
         },
         "test": {
-          "builder": "@ngx-env/builder:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
               "zone.js",
@@ -96,15 +97,13 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/_redirects",
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "builderMode": "browser"
+            "scripts": []
           }
         }
       }
@@ -113,4 +112,5 @@
   "cli": {
     "analytics": false
   }
+
 }
