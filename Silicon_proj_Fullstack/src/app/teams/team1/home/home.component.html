@@ -1,131 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>SpringBoot & Angular App</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome for icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-    .hero-background {
-      background: linear-gradient(135deg, #6e8efb, #a777e3);
-      color: white;
-      padding: 4rem 0;
-      border-radius: 0 0 30px 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .feature-card {
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
-    }
-    .feature-card:hover {
-      transform: translateY(-10px);
-    }
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #6e8efb;
-    }
-    
-  </style>
-</head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #6e8efb, #a777e3);">
-    <div class="container">
-      <a class="navbar-brand display-6 fw-bold" href="/">
-        <i class="fas fa-laptop-code me-2"></i>SpringBoot & Angular
-      </a>
-    </div>
-  </nav>
-
+<!-- Team 1 Home - Professional Layout -->
+<div class="team1-home-wrapper">
   <!-- Hero Section -->
-  <div class="hero-background">
-    <div class="container text-center">
-      <h1 class="display-4 fw-bold mb-4">Welcome to SpringBoot & Angular</h1>
-      <p class="lead mb-4">A modern, full-stack web application built with Java Spring Boot and Angular.</p>
-      <div class="d-flex justify-content-center gap-3">
-        <span class="badge bg-light text-primary p-2">Full-Stack</span>
-        <span class="badge bg-light text-primary p-2">REST APIs</span>
-        <span class="badge bg-light text-primary p-2">Dynamic UI</span>
-      </div>
+  <section class="hero-background text-center mb-4 py-5 px-3 rounded shadow-lg" style="max-width: 700px; margin: 0 auto;">
+    <h1 class="fw-bold mb-3" style="font-size:2.4rem;">SpringBoot & Angular</h1>
+    <p class="lead mb-4" style="font-size:1.25rem;">A modern, full-stack web application built with Java Spring Boot and Angular.</p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <span class="badge bg-light text-primary p-3" style="font-size:1.1rem;">Full-Stack</span>
+      <span class="badge bg-light text-primary p-3" style="font-size:1.1rem;">REST APIs</span>
+      <span class="badge bg-light text-primary p-3" style="font-size:1.1rem;">Dynamic UI</span>
     </div>
-  </div>
+  </section>
 
   <!-- Features Section -->
-  <div class="container my-5">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card feature-card h-100 p-4 text-center">
-          <div class="feature-icon">
-            <i class="fas fa-server"></i>
-          </div>
-          <h3>Spring Boot</h3>
-          <p>Powerful backend with Java Spring Boot for robust APIs and microservices.</p>
+  <section class="row g-3 mb-4 justify-content-center">
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card feature-card h-100 p-3 text-center border-0 shadow-sm">
+        <div class="feature-icon mb-1">
+          <i class="fas fa-server"></i>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card feature-card h-100 p-4 text-center">
-          <div class="feature-icon">
-            <i class="fab fa-angular"></i>
-          </div>
-          <h3>Angular</h3>
-          <p>Modern frontend with Angular for dynamic, responsive user interfaces.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card feature-card h-100 p-4 text-center">
-          <div class="feature-icon">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <h3>Fast & Secure</h3>
-          <p>Optimized for speed and security, with best practices for web development.</p>
-        </div>
+        <h5 class="mb-1">Spring Boot</h5>
+        <p class="small text-muted">Robust backend with Java Spring Boot for scalable APIs and microservices.</p>
       </div>
     </div>
-  </div>
-<h2>Student List</h2>
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card feature-card h-100 p-3 text-center border-0 shadow-sm">
+        <div class="feature-icon mb-1">
+          <i class="fab fa-angular"></i>
+        </div>
+        <h5 class="mb-1">Angular</h5>
+        <p class="small text-muted">Modern frontend with Angular for dynamic, responsive user interfaces.</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card feature-card h-100 p-3 text-center border-0 shadow-sm">
+        <div class="feature-icon mb-1">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h5 class="mb-1">Fast & Secure</h5>
+        <p class="small text-muted">Optimized for speed and security, following best web practices.</p>
+      </div>
+    </div>
+  </section>
 
-<form (ngSubmit)="addStudent()">
-  <input type="text" [(ngModel)]="newStudent.name" name="name" placeholder="Name" required>
-  <input type="number" [(ngModel)]="newStudent.age" name="age" placeholder="Age" required>
-  <input type="email" [(ngModel)]="newStudent.email" name="email" placeholder="Email" required>
-  <button type="submit">Add Student</button>
-</form>
-  <!-- Main Content (Angular Router Outlet) -->
-  <div class="container mb-5">
-    <router-outlet></router-outlet>
-  </div>
+  <!-- Student List Section -->
+  <section class="card shadow-sm p-3 mb-4 mx-auto" style="max-width: 480px;">
+    <h5 class="mb-3 text-primary"><i class="fas fa-users me-2"></i>Student List</h5>
+    <form class="row g-2 align-items-end" (ngSubmit)="addStudent()">
+      <div class="col-6 col-md-4">
+        <input type="text" class="form-control form-control-sm" [(ngModel)]="newStudent.name" name="name" placeholder="Name" required>
+      </div>
+      <div class="col-6 col-md-3">
+        <input type="number" class="form-control form-control-sm" [(ngModel)]="newStudent.age" name="age" placeholder="Age" required>
+      </div>
+      <div class="col-12 col-md-5 mt-2 mt-md-0">
+        <input type="email" class="form-control form-control-sm" [(ngModel)]="newStudent.email" name="email" placeholder="Email" required>
+      </div>
+      <div class="col-12 mt-2">
+        <button type="submit" class="btn btn-primary btn-sm w-100"><i class="fas fa-plus"></i> Add Student</button>
+      </div>
+    </form>
+    <div class="mt-3">
+      <table class="table table-sm table-hover table-bordered align-middle mb-0" *ngIf="students?.length">
+        <thead class="table-light">
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students">
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="!students?.length" class="text-muted text-center mt-2 small">No students yet.</div>
+    </div>
+  </section>
 
-  <!-- Bootstrap JS Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
- 
-  <!-- 📡 Cloud Data Section -->
-  <section class="cloud-data">
-    <h2>📡 Cloud Users (Live JSON)</h2>
+  <!-- Cloud Data Section -->
+  <section class="card shadow-sm p-3 mb-4 mx-auto cloud-data" style="max-width: 480px;">
+    <h5 class="mb-2 text-info"><i class="fas fa-cloud me-2"></i>Cloud Users (Live JSON)</h5>
     <div *ngIf="users.length > 0; else loading">
-      <ul>
-        <li *ngFor="let user of users | slice:0:5">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item py-2 px-1 small" *ngFor="let user of users | slice:0:5">
           <strong>{{ user.name }}</strong> ({{ user.username }})<br />
-          📧 {{ user.email }}<br />
-          🏙️ {{ user.address.city }}
-          <hr />
+          <span class="text-secondary">📧 {{ user.email }}</span><br />
+          <span class="text-secondary">🏙️ {{ user.address.city }}</span>
         </li>
       </ul>
     </div>
     <ng-template #loading>
-      <p>⏳ Loading user data from cloud...</p>
+      <p class="text-center text-muted small">⏳ Loading user data from cloud...</p>
     </ng-template>
   </section>
+</div>
 
-
-
-
-</body>
-</html>
+<app-footer></app-footer>
