@@ -4,20 +4,25 @@
 </div>
 <div class="container">
   <!-- Toggle button for mobile -->
-  <button class="toggle-button" (click)="toggleSidebar()">☰</button>
+  <button class="toggle-button" (click)="toggleSidebar()" aria-label="Open menu">
+    ☰
+  </button>
 
-  <nav class="sidebar" [class.closed]="isSidebarClosed">
+  <!-- Sidebar overlay for mobile -->
+  <div class="sidebar-overlay" *ngIf="isSidebarOpen" (click)="closeSidebarOnMobile()"></div>
+
+  <nav class="sidebar" [class.closed]="!isSidebarOpen">
     <ul>
-      <li><a routerLink="/team1" routerLinkActive="active">Team 1</a></li>
-      <li><a routerLink="/team2" routerLinkActive="active">Team 2</a></li>
-      <li><a routerLink="/team3" routerLinkActive="active">Team 3</a></li>
-      <li><a routerLink="/team4" routerLinkActive="active">Team 4</a></li>
-      <li><a routerLink="/team5" routerLinkActive="active">Team 5</a></li>
-      <li><a routerLink="/team6" routerLinkActive="active">Team 6</a></li>
-      <li><a routerLink="/team7" routerLinkActive="active">Team 7</a></li>
-      <li><a routerLink="/team8" routerLinkActive="active">Team 8</a></li>
-      <li><a routerLink="/team9" routerLinkActive="active">Team 9</a></li>
-      <li><a routerLink="/team10" routerLinkActive="active">Team 10</a></li>
+      <li><a routerLink="/team1" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 1</a></li>
+      <li><a routerLink="/team2" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 2</a></li>
+      <li><a routerLink="/team3" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 3</a></li>
+      <li><a routerLink="/team4" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 4</a></li>
+      <li><a routerLink="/team5" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 5</a></li>
+      <li><a routerLink="/team6" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 6</a></li>
+      <li><a routerLink="/team7" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 7</a></li>
+      <li><a routerLink="/team8" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 8</a></li>
+      <li><a routerLink="/team9" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 9</a></li>
+      <li><a routerLink="/team10" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 10</a></li>
     </ul>
   </nav>
 

@@ -183,31 +183,38 @@
   }
   .sidebar {
     position: fixed;
-    left: 0;
-    bottom: 0;
-    top: auto;
-    width: 100vw;
-    height: 56px;
-    max-height: 56px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.98);
+    width: 90vw;
+    max-width: 340px;
+    height: auto;
+    max-height: 80vh;
+    background: #232946;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(35,41,70,0.18);
+    z-index: 1003;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 0;
-    padding: 0;
-    z-index: 1001;
-    box-shadow: 0 -2px 8px rgba(35, 41, 70, 0.07);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 18px 0 12px 0;
+    overflow-y: auto;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .sidebar.closed {
+    display: none !important;
   }
   .sidebar ul {
-    flex-direction: row;
-    gap: 0;
-    width: 100vw;
-    padding: 0;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding: 0 12px;
     margin: 0;
-    justify-content: space-around;
+    justify-content: flex-start;
   }
   .sidebar li {
-    flex: 1 1 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,28 +222,30 @@
     padding: 0;
   }
   .sidebar a {
-    font-size: 0.95rem;
-    padding: 8px 0;
-    border-radius: 0;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    border-radius: 10px;
     width: 100%;
     text-align: center;
     border: none;
-    background: none;
+    background: #f4f6fb;
+    color: #232946;
+    margin-bottom: 2px;
     box-shadow: none;
   }
-  .container {
-    margin-top: 48px;
-    margin-left: 0;
-    width: 100vw;
-    height: calc(100vh - 104px);
-    flex-direction: column;
-    padding: 0;
+  .sidebar a.active {
+    background: #b8c1ec;
+    color: #232946;
   }
-  .content {
-    padding: 8px 2px 2px 2px;
-    min-height: calc(100vh - 104px);
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
-    box-sizing: border-box;
+    height: 100vh;
+    background: rgba(0,0,0,0.35);
+    z-index: 1002;
+    display: block;
   }
   .toggle-button {
     position: fixed;
@@ -250,5 +259,19 @@
     padding: 6px 12px;
     font-size: 1.3rem;
     display: block;
+  }
+  .container {
+    margin-top: 48px;
+    margin-left: 0;
+    width: 100vw;
+    height: calc(100vh - 48px);
+    flex-direction: column;
+    padding: 0;
+  }
+  .content {
+    padding: 8px 2px 2px 2px;
+    min-height: calc(100vh - 48px);
+    width: 100vw;
+    box-sizing: border-box;
   }
 }
