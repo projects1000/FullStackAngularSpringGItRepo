@@ -1,10 +1,12 @@
 <!-- app.component.html -->
+<div class="main-heading-bar">
+  <h1 class="main-heading">Silicon Fullstack Internship Project</h1>
+</div>
 <div class="container">
   <!-- Toggle button for mobile -->
   <button class="toggle-button" (click)="toggleSidebar()">☰</button>
 
   <nav class="sidebar" [class.closed]="isSidebarClosed">
-    <h2 class="sidebar-title">SILICON Teams.</h2>
     <ul>
       <li><a routerLink="/team1" routerLinkActive="active">Team 1</a></li>
       <li><a routerLink="/team2" routerLinkActive="active">Team 2</a></li>
