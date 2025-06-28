@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.dataService.getUsers().subscribe(data => {
-      this.users = data;
+    this.dataService.getUsers().subscribe(any => {
+      this.users = any;
     });
   }
 
