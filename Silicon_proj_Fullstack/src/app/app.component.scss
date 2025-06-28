@@ -252,13 +252,30 @@
     top: 10px;
     right: 10px;
     z-index: 1100;
-    background: #b8c1ec;
-    color: #232946;
+    color: #fff !important;
+    background: #b8c1ec !important; /* light blue */
     border: none;
-    border-radius: 6px;
-    padding: 6px 12px;
+    border-radius: 8px;
+    padding: 6px 10px;
     font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+    cursor: pointer;
+    transition: background 0.18s;
+  }
+  .toggle-button .bars-icon svg {
     display: block;
+    width: 28px;
+    height: 28px;
+  }
+  .toggle-button .bars-icon rect {
+    fill: #fff;
+    font-weight: bold;
+  }
+  .toggle-button:active, .toggle-button:focus {
+    background: #a0b4e6 !important;
   }
   .container {
     margin-top: 48px;
