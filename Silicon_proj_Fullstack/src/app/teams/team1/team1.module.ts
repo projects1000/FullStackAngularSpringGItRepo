@@ -8,6 +8,8 @@ import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 
@@ -24,6 +26,8 @@ import { RouterModule } from '@angular/router';
     Team1RoutingModule,
     SharedModule,
     ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
     RouterModule
   ]
 })

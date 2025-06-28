@@ -1,3 +1,5 @@
+import { Component } from '@angular/core';
+import { Student, StudentService } from '../student.service';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 
@@ -9,6 +11,26 @@ import { DataService } from 'src/app/data.service';
 export class HomeComponent implements OnInit, AfterViewInit {
   users: any[] = [];
 
+  students: Student[] = [];
+  newStudent: Student = { name: '', age: 0, email: '' };
+
+  constructor(private studentService: StudentService) {}
+
+  ngOnInit() {
+    this.getStudents();
+  }
+
+  addStudent() {
+    this.studentService.addStudent(this.newStudent).subscribe(response => {
+      alert(response);
+      this.getStudents(); // Refresh list
+    });
+  }
+
+  getStudents() {
+    this.studentService.getAllStudents().subscribe(data => {
+      this.students = data;
+    });
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {

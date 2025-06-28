@@ -90,7 +90,14 @@
       </div>
     </div>
   </div>
+<h2>Student List</h2>
 
+<form (ngSubmit)="addStudent()">
+  <input type="text" [(ngModel)]="newStudent.name" name="name" placeholder="Name" required>
+  <input type="number" [(ngModel)]="newStudent.age" name="age" placeholder="Age" required>
+  <input type="email" [(ngModel)]="newStudent.email" name="email" placeholder="Email" required>
+  <button type="submit">Add Student</button>
+</form>
   <!-- Main Content (Angular Router Outlet) -->
   <div class="container mb-5">
     <router-outlet></router-outlet>
