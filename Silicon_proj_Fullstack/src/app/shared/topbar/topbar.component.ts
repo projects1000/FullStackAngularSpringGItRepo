@@ -12,6 +12,7 @@ export class TopbarComponent {
     { iconClass: 'fas fa-heart', route: 'about' },
     { iconClass: 'fa-solid fa-photo-film', route: 'gallery' },
     { iconClass: 'fa-solid fa-envelopes-bulk', route: 'contact' },
+    { iconClass: 'fas fa-briefcase', route: 'smartbiz' }
   ];
 
   // setActive(index: number) {
