@@ -1,10 +1,80 @@
 /* ===== Base ===== */
-.home-landing {
-  background-color: #0f172a; /* deep navy */
-  color: #f1f5f9; /* slate-50 */
-  padding: 40px 20px;
-  font-family: 'Segoe UI', sans-serif;
-  min-height: 100vh;
+  .home-landing {
+    background: linear-gradient(135deg, #1e3a8a, #0f172a);
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+  }
+/* === Hero Logo and Title Styling === */
+.hero-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.team-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 10%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  margin-left: 20px;
+}
+.team-logo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .hero-heading {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .team-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .typewriter {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
+
+
+.background-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/team3-gallery/silicon.jpg'); 
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  z-index: -1;
+}
+
+/* ===== Glassmorphism Utility Class ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
 }
 
 /* ===== Hero Section ===== */
@@ -17,28 +87,30 @@
   font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 12px;
-  color: #38bdf8; /* sky blue */
+  color: #38bdf8;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #cbd5e1;
+  color: #ffffff;
 }
 
 .explore-btn {
   margin-top: 20px;
   display: inline-block;
-  background-color: #2563eb;
+  background-color: rgba(37, 99, 235, 0.6);
   color: white;
   padding: 12px 24px;
   font-weight: 600;
   border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
 }
 
 .explore-btn:hover {
-  background-color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.8);
 }
 
 /* ===== Vibes Section ===== */
@@ -50,7 +122,7 @@
 .vibes h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #facc15; /* yellow-400 */
+  color: #facc15;
 }
 
 .cards {
@@ -58,46 +130,50 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .card {
-  background-color: #1e293b;
-  color: #f8fafc;
-  padding: 20px;
+  background-color: rgba(30, 41, 59, 0.8);
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-  min-width: 180px;
+  padding: 20px;
   font-size: 1rem;
-  transition: transform 0.2s ease-in-out;
+  min-width: 180px;
+  color: #f8fafc;
+  transition: transform 0.3s ease-in-out, opacity 0.6s ease-out, transform 0.6s ease-out;
   opacity: 0;
-  animation: slideUp 0.7s ease-out forwards;
+  transform: translateY(40px);
 }
 
-.card:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-  background-color: #334155;
+.card.glass:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  background-color: rgba(234, 237, 241, 0.2);
 }
 
-.card:nth-child(1) { animation-delay: 0.3s; }
-.card:nth-child(2) { animation-delay: 0.5s; }
-.card:nth-child(3) { animation-delay: 0.7s; }
-.card:nth-child(4) { animation-delay: 0.9s; }
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ===== Tech Stack Section ===== */
 .tech {
   margin-top: 60px;
   text-align: center;
+  gap: 2px;
 }
 
 .tech h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #34d399; /* emerald-400 */
+  color: #34d399;
   opacity: 0;
-  animation: fadeInTop 0.8s ease-out forwards;
-  animation-delay: 0.3s;
+  transform: translateY(-20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.tech h2.visible {
+  opacity: 1;
 }
 
 .icons {
@@ -106,28 +182,106 @@
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 10px;
-  overflow: visible;
 }
 
 .icons img {
   width: 60px;
   height: 60px;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
-  animation: fadeInTop 0.6s ease-out forwards;  /* <-- add “forwards” */
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.6s ease-out, transform 0.6s ease-out;
   opacity: 0;
+  transform: translateY(-20px);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 12px;
 }
 
 .icons img:hover {
-    cursor: pointer;
-    transform: scale(1.15);
-
+  cursor: pointer;
+  transform: scale(1.15);
 }
 
-.icons img:nth-child(1) { animation-delay: 0.3s; }
-.icons img:nth-child(2) { animation-delay: 0.5s; }
-.icons img:nth-child(3) { animation-delay: 0.7s; }
-.icons img:nth-child(4) { animation-delay: 0.9s; }
+.icons img.visible {
+  opacity: 1;
+}
+
+/* ===== Cloud Data Section ===== */
+.cloud-data {
+  margin-top: 60px;
+  text-align: center;
+  color: #f8fafc;
+}
+
+.cloud-data h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.cloud-data h2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cloud-data ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cloud-data li {
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: left;
+  transition: transform 0.2s ease-in-out, opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(40px);
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.cloud-data li:hover {
+  transform: scale(1.03);
+}
+
+.cloud-data li.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cloud-data li strong {
+  color: #facc15;
+  font-size: 1.1rem;
+}
+
+.cloud-data hr {
+  border: 0;
+  border-top: 1px solid #475569;
+  margin-top: 10px;
+}
+
+.load-btn {
+  margin-top: 10px;
+  background-color: rgba(37, 99, 235, 0.5);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.load-btn:hover {
+  background-color: rgba(59, 130, 246, 0.8);
+}
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
@@ -145,95 +299,26 @@
   }
 }
 
-/* === Animations === */
-@keyframes fadeInTop {
-  0% {
-    opacity: 0;
-    transform: translate3d(50px, 70px, 100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0,0,0,40px);
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* === Typewriter Animation === */
 .typewriter {
   font-size: 2.8rem;
   font-weight: bold;
   color: #38bdf8;
-  white-space: wrap;
+  white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #38bdf8;
   width: fit-content;
   margin: 0 auto;
-  animation: blink 0.7s infinite;
+  animation: typing 3s steps(30, end), blink 0.7s step-end 3;
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes blink {
-  0%   { border-color: #38bdf8; }
-  50%  { border-color: transparent; }
-  100% { border-color: #38bdf8; }
-}
-
-
-/* ===== Cloud Data Section ===== */
-.cloud-data {
-  margin-top: 60px;
-  text-align: center;
-  color: #f8fafc;
-}
-
-.cloud-data h2 {
-  font-size: 2rem;
-  color: #60a5fa; /* light blue */
-  margin-bottom: 20px;
-  opacity: 0;
-  animation: fadeInTop 0.7s ease-out forwards;
-  animation-delay: 0.2s;
-}
-
-.cloud-data ul {
-  list-style-type: none;
-  padding: 0;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.cloud-data li {
-  background-color: #1e293b; /* blue-gray background */
-  margin-bottom: 15px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  text-align: left;
-  transition: transform 0.2s ease-in-out;
-  animation: slideUp 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-.cloud-data li:hover {
-  transform: scale(1.03);
-  background-color: #334155;
-}
-
-.cloud-data li strong {
-  color: #facc15; /* yellow */
-  font-size: 1.1rem;
-}
-
-.cloud-data hr {
-  border: 0;
-  border-top: 1px solid #475569;
-  margin-top: 10px;
+  50% { border-color: transparent; }
+  100% { border-color: transparent; }
 }
