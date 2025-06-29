@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+.container{
+    color: chartreuse; 
+}
+=======
 .gallery-container {
   padding: 2rem;
   max-width: 1200px;
@@ -132,3 +137,4 @@ h1 {
 }
 
 
+>>>>>>> main
