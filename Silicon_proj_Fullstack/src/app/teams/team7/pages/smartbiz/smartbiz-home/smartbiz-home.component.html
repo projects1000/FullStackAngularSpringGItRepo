@@ -1,0 +1,24 @@
+<!-- <h2>SmartBiz Projects</h2>
+<div class="button-group">
+  <button routerLink="arpita">SmartBiz - Arpita</button>
+  <button routerLink="jyoti">SmartBiz - Jyoti</button>
+  <button routerLink="shobha">SmartBiz - Shobha</button>
+  <button routerLink="soma">SmartBiz - Soma</button>
+  <button routerLink="sajeya">SmartBiz - Sajeya</button>
+  <button routerLink="akansha">SmartBiz - Akansha</button>
+  <button routerLink="ipsita">SmartBiz - Ipsita</button>
+</div>
+<router-outlet></router-outlet> -->
+
+
+<section class="home-wrapper">
+  <h2 class="team-heading">Explore SmartBiz Apps</h2>
+
+  <div class="member-grid">
+    <div class="member-card" *ngFor="let member of smartbizMembers">
+      <h4>{{ member.label }}</h4>
+      <p><button class="fetch-button" [routerLink]="member.route">View App</button></p>
+    </div>
+  </div>
+</section>
+<router-outlet></router-outlet>

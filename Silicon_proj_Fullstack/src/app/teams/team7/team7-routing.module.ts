@@ -17,6 +17,7 @@ const routes: Routes = [
         { path: 'about', component: AboutComponent },
         { path: 'gallery', component: GalleryComponent },
         { path: 'contact', component: ContactComponent },
+        { path: 'smartbiz', loadChildren: () => import('./pages/smartbiz/smartbiz.module').then((m) => m.SmartbizModule), }
       ]
     }
 ];
