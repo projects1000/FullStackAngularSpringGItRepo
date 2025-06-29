@@ -187,3 +187,4 @@ fetchCommitFiles(sha: string) {
     }, 1500); // Microcard shown for 3 seconds
   }
 }
+

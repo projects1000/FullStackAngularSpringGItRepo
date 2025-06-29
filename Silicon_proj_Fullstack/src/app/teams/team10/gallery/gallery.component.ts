@@ -16,3 +16,4 @@ images: string[] = [
  "../../../../assets/team10/assets/outsideview2.jpg"
   ];
 }
+

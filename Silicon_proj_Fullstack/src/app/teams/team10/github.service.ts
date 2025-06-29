@@ -26,3 +26,4 @@ getCommitDetails(sha: string): Observable<any> {
 }
 
 }
+
