@@ -1,207 +1,160 @@
-/* 🎯 Background Section */
+/* Global wrapper */
 .about-section {
-  position: relative;
-  padding: 100px 20px;
-  min-height: 100vh;
-  color: #ffffff;
-  z-index: 1;
-  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fc;
+  padding: 2rem 1rem;
 }
 
-.about-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('https://avonwood.co.uk/wp-content/uploads/2023/12/case-study-about-us-image.jpg');
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
-  z-index: -1;
-  opacity: 1;
-  filter: brightness(0.7);
-}
-
-/* 🟪 Overlay */
-.overlay {
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border: none;
-  padding: 50px;
-  border-radius: 16px;
-  max-width: 1200px;
-  margin: auto;
-  box-shadow: none;
-}
-
-/* 🔠 Typography & Layout */
-.container {
-  text-align: center;
-}
-
-.tagline {
-  font-size: 1.6rem;
-  font-style: italic;
-  margin-bottom: 30px;
-  color: #f8f8f8;
-}
-
-.team-members, .team-leader {
-  margin-top: 60px;
-}
-
-.member-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 20px 0;
-  justify-items: center;
-}
-
-/* 👤 Member Card Styling */
-.member-card {
-  padding: 25px 20px;
+/* Common section box styling */
+.section-box {
+  background: white;
   border-radius: 20px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  max-width: 260px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.member-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
-}
-
-.member-card img {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 4px solid #fff;
-  background-color: #f0f0f0;
-}
-
-/* ✨ Shining Name Effect */
-.shine-text {
-  font-size: 1.3rem;
-  font-weight: 700;
-  background: linear-gradient(
-    90deg,
-    #dce1e8,
-    #edfafd,
-    #dee2e6,
-    #efede6,
-    #ffffff
-  );
-  background-size: 400% auto;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-}
-
-@keyframes shineMove {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-
-.member-card p {
-  font-size: 0.95rem;
-  font-style: italic;
-  color: #dddddd;
-  margin: 0;
-}
-
-/* 💻 Project Info Box */
-.project-box {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 40px 30px;
-  margin: 60px 0;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  color: #fff;
+  padding: 2rem;
+  margin: 1.5rem auto;
   max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.project-box h2 {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  color: #ffffff;
 }
 
-/* 📦 Tech Cards */
-.tech-stack {
+/* Individual gradient backgrounds */
+.header-banner {
+  background: linear-gradient(to right, #7b2ff7, #f107a3);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  align-items: center;
   justify-content: center;
+  gap: 12px;
+}
+
+.welcome-section {
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+}
+
+.about-section-inner {
+  background: linear-gradient(to bottom, #ede7f6, #ffffff);
+}
+
+.tech-stack-section {
+  background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+}
+
+.team-members-section {
+  background: linear-gradient(to bottom, #ffe0b2, #ffffff);
+}
+
+/* Typography */
+.section-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.section-box p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #34495e;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Grid layout for team cards */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Team member cards */
+.team-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+}
+
+.team-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.team-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  color: #2c3e50;
+}
+
+.team-card p {
+  font-size: 0.95rem;
+  color: #607d8b;
+}
+
+/* Tech Stack Section */
+.tech-stack-section {
+  background: linear-gradient(to bottom, #e0f2f1, #ffffff);
+}
+
+.tech-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .tech-card {
-  flex: 1 1 280px;
-  background: rgba(255, 255, 255, 0.08); /* Transparent glass effect */
-  border-left: 6px solid #ccc;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  background: white;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-  color: #ffffff;
-  backdrop-filter: blur(6px);
-}
-
-.tech-card h3,
-.tech-card p {
-  color: #ffffff;
 }
 
 .tech-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
 
-.tech-logo {
-  width: 60px;
-  height: auto;
-  display: block;
-  margin: 0 auto 15px auto;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-  transition: transform 0.3s ease-in-out;
+.tech-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
 }
 
-.tech-card:hover .tech-logo {
-  transform: scale(1.1);
+.tech-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
 }
 
-/* 🎨 Colored Borders Only */
-.tech-card.angular {
-  
-  border-left-color: #dd0031;
+.tech-card p {
+  font-size: 0.95rem;
+  color: #546e7a;
 }
 
-.tech-card.springboot {
-  border-left-color: #6db33f;
-}
-
-.tech-card.mysql .tech-logo {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  padding: 6px;
+/* Responsive layout */
+@media (max-width: 768px) {
+  .section-box {
+    padding: 1.5rem 1rem;
+  }
+  .tech-card {
+    width: 90%;
+  }
+  .leader-card {
+    max-width: 90%;
+  }
 }
