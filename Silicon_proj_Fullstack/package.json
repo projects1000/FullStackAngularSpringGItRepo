@@ -21,12 +21,9 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "@pierresh/ngx-lightbox": "^20.0.0",
-
+    "animate.css": "^4.1.1",
     "axios": "^1.10.0",
     "dotenv": "^16.5.0",
-
-    "animate.css": "^4.1.1",
-
     "ngx-lightbox": "^3.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -36,6 +33,7 @@
     "@angular-devkit/build-angular": "^15.2.11",
     "@angular/cli": "~15.2.11",
     "@angular/compiler-cli": "^15.2.0",
+    "@ngx-env/builder": "^19.0.5",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
@@ -44,5 +42,10 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

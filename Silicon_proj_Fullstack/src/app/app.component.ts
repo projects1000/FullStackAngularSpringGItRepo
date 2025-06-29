@@ -7,15 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  isSidebarClosed = false;
+  isSidebarOpen = false;
 
   toggleSidebar() {
-    this.isSidebarClosed = !this.isSidebarClosed;
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 
   closeSidebarOnMobile() {
     if (window.innerWidth < 768) {
-      this.isSidebarClosed = true;
+      this.isSidebarOpen = false;
     }
   }
 }

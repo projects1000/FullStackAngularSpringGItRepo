@@ -1,21 +1,34 @@
 <!-- app.component.html -->
+<div class="main-heading-bar">
+  <h1 class="main-heading">Silicon Fullstack Internship Project</h1>
+</div>
 <div class="container">
   <!-- Toggle button for mobile -->
-  <button class="toggle-button" (click)="toggleSidebar()">☰</button>
+  <button class="toggle-button" (click)="toggleSidebar()" aria-label="Open menu">
+    <span class="bars-icon">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect y="5" width="28" height="3.5" rx="1.5" fill="#fff"/>
+        <rect y="12" width="28" height="3.5" rx="1.5" fill="#fff"/>
+        <rect y="19" width="28" height="3.5" rx="1.5" fill="#fff"/>
+      </svg>
+    </span>
+  </button>
 
-  <nav class="sidebar" [class.closed]="isSidebarClosed">
-    <h2 class="sidebar-title">SILICON Teams</h2>
+  <!-- Sidebar overlay for mobile -->
+  <div class="sidebar-overlay" *ngIf="isSidebarOpen" (click)="closeSidebarOnMobile()"></div>
+
+  <nav class="sidebar" [class.closed]="!isSidebarOpen">
     <ul>
-      <li><a routerLink="/team1" routerLinkActive="active">Team 1</a></li>
-      <li><a routerLink="/team2" routerLinkActive="active">Team 2</a></li>
-      <li><a routerLink="/team3" routerLinkActive="active">Team 3</a></li>
-      <li><a routerLink="/team4" routerLinkActive="active">Team 4</a></li>
-      <li><a routerLink="/team5" routerLinkActive="active">Team 5</a></li>
-      <li><a routerLink="/team6" routerLinkActive="active">Team 6</a></li>
-      <li><a routerLink="/team7" routerLinkActive="active">Team 7</a></li>
-      <li><a routerLink="/team8" routerLinkActive="active">Team 8</a></li>
-      <li><a routerLink="/team9" routerLinkActive="active">Team 9</a></li>
-      <li><a routerLink="/team10" routerLinkActive="active">Team 10</a></li>
+      <li><a routerLink="/team1" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 1</a></li>
+      <li><a routerLink="/team2" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 2</a></li>
+      <li><a routerLink="/team3" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 3</a></li>
+      <li><a routerLink="/team4" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 4</a></li>
+      <li><a routerLink="/team5" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 5</a></li>
+      <li><a routerLink="/team6" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 6</a></li>
+      <li><a routerLink="/team7" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 7</a></li>
+      <li><a routerLink="/team8" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 8</a></li>
+      <li><a routerLink="/team9" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 9</a></li>
+      <li><a routerLink="/team10" routerLinkActive="active" (click)="closeSidebarOnMobile()">Team 10</a></li>
     </ul>
   </nav>
 

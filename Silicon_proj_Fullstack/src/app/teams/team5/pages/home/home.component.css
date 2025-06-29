@@ -51,7 +51,7 @@
 /* Individual Card */
 .card {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
+  /* backdrop-filter: blur(8px); */
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 25px;
   border-radius: 15px;
@@ -88,6 +88,70 @@
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
+}
+
+/* Cloud Data Section */
+.cloud-data {
+  background: linear-gradient(to bottom right, #cce5ff, #e6f2ff);
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 800px;
+  margin: 2rem auto;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  color: #222;
+}
+
+/* Section Heading */
+.cloud-data h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #0055aa;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* List Style */
+.cloud-data ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cloud-data li {
+  background: white;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.cloud-data li:hover {
+  transform: translateY(-4px);
+}
+
+.cloud-data li strong {
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* Email & Address */
+.cloud-data li br {
+  line-height: 1.6;
+}
+
+.cloud-data hr {
+  border: none;
+  border-top: 1px dashed #ccc;
+  margin: 0.8rem 0 0 0;
+}
+
+/* Loading message */
+.cloud-data p {
+  text-align: center;
+  color: #666;
+  font-style: italic;
 }
 
 /* Responsive Design */
