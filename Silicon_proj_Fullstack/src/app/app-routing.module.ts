@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'team1', pathMatch: 'full' },
+  { path: '', redirectTo: 'team6', pathMatch: 'full' },
   {
     path: 'team1',
     loadChildren: () =>

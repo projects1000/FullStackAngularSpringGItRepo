@@ -1,1 +1,13 @@
-<p>gallery works!</p>
+<div class="gallery-wrapper">
+  <div class="tab-buttons">
+    <button (click)="setActiveTab('Team')">Team</button>
+    <button (click)="setActiveTab('Projects')">Projects</button>
+  </div>
+
+  <div class="gallery-grid">
+    <div *ngFor="let item of galleryData[activeTab]" class="gallery-card">
+      <img [src]="item.image" [alt]="item.name || item.title || 'Gallery Image'" />
+      <p>{{ item.name || item.title }}</p>
+    </div>
+  </div>
+</div>

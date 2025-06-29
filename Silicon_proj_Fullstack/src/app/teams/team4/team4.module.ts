@@ -10,6 +10,11 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AboutSiliconComponent } from './about/about-silicon/about-silicon.component';
+import { CollaborationsComponent } from './about/collaborations/collaborations.component';
+import { RankingRecognitionComponent } from './about/ranking-recognition/ranking-recognition.component';
+import { MandatoryDisclosureComponent } from './about/mandatory-disclosure/mandatory-disclosure.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ContactComponent,
     AboutComponent,
     GalleryComponent,
-    ContactComponent
+    ContactComponent,
+    AboutSiliconComponent,
+    CollaborationsComponent,
+    RankingRecognitionComponent,
+    MandatoryDisclosureComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,

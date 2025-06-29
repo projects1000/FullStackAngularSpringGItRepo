@@ -5,7 +5,7 @@ import { Team2RoutingModule } from './team2-routing.module';
 import { Team2Component } from './team2.component';
 import { SharedModule } from "../../shared/shared.module";
 import { AboutComponent } from './about/about.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { AboutComponent } from './about/about.component';
   imports: [
     CommonModule,
     Team2RoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
 ]
 })
 export class Team2Module { }

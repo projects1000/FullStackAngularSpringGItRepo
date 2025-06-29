@@ -1,3 +1,49 @@
+<<<<<<< HEAD
 <div class="container">
     Welcome to Silicon Gallery
 </div>
+=======
+<!-- Poppins Font from Google -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
+
+<div class="gallery-container">
+  <h1>SILICON UNIVERSITY</h1>
+
+ <div class="slideshow">
+  <img *ngFor="let img of slides; let i = index"
+       [src]="img"
+       loading="lazy"
+       [class.active]="i === currentSlide" />
+  <button class="nav prev" (click)="prevSlide()">&#10094;</button>
+  <button class="nav next" (click)="nextSlide()">&#10095;</button>
+</div>
+
+
+  <div class="grid-gallery">
+  <img *ngFor="let img of gridImages"
+       [src]="img"
+       alt="Gallery image"
+       loading="lazy"
+       (click)="openLightbox(img)" />
+</div>
+
+<!-- Lightbox Modal -->
+<div class="lightbox"
+     *ngIf="selectedImage"
+     (click)="closeLightbox()"
+     (touchstart)="onTouchStart($event)"
+     (touchend)="onTouchEnd($event)">
+  <img [src]="selectedImage" class="lightbox-image" />
+  <button class="close-btn" (click)="closeLightbox(); $event.stopPropagation()">×</button>
+</div>
+
+</div>
+
+<p>developer-Gomesh Agarwal</p>
+>>>>>>> main

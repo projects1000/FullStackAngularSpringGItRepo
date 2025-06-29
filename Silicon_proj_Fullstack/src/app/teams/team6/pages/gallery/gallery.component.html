@@ -1,37 +1,18 @@
-<div class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-16 px-4">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-5xl font-bold text-gray-800 mb-4">Course Gallery</h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Discover our diverse range of courses designed to enhance your skills.
-      </p>
-    </div>
+<div class="gallery-wrapper">
+  <h2 class="gallery-heading">Team 6: Innovative Tech Products</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div *ngFor="let item of galleryItems" 
-           class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-        
-        <img [src]="item.image" 
-             alt="{{ item.title }}" 
-             class="w-full h-48 object-cover">
-        
-        <div class="p-6">
-          <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-            {{ item.category }}
-          </span>
-          <h3 class="text-xl font-semibold text-gray-800 mt-2">{{ item.title }}</h3>
-          <p class="text-gray-600 mt-1">{{ item.description }}</p>
-          
-          <div class="mt-4">
-            <button (click)="onLearnMore(item)" 
-                    class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
-              Learn More
-            </button>
-          </div>
-        </div>
+  <div class="gallery-container" [@galleryAnim]>
+    <div
+      class="product-card"
+      *ngFor="let product of products; let i = index"
+      (click)="open(i)"
+    >
+      <img [src]="product.imageUrl" [alt]="product.title" class="product-image" />
+      <div class="product-details">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.description }}</p>
+        <a *ngIf="product.link" [href]="product.link" target="_blank" class="view-btn">Discover</a>
       </div>
     </div>
   </div>
 </div>
-
-

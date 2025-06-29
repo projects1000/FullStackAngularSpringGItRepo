@@ -1,6 +1,34 @@
 <!-- team2.component.html -->
 <app-topbar [teamRoute]="'team2'"></app-topbar>
+<div class="team2-posts-container">
+  <h2 class="title">📄 Team 2 - Cloud Posts</h2>
 
+<div class="messaging-ui">
+  <h3>Send and Receive Messages</h3>
+  <input [(ngModel)]="message" placeholder="Type your message" class="message-input" />
+
+  <div class="team-buttons">
+    <div *ngFor="let team of allTeams" class="team-button-group">
+      <button class="send-btn" (click)="sendMessageTo(team)">Send to {{ team }}</button>
+      <button class="receive-btn" (click)="receiveMessageFrom(team)">Receive from {{ team }}</button>
+    </div>
+  </div>
+
+  <div *ngIf="receivedMessage" class="received-box">
+    <p><strong>Message from {{ lastFromTeam }}:</strong> {{ receivedMessage }}</p>
+  </div>
+</div>
+
+  <button (click)="doSomething()" class="action-button">Click Me</button>
+</div>
+
+<ul class="post-list">
+  <li *ngFor="let user of users" class="post-item">
+    <h4>{{ user.name }}</h4>
+    <p>Email: {{ user.email }}</p>
+    <p>City: {{ user.city }}</p>
+  </li>
+</ul>
 <div class="team-dashboard">
   <div class="dashboard-header">
     <h1>Team 2 Analytics Dashboard</h1>
@@ -108,8 +136,6 @@
         </div>
       </div>
     </div>
-
-
     <!-- Sidebar -->
     <div class="sidebar">
       <div class="team-members card">
@@ -158,5 +184,4 @@
     </div>
   </div>
 </div>
-
 <app-footer></app-footer>

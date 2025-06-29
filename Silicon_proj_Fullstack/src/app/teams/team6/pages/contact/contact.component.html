@@ -7,14 +7,14 @@
       </div>
 
       <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="space-y-4">
-        <!-- Name -->
+         Name -->
         <!-- <div class = "fullname">
           <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
           <input type="text" name="name" [(ngModel)]="formData.name" required 
                  class="w-full px-4 py-2 border border-gray-300 rounded-lg">
         </div>
 
-        <!-- Email -->
+         Email -->
         <!-- <div class = "email">
           <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
           <input type="email" name="email" [(ngModel)]="formData.email" required 
@@ -63,7 +63,72 @@
       </form>
     </div>
   </div>
-</div> --> --> -->
+</div> --> 
 
 
 
+<div class="contact-container">
+  <!-- Left: Contact Form -->
+  <div class="form-section">
+    <h2>Get in Touch</h2>
+    <h3>welcome to contact page</h3>
+    <form>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Your name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Contact Number</label>
+        <input type="tel" id="contact" placeholder="1234567890" required />
+      </div>
+
+      <div class="form-group">
+        <label for="state">Select State</label>
+        <select id="state">
+          <option value="" disabled selected>Choose a state</option>
+          <option>Odisha</option>
+          <option>Maharashtra</option>
+          <option>Karnataka</option>
+          <option>Delhi</option>
+          <option>Tamil Nadu</option>
+          <option>Others</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" rows="3" placeholder="Your address here"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date of Contact</label>
+        <input type="date" id="date" />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Right: Company Info -->
+ <!-- Right: Company Info -->
+<div class="info-section">
+  <h2>Company Info</h2>
+  <p><strong>Company:</strong> SmartBiz Solutions Pvt. Ltd.</p>
+  <p><strong>Address:</strong> 3rd Floor, Tech Park, Bhubaneswar, Odisha, India</p>
+  <p><strong>Phone:</strong> +91-9876543210</p>
+  <p><strong>Email:</strong> support smartbiz.in</p>
+  <p><strong>Support Hours:</strong> Mon–Fri, 9AM to 6PM</p>
+
+  <!-- Company Website Box -->
+  <div class="company-site">
+    <a href="https://www.smartbiz.in" target="_blank">🌐 Visit Our Website</a>
+  </div>
+</div>
+
+</div>

@@ -1,4 +1,5 @@
-<app-topbar [teamRoute]="'team6'"></app-topbar>
+
+<!-- <app-topbar [teamRoute]="'team6'"></app-topbar> -->
 <div class="home-container">
   <h1 class="main-title">Angular + Spring Boot Course</h1>
   <p class="description">Learn to build full-stack web applications using Angular for frontend and Spring Boot for backend.</p>
@@ -45,6 +46,16 @@
       <p>Learn about CI/CD and DevOps practices for efficient development.</p>
     </div>
   </div>
-</div>
+<ul *ngIf="users.length > 0; else loadingTemplate">
+  <li *ngFor="let user of users | slice:0:5">
+    <strong>{{ user.name }}</strong> ({{ user.username }})
+    📧 {{ user.email }} | 🏙️ {{ user.address.city }}
+    <hr />
+  </li>
+</ul>
+<ng-template #loadingTemplate>
+  <div>Loading users...</div>
+</ng-template>
 
+</div>
 

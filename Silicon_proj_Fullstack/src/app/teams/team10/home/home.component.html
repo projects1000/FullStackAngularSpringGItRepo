@@ -1,1 +1,86 @@
-<p>home works!</p>
+<!-- Hero Section -->
+<main>
+  <section class="hero">
+    <p class="badge">
+      <ng-container *ngFor="let member of members">
+        <span class="avatar" (click)="showGitHub(member.key)">
+          <img [src]="member.img" width="24" />
+          <div class="name-popup">{{ member.name }}</div>
+          <div
+            class="microcard"
+            [ngClass]="{ 'fade-out': fadingOut === member.key }"
+            *ngIf="selected === member.key"
+          >
+            <a [href]="member.github" target="_blank" class="github-link">
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg"
+                alt="GitHub"
+              />
+              {{ member.username }}
+            </a>
+          </div>
+        </span>
+      </ng-container>
+
+      <span style="margin-left: 0.75rem; font-weight: 600">
+        Trusted by <span style="color: #000">5000+ users</span>
+      </span>
+    </p>
+
+    <h1>Seamless Task Management for Teams and Individuals</h1>
+    <p class="subtext">
+      In today’s fast-paced world, staying organized and on track can be
+      challenging, whether you're working alone or as part of a team.
+    </p>
+
+    <div class="email-box">
+      <a
+        href="https://github.com/projects1000/FullStackAngularSpringGItRepo/tree/team10"
+        target="_blank"
+        class="github-star-btn"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg"
+          alt="GitHub"
+        />
+        Star us on GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats-left">
+      <h2>Get Instant Progress Updates With Reports.</h2>
+      <p>
+        Track project progress and productivity instantly with our real-time
+        reports.
+      </p>
+      <a [routerLink]="['/team10/contact']" class="get-started">Get Started</a>
+    </div>
+
+    <div class="stats-right">
+      <div class="summary-box">
+        <h4>Git Commits on <code>team10</code> Branch</h4>
+        <p><strong>Total Commits:</strong> {{ commits.length }}</p>
+        <ul class="commit-list">
+          <li *ngFor="let commit of commits">
+            <span class="commit-message">{{ commit.message }}</span
+            ><br />
+            <small class="commit-meta">
+              by <strong>{{ commit.author }}</strong>
+              <span class="commit-hash">#{{ commit.hash }}</span>
+            </small>
+          </li>
+        </ul>
+      </div>
+
+      <div class="assignment-card">
+        <h4>Task.M</h4>
+        <p>Assigned <strong>32</strong></p>
+        <button class="follow">+ Follow</button>
+        <button class="message">Message</button>
+      </div>
+    </div>
+  </section>
+</main>

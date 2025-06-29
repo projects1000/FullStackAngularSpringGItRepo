@@ -1,97 +1,200 @@
-<div class="form-container">
-  <h2>Contact Us</h2>
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+<div class="contact-background">
+  <h1 class="contact-heading">Have Questions? We're Just a Message Away!</h1>
+  <!-- Top Contact Section -->
+  <div class="contact-page animate-fade-slide">
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2 class="section-heading">Contact Information</h2>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i> Silicon University, Silicon Hills<br>Patia, Bhubaneswar - 751024<br>Odisha, India</li>
+        <li><i class="fa-solid fa-envelope"></i> info@silicon.ac.in<br>admission@silicon.ac.in</li>
+        <li><i class="fa-solid fa-phone"></i> +91 9937289499<br>+91 6742725448</li>
+        <li><i class="fa-solid fa-clock"></i> Mon - Fri: 9:00 AM – 6:00 PM<br>Sat: 8:00 AM – 2:00 PM</li>
+      </ul>
 
-    <!-- Name -->
-    <div class="form-group">
-      <label>Name</label>
-      <i class="fas fa-user icon"></i>
-      <input formControlName="name" placeholder="Enter your name" />
-      <div *ngIf="submitted && contactForm.controls['name'].errors" class="error">
-        <span *ngIf="contactForm.controls['name'].errors['required']">Name is required.</span>
-        <span *ngIf="contactForm.controls['name'].errors['pattern']">Only letters and spaces allowed.</span>
+      <!-- Social Icons -->
+      <div class="social-icons">
+        <a href="https://www.facebook.com/siliconuniversity" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/SiliconIndia" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/siliconuniversity/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/school/silicon-institute-of-technology/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+      <!-- Book a Visit -->
+      <h2 class="section-heading" style="margin-top: 28px;">Book a Visit</h2>
+      <form [formGroup]="appointmentForm" (ngSubmit)="onBookVisit()" class="visit-form">
+        <!-- Date of Visit -->
+        <div class="form-group visit-date">
+          <label>Date of Visit</label>
+          <input type="date" formControlName="visitDate" placeholder="Select date" />
+          <div class="error" *ngIf="submittedAppointment && appointmentForm.get('visitDate')?.errors?.['required']">
+            Date of visit is required.
+          </div>
+        </div>
+
+        <!-- Reason for Visit -->
+  <div class="form-group message">
+    <label>Reason for Visit</label>
+    <i class="fa-solid fa-comment-dots icon"></i>
+    <textarea formControlName="visitReason" placeholder="Why are you visiting?"></textarea>
+    <div class="error" *ngIf="submittedAppointment && appointmentForm.get('visitReason')?.errors?.['required']">
+      Reason is required.
+    </div>
+  </div>
+
+          <div class="button-row">
+            <button type="submit" class="btn small send-btn">Book Visit</button>
+            <button type="button" class="btn small reset-btn" (click)="resetAppointmentForm()">Reset</button>
+          </div>
+
+        <div class="output" [class.show]="appointmentMessage">
+          <strong>{{ appointmentMessage }}</strong>
+        </div>
+      </form>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-wrapper">
+      <div class="form-container">
+        <h2 class="section-heading">Contact Us</h2>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <!-- Name -->
+          <div class="form-group">
+            <label>Name</label>
+            <i class="fa-solid fa-user icon"></i>
+            <input formControlName="name" placeholder="Enter your name" />
+            <div class="error" *ngIf="submitted && f['name'].errors">
+              <div *ngIf="f['name'].errors['required']">Name is required.</div>
+              <div *ngIf="f['name'].errors['pattern']">Name must contain only letters and spaces.</div>
+            </div>
+          </div>
+
+          <!-- Country -->
+          <div class="form-group">
+            <label>Country</label>
+            <i class="fa-solid fa-globe icon"></i>
+            <select formControlName="country" (change)="onCountryChange($event)">
+              <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+            </select>
+            <div class="error" *ngIf="submitted && f['country'].errors?.['required']">
+              Country is required.
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label>Email</label>
+            <i class="fa-solid fa-envelope icon"></i>
+            <input formControlName="email" placeholder="Enter your email" />
+            <div class="error" *ngIf="submitted && f['email'].errors">
+              <div *ngIf="f['email'].errors['required']">Email is required.</div>
+              <div *ngIf="f['email'].errors['email']">Invalid email format.</div>
+            </div>
+          </div>
+
+          <!-- Mobile -->
+          <div class="form-group mobile-group">
+            <label>Mobile</label>
+            <div class="mobile-field">
+              <span><i class="fa-solid fa-phone"></i> {{ countryCode }}</span>
+              <input formControlName="mobile" placeholder="Enter mobile number" />
+            </div>
+            <div class="error" *ngIf="submitted && f['mobile'].errors">
+              <div *ngIf="f['mobile'].errors['required']">Mobile number is required.</div>
+              <div *ngIf="f['mobile'].errors['pattern']">Only digits allowed.</div>
+              <div *ngIf="f['mobile'].errors['minlength'] || f['mobile'].errors['maxlength']">
+                Must be exactly 10 digits.
+              </div>
+            </div>
+          </div>
+
+          <!-- State -->
+          <div class="form-group">
+            <label>State</label>
+            <i class="fa-solid fa-location-dot icon"></i>
+            <select formControlName="state">
+              <option value="">Select State</option>
+              <option *ngFor="let s of states" [value]="s">{{ s }}</option>
+            </select>
+            <div class="error" *ngIf="submitted && f['state'].errors?.['required']">
+              State is required.
+            </div>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <i class="fa-solid fa-calendar icon"></i>
+            <input type="date" formControlName="dob" />
+            <div class="error" *ngIf="submitted && f['dob'].errors?.['required']">
+              DOB is required.
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group message">
+            <label>Message</label>
+            <i class="fa-solid fa-comment-dots icon"></i>
+            <textarea formControlName="message" placeholder="Your message"></textarea>
+            <div class="error" *ngIf="submitted && f['message'].errors?.['required']">
+              Message is required.
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="button-row">
+            <button type="submit" class="btn small send-btn">Send</button>
+            <button type="button" class="btn small reset-btn" (click)="resetForm()">Reset</button>
+            <button type="button" class="btn small draft-btn" (click)="saveDraft()">Save Draft</button>
+          </div>
+
+          <!-- Output Message -->
+          <div class="output" [class.show]="message">
+            <strong>{{ message }}</strong>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Row with Tiles -->
+  <div class="bottom-row contact-page">
+    <!-- Map Tile -->
+    <div class="bottom-tile map-tile">
+      <h2 class="section-heading center">Find Us</h2>
+      <div class="map-container">
+        <iframe
+          frameborder="0"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!2d3731.9863860676073!2d85.80401577518458!3d20.3506772810287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1908e064769e73%3A0x9288172f3a98c7a4!2sSilicon%20University!5e0!3m2!1sen!2sin!4v1719306500000!5m2!1sen!2sin">
+        </iframe>
       </div>
     </div>
 
-    <!-- Country -->
-    <div class="form-group">
-      <label>Country</label>
-      <i class="fas fa-globe icon"></i>
-      <select formControlName="country" (change)="onCountryChange($event)">
-        <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
-      </select>
-      <div *ngIf="submitted && contactForm.controls['country'].invalid" class="error">
-        Please select a country.
+    <!-- Campus Stats Tile -->
+    <div class="bottom-tile campus-tile">
+      <h2 class="section-heading center">Campus in Numbers</h2>
+      <div class="campus-stats">
+        <div class="stat-box"><h3>7500+</h3><p>Students</p></div>
+        <div class="stat-box"><h3>250+</h3><p>Faculty</p></div>
+        <div class="stat-box"><h3>65+</h3><p>Programs</p></div>
+        <div class="stat-box"><h3>100+</h3><p>Recruiters</p></div>
       </div>
     </div>
 
-    <!-- Email -->
-    <div class="form-group">
-      <label>Email</label>
-      <i class="fas fa-envelope icon"></i>
-      <input formControlName="email" placeholder="Enter your email" />
-      <div *ngIf="submitted && contactForm.controls['email'].errors" class="error">
-        <span *ngIf="contactForm.controls['email'].errors['required']">Email is required.</span>
-        <span *ngIf="contactForm.controls['email'].errors['email']">Please enter a valid email.</span>
+    <!-- FAQ Tile -->
+    <div class="bottom-tile faq-tile">
+      <h2 class="section-heading center">Frequently Asked Questions</h2>
+      <div class="faq-accordion">
+        <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+          <div class="faq-question" (click)="toggleFAQ(i)">
+            {{ activeFaqIndex === i ? '–' : '+' }} <strong>{{ faq.question }}</strong>
+          </div>
+          <div class="faq-answer" *ngIf="activeFaqIndex === i">{{ faq.answer }}</div>
+        </div>
       </div>
     </div>
-
-    <!-- Mobile -->
-    <div class="form-group mobile-group">
-      <label>Mobile</label>
-      <i class="fas fa-phone icon"></i>
-      <div class="mobile-field">
-        <span>{{ countryCode }}</span>
-        <input formControlName="mobile" placeholder="Enter mobile number" />
-      </div>
-      <div *ngIf="submitted && contactForm.controls['mobile'].errors" class="error">
-        <span *ngIf="contactForm.controls['mobile'].errors['required']">Mobile number is required.</span>
-        <span *ngIf="contactForm.controls['mobile'].errors['pattern']">Only digits allowed.</span>
-        <span *ngIf="contactForm.controls['mobile'].errors['minlength']">At least 10 digits required.</span>
-        <span *ngIf="contactForm.controls['mobile'].errors['maxlength']">Only 10 digits allowed.</span>
-      </div>
-    </div>
-
-    <!-- State -->
-    <div class="form-group">
-      <label>State</label>
-      <i class="fas fa-location-dot icon"></i>
-      <select formControlName="state">
-        <option value="">Select State</option>
-        <option *ngFor="let s of states" [value]="s">{{ s }}</option>
-      </select>
-      <div *ngIf="submitted && contactForm.controls['state'].invalid" class="error">
-        Please select a state.
-      </div>
-    </div>
-
-    <!-- DOB -->
-    <div class="form-group">
-      <label>Date of Birth</label>
-      <i class="fas fa-calendar icon"></i>
-      <input type="date" formControlName="dob" />
-      <div *ngIf="submitted && contactForm.controls['dob'].invalid" class="error">
-        Please select your date of birth.
-      </div>
-    </div>
-
-    <!-- Message -->
-    <div class="form-group message">
-      <label>Message</label>
-      <i class="fas fa-comment-dots icon"></i>
-      <textarea formControlName="message" placeholder="Your message"></textarea>
-      <div *ngIf="submitted && contactForm.controls['message'].invalid" class="error">
-        Please enter a message.
-      </div>
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit">Submit</button>
-
-    <!-- Output message -->
-    <div class="output" [class.show]="message">
-      <strong>{{ message }}</strong>
-    </div>
-
-  </form>
+  </div>
 </div>
