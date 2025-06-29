@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Team7RoutingModule } from './team7-routing.module';
 import { Team7Component } from './team7.component';
@@ -22,7 +22,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     Team7RoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+     FormsModule, 
   ]
 })
 export class Team7Module { }
