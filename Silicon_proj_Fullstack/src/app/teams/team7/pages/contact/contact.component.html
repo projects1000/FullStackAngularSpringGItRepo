@@ -1,1 +1,63 @@
-<p>contact works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contact-container">
+  <!-- Contact Form -->
+  <div class="section">
+    <h3>Contact Form</h3>
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+      <label>Name:</label>
+      <input type="text" required [(ngModel)]="newMember.name" name="name" />
+
+      <label>Email:</label>
+      <input type="email" required [(ngModel)]="newMember.email" name="email" />
+
+      <label>Phone Number:</label>
+      <input type="text" required [(ngModel)]="newMember.phone" name="phone" />
+
+      <label>Message:</label>
+      <textarea rows="3" required [(ngModel)]="newMember.message" name="message"></textarea>
+
+      <button type="submit" [disabled]="!contactForm.form.valid">Submit</button>
+    </form>
+  </div>
+
+  <!-- Team Lead Info -->
+  <div class="section">
+    <h3>Team Lead</h3>
+    <p>
+      <strong>{{ teamLead.name }}</strong> &nbsp; | &nbsp;
+      📞 {{ teamLead.phone }} &nbsp; | &nbsp;
+      📧 <a href="mailto:{{ teamLead.email }}">{{ teamLead.email }}</a>
+    </p>
+  </div>
+
+  <!-- Team Members Info -->
+  <div class="section">
+    <h3>Team Members</h3>
+    <ul class="members-list">
+      <li *ngFor="let member of members">
+        <span class="member-line">
+          <strong>{{ member.name }}</strong> &nbsp; | &nbsp;
+          📞 {{ member.phone }} &nbsp; | &nbsp;
+          📧 <a href="mailto:{{ member.email }}">{{ member.email }}</a>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Office Location -->
+  <div class="section">
+    <h3>Office Location</h3>
+    <p>Silicon Institute of Technology, Bhubaneswar</p>
+  </div>
+</div>
+
+
+</body>
+</html>
