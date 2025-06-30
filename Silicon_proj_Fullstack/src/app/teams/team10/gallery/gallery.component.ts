@@ -9,11 +9,11 @@ export class GalleryComponent {
 
 images: string[] = [
     
-"../../../../assets/team10/assets/outsideview1.jpg",
- "../../../../assets/team10/assets/csebuilding.png",
- "../../../../assets/team10/assets/competiton.jpg",
- "../../../../assets/team10/assets/zygon.jpg",
- "../../../../assets/team10/assets/outsideview2.jpg"
+"../../../../assets/team10/assets/3.jpg",
+ "../../../../assets/team10/assets/4.jpg",
+ "../../../../assets/team10/assets/12.jpg",
+ "../../../../assets/team10/assets/6.jpg",
+ "../../../../assets/team10/assets/8.jpg"
   ];
 }
 

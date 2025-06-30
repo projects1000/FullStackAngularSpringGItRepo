@@ -358,3 +358,88 @@ border-radius: 20px;
   }
 }
 
+.commit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.commit-item {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.commit-message {
+  font-weight: 500;
+  color: #24292f;
+}
+
+.commit-hash {
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.hover-card {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background: #161b22;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 10px;
+  width: 250px;
+  z-index: 999;
+}
+
+.hover-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.hover-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.hover-name {
+  font-size: 0.85em;
+  color: #c9d1d9;
+}
+
+.hover-bio {
+  margin-top: 5px;
+  font-size: 0.85em;
+}
+
+.hover-footer {
+  margin-top: 6px;
+  font-size: 0.75em;
+  color: #8b949e;
+}
+.commit-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.skeleton-line {
+  height: 12px;
+  background: linear-gradient(90deg, #2f2f2f 25%, #444 50%, #2f2f2f 75%);
+  border-radius: 4px;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}

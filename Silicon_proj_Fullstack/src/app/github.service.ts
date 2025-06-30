@@ -24,6 +24,14 @@ getCommitDetails(sha: string): Observable<any> {
 
   return this.http.get<any>(url, { headers });
 }
+getUserDetails(username: string): Observable<any> {
+  const url = `https://api.github.com/users/${username}`;
+  const headers = new HttpHeaders({
+    Authorization: `Bearer ${environment.githubToken}`
+  });
+  return this.http.get<any>(url, { headers });
+}
+
 
 }
 
