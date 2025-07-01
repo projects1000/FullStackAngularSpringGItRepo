@@ -6,19 +6,22 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { GalleryComponent } from './gallery/gallery.component';
 
-
-const routes: Routes = [{path: '', component: Team10Component, 
-      children: [
-        { path: '', redirectTo: 'home', pathMatch: 'full' },
-       { path: 'home', component: HomeComponent },
-       { path: 'about', component: AboutComponent },
-      {path:'contact',component:ContactComponent},
-       {path:'gallery',component:GalleryComponent}
-    ]
-}];
+const routes: Routes = [
+  {
+    path: '',
+    component: Team10Component,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: 'gallery', component: GalleryComponent },
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class Team10RoutingModule { }
+export class Team10RoutingModule {}
