@@ -51,6 +51,20 @@ export class HomeComponent {
       key: 'swetalina',
       username: 'Swetalina-cyber',
     },
+        {
+      name: 'Anindita',
+      img: '../../../../assets/team10/assets/Member6.jpg',
+      github: 'https://github.com/aninditaparida',
+      key: 'Anindita',
+      username: 'aninditaparida',
+    },
+        {
+      name: 'Arjun',
+      img: '../../../../assets/team10/assets/Member5.jpg',
+      github: 'https://github.com/ArjuMallick',
+      key: 'Arjun',
+      username: 'Arjun',
+    },
   ];
   commits: any[] = [];
 filteredCommits: { message: string; username: string; sha: string }[] = [];
