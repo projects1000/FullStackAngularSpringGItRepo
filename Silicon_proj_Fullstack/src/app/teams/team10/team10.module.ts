@@ -18,14 +18,15 @@ import { GalleryComponent } from './gallery/gallery.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    GalleryComponent
+    GalleryComponent,
   ],
   imports: [
     CommonModule,
-        Team10RoutingModule,
-        SharedModule,
-        FormsModule,
-        HttpClientModule,
-  ]
+    Team10RoutingModule,
+    SharedModule,
+    FormsModule,
+    HttpClientModule,
+  
+  ],
 })
-export class Team10Module { }
+export class Team10Module {}
