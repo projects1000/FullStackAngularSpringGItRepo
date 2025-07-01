@@ -6,14 +6,23 @@ import { DataService } from 'src/app/data.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements AfterViewInit {
   users: any[] = [];
+  isLoading = false;
 
   constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {
-    this.dataService.getUsers().subscribe(any => {
-      this.users = any;
+  loadUsers() {
+    this.isLoading = true;
+    this.dataService.getUsers().subscribe({
+      next: (data) => {
+        this.users = data;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error('Failed to load users', err);
+        this.isLoading = false;
+      }
     });
   }
 

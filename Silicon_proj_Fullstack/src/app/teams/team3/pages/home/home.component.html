@@ -1,7 +1,13 @@
 <div class="home-landing">
+  <div class="background-blur"></div>
+  <div class="overlay"></div>
+  
   <!-- 🔥 Hero Section -->
   <section class="hero">
-    <h1 class="typewriter"></h1>
+    <div class="hero-heading">
+      <img src="assets/team3-gallery/logo.jpg" alt="Team 3 Logo glass visible" class="team-logo" />
+      <h1 class="typewriter"></h1>
+    </div>
     <p>We code. We innovate. We make impact.</p>
     <a routerLink="/team3/about" class="explore-btn">Explore Our Journey</a>
   </section>
@@ -10,30 +16,35 @@
   <section class="vibes">
     <h2>Our Team Vibe</h2>
     <div class="cards">
-      <div class="card">💡 Creative Thinkers</div>
-      <div class="card">⚙️ Code Warriors</div>
-      <div class="card">🎯 Goal Focused</div>
-      <div class="card">🧠 Problem Solvers</div>
+      <div class="card glass visible">💡 Creative Thinkers</div>
+      <div class="card glass visible">⚙️ Code Warriors</div>
+      <div class="card glass visible">🎯 Goal Focused</div>
+      <div class="card glass visible">🧠 Problem Solvers</div>
     </div>
   </section>
 
   <!-- ⚙️ Tech Stack Section -->
   <section class="tech">
-    <h2>Tech Stack</h2>
+    <h2 class="visible">Tech Stack</h2>
     <div class="icons">
-      <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular" />
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML" />
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" />
-      <img src="https://cdn.prod.website-files.com/5f10ed4b2ae6bc09c03f5d7a/64959d5f65a257fb51a4259c_github.png" alt="Git" />
+      <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular" class="visible" />
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML" class="visible" />
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" class="visible" />
+      <img src="https://images-cdn.openxcell.com/wp-content/uploads/2024/07/25070933/springboot-inner.svg" alt="Spring Boot" class="visible" />
+      <img src="https://www.codeconvert.ai/lang_logos/mysql.svg" alt="My Sql" class="visible" />
+      <img src="https://cdn.prod.website-files.com/5f10ed4b2ae6bc09c03f5d7a/64959d5f65a257fb51a4259c_github.png" alt="Git" class="visible" />
     </div>
   </section>
 
   <!-- 📡 Cloud Data Section -->
   <section class="cloud-data">
-    <h2>📡 Cloud Users (Live JSON)</h2>
-    <div *ngIf="users.length > 0; else loading">
+    <h2 class="visible">📡 Cloud Users (Live JSON)</h2>
+
+    <button (click)="loadUsers()" class="load-btn">Load Data</button>
+
+    <div *ngIf="users.length > 0; else loading" style="margin-top: 20px;">
       <ul>
-        <li *ngFor="let user of users | slice:0:5">
+        <li *ngFor="let user of users | slice:0:5" class="visible">
           <strong>{{ user.name }}</strong> ({{ user.username }})<br />
           📧 {{ user.email }}<br />
           🏙️ {{ user.address.city }}<br />
@@ -42,8 +53,9 @@
         </li>
       </ul>
     </div>
+
     <ng-template #loading>
-      <p>⏳ Loading user data from cloud...</p>
+      <p *ngIf="isLoading">⏳ Loading user data from cloud...</p>
     </ng-template>
   </section>
 </div>

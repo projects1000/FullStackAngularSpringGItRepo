@@ -1,3 +1,8 @@
+
+.container{
+    color: chartreuse; 
+}
+
 .gallery-container {
   padding: 2rem;
   max-width: 1200px;
@@ -130,5 +135,3 @@ h1 {
 .grid-gallery img:hover {
   transform: scale(1.1); /* 🔍 Smooth zoom-in effect */
 }
-
-

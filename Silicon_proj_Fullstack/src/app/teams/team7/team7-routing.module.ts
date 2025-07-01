@@ -7,6 +7,7 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+
 const routes: Routes = [
   {
       path: '',
@@ -17,6 +18,7 @@ const routes: Routes = [
         { path: 'about', component: AboutComponent },
         { path: 'gallery', component: GalleryComponent },
         { path: 'contact', component: ContactComponent },
+        { path: 'smartbiz', loadChildren: () => import('./pages/smartbiz/smartbiz.module').then((m) => m.SmartbizModule), }
       ]
     }
 ];

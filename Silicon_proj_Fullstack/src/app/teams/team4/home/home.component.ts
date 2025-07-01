@@ -30,7 +30,8 @@ export class HomeComponent implements OnInit {
     const users = [
       { username: 'Mukund', password: 'Mukund123' },
       { username: 'Abhay', password: 'Abhay456' },
-      { username: 'User', password: 'User123' }
+      { username: 'AKJ', password: 'Akj123' },
+
     ];
 
     const valid = users.find(

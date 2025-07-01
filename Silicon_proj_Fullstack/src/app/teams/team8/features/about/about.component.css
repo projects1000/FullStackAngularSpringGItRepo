@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
+  color: #333;
+}
+
+.team8-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.team8-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.team8-header h1 {
+  font-size: 3rem;
+  color: #2c3e50;
+}
+
+.team8-header p {
+  font-size: 1.2rem;
+  color: #5c6b7c;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  color: #0077cc;
+  margin-bottom: 15px;
+}
+
+.card p, .card ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
