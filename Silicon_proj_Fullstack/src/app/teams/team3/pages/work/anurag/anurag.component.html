@@ -1,0 +1,77 @@
+<!-- connecting to spring boot -->
+<!-- 🧍‍♂️ Add Student Form with Icons -->
+<section class="student-section glass visible silicon-bg">
+  <h2 style="color: rgb(255, 255, 255);">Add Student</h2>
+  <form (ngSubmit)="addStudent()" #studentForm="ngForm">
+
+    <div class="mb-3 input-icon">
+      <label>Name:</label>
+      <i class="fas fa-user"></i>
+      <input type="text" class="form-control" [(ngModel)]="student.name" name="name" required />
+    </div>
+
+    <div class="mb-3 input-icon">
+      <label>Email:</label>
+      <i class="fas fa-envelope"></i>
+      <input type="email" class="form-control" [(ngModel)]="student.email" name="email" required />
+    </div>
+
+    <div class="mb-3 input-icon">
+      <label>Age:</label>
+      <i class="fas fa-hashtag"></i>
+      <input type="number" class="form-control" [(ngModel)]="student.age" name="age" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Add Student</button>
+  </form>
+
+  <hr />
+
+  <!-- 🔁 Load Students Button -->
+  <button (click)="getStudents()" class="btn btn-primary">
+    Load Students
+  </button>
+
+  <!-- Table remains same -->
+  <table *ngIf="students.length > 0" class="table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of students">
+        <td>{{ s.id }}</td>
+        <td *ngIf="editId !== s.id">{{ s.name }}</td>
+        <td *ngIf="editId === s.id">
+          <input [(ngModel)]="editStudent.name" class="form-control" />
+        </td>
+
+        <td *ngIf="editId !== s.id">{{ s.email }}</td>
+        <td *ngIf="editId === s.id">
+          <input [(ngModel)]="editStudent.email" class="form-control" />
+        </td>
+
+        <td *ngIf="editId !== s.id">{{ s.age }}</td>
+        <td *ngIf="editId === s.id">
+          <input type="number" [(ngModel)]="editStudent.age" class="form-control" />
+        </td>
+
+        <td>
+          <button *ngIf="editId !== s.id" class="btn-edit" (click)="startEdit(s)">✏️</button>
+          <button *ngIf="editId === s.id" class="btn-save" (click)="saveEdit()">💾</button>
+          <button class="btn-delete" *ngIf="s.id !== undefined" (click)="deleteStudent(s.id)">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <!-- 🔻 Empty State -->
+  <p *ngIf="students.length === 0 && !isLoading" style="color: #cbd5e1;">
+    No data present.
+  </p>
+</section>

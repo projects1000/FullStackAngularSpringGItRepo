@@ -1,0 +1,222 @@
+/* ===== Anurag Work Section - Professional & Team 3 Colors ===== */
+.anurag-section {
+  background: linear-gradient(135deg, #1e3a8a 60%, #38bdf8 100%);
+  min-height: 100vh;
+  padding: 48px 0 32px 0;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.anurag-section h2 {
+  color: #facc15;
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.student-section {
+  background: rgba(255,255,255,0.10);
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(30,58,138,0.18);
+  padding: 36px 32px 32px 32px;
+  max-width: 90%;
+  width: 100%;
+  margin: 30px auto 32px auto;
+  border: 1.5px solid #38bdf8;
+}
+
+.student-section label {
+  color: #ffffff; /* bright yellow for visibility */
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  text-shadow: 1px 1px 4px #1e293b;
+}
+
+.input-icon {
+  position: relative;
+  margin-bottom: 22px;
+}
+.input-icon i {
+  position: absolute;
+  top: 67%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #38bdf8;
+  font-size: 16px;
+}
+.input-icon input {
+  padding-left: 38px;
+  height: 42px;
+  border-radius: 8px;
+  border: 1.5px solid #38bdf8;
+  background: rgba(255,255,255,0.18);
+  color: #1e293b;
+  font-size: 1rem;
+  width: 96%;
+  transition: border 0.2s;
+}
+.input-icon input:focus {
+  border: 1.5px solid #facc15;
+  outline: none;
+}
+
+.btn-success {
+  background: linear-gradient(90deg, #38bdf8 0%, #1e3a8a 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  margin-top: 18px;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.12);
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+.btn-success:hover {
+  background: linear-gradient(90deg, #1e3a8a 0%, #38bdf8 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #facc15 0%, #38bdf8 100%);
+  color: #1e293b;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  margin: 18px 0 18px 0;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(250, 204, 21, 0.10);
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #38bdf8 0%, #facc15 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.btn-refresh {
+  background: linear-gradient(90deg, #6366f1 0%, #38bdf8 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1.1rem;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  margin-left: 10px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-refresh:hover {
+  background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
+  color: #facc15;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.table {
+  margin-top: 24px;
+  border-collapse: collapse;
+  width: 100%;
+  background: rgba(255,255,255,0.13);
+  color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(30,58,138,0.10);
+}
+.table thead {
+  background: #00acf5;
+  color: #fff;
+}
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e7ef;
+}
+.table tr:hover {
+  background: #000000;
+}
+
+.btn-edit, .btn-save, .btn-delete {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-edit {
+  background: #facc15;
+  color: #1e293b;
+}
+.btn-edit:hover {
+  background: #fde68a;
+}
+.btn-save {
+  background: #38bdf8;
+  color: #fff;
+}
+.btn-save:hover {
+  background: #0ea5e9;
+}
+.btn-delete {
+  background: #ef4444;
+  color: #fff;
+}
+.btn-delete:hover {
+  background: #b91c1c;
+}
+
+.silicon-bg {
+  background-image: url('/assets/team3-gallery/silicon.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+.silicon-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.55); /* black overlay for readability */
+  z-index: 2;
+  border-radius: 18px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.silicon-bg > * {
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 600px) {
+  .work-buttons .btn {
+    width: 100%;
+    margin: 8px 0;
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+  .student-section {
+    padding: 18px 6px 18px 6px;
+    max-width: 98vw;
+  }
+  .table th, .table td {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+}
+

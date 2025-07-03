@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { DataService } from 'src/app/data.service';
 
 @Component({
