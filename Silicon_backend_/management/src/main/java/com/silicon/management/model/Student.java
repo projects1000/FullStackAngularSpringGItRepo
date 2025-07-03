@@ -1,16 +1,22 @@
 package com.silicon.management.model;
 
-import jakarta.persistence.*;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "student")
 
 //POJO - PLAIN OLD JAVA MODEL, PAYLOADBODY
 public class Student {  
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Schema(description = "Auto-generated ID of the student", accessMode = Schema.AccessMode.READ_ONLY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
     @Column(name = "name", nullable = false)
     private String name;
