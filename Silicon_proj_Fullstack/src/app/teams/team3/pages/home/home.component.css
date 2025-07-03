@@ -69,12 +69,14 @@
 
 /* ===== Glassmorphism Utility Class ===== */
 .glass {
+  margin-top: 20px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
+  padding: 20px;
 }
 
 /* ===== Hero Section ===== */
@@ -281,6 +283,46 @@
 
 .load-btn:hover {
   background-color: rgba(59, 130, 246, 0.8);
+}
+
+/* ===== Work Buttons Section ===== */
+.work-buttons {
+  text-align: center;
+  margin: 40px 0;
+}
+.work-buttons h2 {
+  color: #facc15;
+  margin-bottom: 18px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+.work-buttons .btn {
+  background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  margin: 6px 8px;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.15);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  cursor: pointer;
+  outline: none;
+}
+.work-buttons .btn:hover {
+  background: linear-gradient(90deg, #6366f1 0%, #38bdf8 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.18);
+}
+
+@media (max-width: 600px) {
+  .work-buttons .btn {
+    width: 100%;
+    margin: 8px 0;
+    font-size: 1rem;
+    padding: 10px 0;
+  }
 }
 
 /* ===== Responsive ===== */

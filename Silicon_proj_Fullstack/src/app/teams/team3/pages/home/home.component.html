@@ -12,6 +12,7 @@
     <a routerLink="/team3/about" class="explore-btn">Explore Our Journey</a>
   </section>
 
+  
   <!-- 🎨 Vibes Section -->
   <section class="vibes">
     <h2>Our Team Vibe</h2>
@@ -22,7 +23,7 @@
       <div class="card glass visible">🧠 Problem Solvers</div>
     </div>
   </section>
-
+  
   <!-- ⚙️ Tech Stack Section -->
   <section class="tech">
     <h2 class="visible">Tech Stack</h2>
@@ -35,13 +36,13 @@
       <img src="https://cdn.prod.website-files.com/5f10ed4b2ae6bc09c03f5d7a/64959d5f65a257fb51a4259c_github.png" alt="Git" class="visible" />
     </div>
   </section>
-
+  
   <!-- 📡 Cloud Data Section -->
   <section class="cloud-data">
     <h2 class="visible">📡 Cloud Users (Live JSON)</h2>
-
+    
     <button (click)="loadUsers()" class="load-btn">Load Data</button>
-
+    
     <div *ngIf="users.length > 0; else loading" style="margin-top: 20px;">
       <ul>
         <li *ngFor="let user of users | slice:0:5" class="visible">
@@ -53,9 +54,24 @@
         </li>
       </ul>
     </div>
-
+    
     <ng-template #loading>
       <p *ngIf="isLoading">⏳ Loading user data from cloud...</p>
     </ng-template>
   </section>
+  <!-- 8 Member Work Buttons -->
+  <section class="work-buttons" style="text-align:center; margin: 40px 0;">
+    <h2>Team 3 Work Sections</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 20px;">
+      <button routerLink="/team3/work/anurag" class="btn btn-primary">Anurag</button>
+      <button routerLink="/team3/work/digdarshan" class="btn btn-primary">Digdarshan</button>
+      <button routerLink="/team3/work/akash" class="btn btn-primary">Akash</button>
+      <button routerLink="/team3/work/aswini" class="btn btn-primary">Aswini</button>
+      <button routerLink="/team3/work/abhisek" class="btn btn-primary">Abhisek</button>
+      <button routerLink="/team3/work/khushi" class="btn btn-primary">Khushi</button>
+      <button routerLink="/team3/work/shruti" class="btn btn-primary">Shruti</button>
+      <button routerLink="/team3/work/kritidaya" class="btn btn-primary">Kritidaya</button>
+    </div>
+  </section>
+
 </div>
