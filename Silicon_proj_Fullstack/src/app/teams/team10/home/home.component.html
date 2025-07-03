@@ -23,7 +23,7 @@
       </ng-container>
 
       <span style="margin-left: 0.75rem; font-weight: 600">
-        Trusted by <span style="color: #000">5000+ users</span>
+     <span style="color: #000 ;font: 1em sans-serif;">Our team</span>
       </span>
     </p>
 
@@ -59,28 +59,79 @@
       <a [routerLink]="['/team10/contact']" class="get-started">Get Started</a>
     </div>
 
-    <div class="stats-right">
-      <div class="summary-box">
-        <h4>Git Commits on <code>team10</code> Branch</h4>
-        <p><strong>Total Commits:</strong> {{ commits.length }}</p>
-        <ul class="commit-list">
-          <li *ngFor="let commit of commits">
-            <span class="commit-message">{{ commit.message }}</span
-            ><br />
-            <small class="commit-meta">
-              by <strong>{{ commit.author }}</strong>
-              <span class="commit-hash">#{{ commit.hash }}</span>
-            </small>
-          </li>
-        </ul>
-      </div>
+<div class="stats-right">
+  <div class="summary-box">
+    <h4>Git Commits on <code>team10</code> Branch</h4>
 
-      <div class="assignment-card">
-        <h4>Task.M</h4>
-        <p>Assigned <strong>32</strong></p>
-        <button class="follow">+ Follow</button>
-        <button class="message">Message</button>
-      </div>
+    <!-- skeleton loader while loading -->
+    <div *ngIf="isLoading" class="commit-skeleton">
+      <div class="skeleton-line" style="width: 60%"></div>
+      <div class="skeleton-line" style="width: 80%"></div>
+      <div class="skeleton-line" style="width: 70%"></div>
+      <div class="skeleton-line" style="width: 90%"></div>
+      <div class="skeleton-line" style="width: 75%"></div>
     </div>
+
+    <!-- real content -->
+    <div *ngIf="!isLoading">
+      <p><strong>Total Commits:</strong> {{ filteredCommits.length }}</p>
+      <ul class="commit-list">
+        <li *ngFor="let commit of filteredCommits" class="commit-item">
+          <span class="commit-message">{{ commit.message }}</span><br />
+
+          <small class="commit-meta" style="position: relative">
+            by
+            <strong
+              (mouseenter)="fetchUser(commit.username, commit.sha)"
+              (mouseleave)="hoveredCommitKey = null"
+              style="cursor: pointer"
+            >
+              <a
+                [href]="'https://github.com/' + commit.username"
+                target="_blank"
+                style="text-decoration: none; color: #0969da"
+              >
+                {{
+                  hoveredCommitKey === commit.sha && hoveredUser?.login
+                    ? hoveredUser.login
+                    : commit.username
+                }}
+              </a>
+            </strong>
+
+            <span class="commit-hash"> #{{ commit.sha }} </span>
+
+            <!-- Hover card -->
+            <div
+              class="hover-card"
+              *ngIf="hoveredCommitKey === commit.sha && hoveredUser"
+            >
+              <div class="hover-header">
+                <img
+                  [src]="hoveredUser.avatar_url"
+                  alt="avatar"
+                  class="hover-avatar"
+                />
+                <div>
+                  <strong>{{ hoveredUser.login }}</strong>
+                  <div *ngIf="hoveredUser.name" class="hover-name">
+                    ({{ hoveredUser.name }})
+                  </div>
+                </div>
+              </div>
+              <div class="hover-bio">
+                {{ hoveredUser.bio || "No bio available" }}
+              </div>
+              <div class="hover-footer">
+                <small>Fetched from GitHub</small>
+              </div>
+            </div>
+          </small>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
   </section>
 </main>
