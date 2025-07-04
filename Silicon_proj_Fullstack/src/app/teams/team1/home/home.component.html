@@ -1,101 +1,102 @@
-<!-- Team 1 Home - Professional Layout -->
-<div class="team1-home-wrapper">
-  <!-- Hero Section -->
-  <section class="hero-background text-center mb-4 py-5 px-3 rounded shadow-lg" style="max-width: 700px; margin: 0 auto;">
-    <h1 class="fw-bold mb-3" style="font-size:2.4rem;">SpringBoot & Angular</h1>
-    <p class="lead mb-4" style="font-size:1.25rem;">A modern, full-stack web application built with Java Spring Boot and Angular.</p>
-    <div class="d-flex justify-content-center gap-3 flex-wrap">
-      <span class="badge bg-light text-primary p-3" style="font-size:1.1rem;">Full-Stack</span>
-      <span class="badge bg-light text-primary p-3" style="font-size:1.1rem;">REST APIs</span>
-      <span class="badge bg-light text-primary p-3" style="font-size:1.1rem;">Dynamic UI</span>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="row g-3 mb-4 justify-content-center">
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card feature-card h-100 p-3 text-center border-0 shadow-sm">
-        <div class="feature-icon mb-1">
-          <i class="fas fa-server"></i>
+<!-- 📡 Cloud Data Section (from Team 3, enhanced) -->
+<section class="cloud-data mt-5 animate__animated animate__fadeIn animate__delay-1s" style="background: linear-gradient(120deg, #e0eafc 60%, #f8fafc 100%); border-radius: 1.5rem; box-shadow: 0 2px 16px #00c6ff22; padding: 2.5rem 1.5rem; max-width: 700px; margin: 2rem auto 3rem auto;">
+  <h2 class="visible text-center mb-4" style="color:#0072ff;font-weight:700;letter-spacing:1px;">📡 Cloud Users (Live JSON)</h2>
+  <div class="text-center mb-3">
+    <button (click)="loadUsers()" class="btn btn-info" style="border-radius:1.5rem;padding:0.6rem 2.2rem;font-size:1.1rem;font-weight:600;box-shadow:0 2px 8px #00c6ff22;">Load Data</button>
+  </div>
+  <div *ngIf="users.length > 0; else loadingBlock" style="margin-top: 20px;">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col" *ngFor="let user of users | slice:0:5">
+        <div class="card h-100 shadow-sm border-0 p-3 glass" style="background:rgba(255,255,255,0.85);border-radius:1.2rem;">
+          <h5 class="mb-1" style="color:#0072ff;"><i class="fas fa-user-circle me-2"></i>{{ user.name }}</h5>
+          <div class="mb-1" style="color:#333;"><b>&commat;{{ user.username }}</b></div>
+          <div class="mb-1" style="color:#388e3c;">📧 {{ user.email }}</div>
+          <div class="mb-1" style="color:#f7971e;">🏙️ {{ user.address.city }} <span style="color:#888;">({{ user.address.zipcode }})</span></div>
         </div>
-        <h5 class="mb-1">Spring Boot</h5>
-        <p class="small text-muted">Robust backend with Java Spring Boot for scalable APIs and microservices.</p>
       </div>
     </div>
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card feature-card h-100 p-3 text-center border-0 shadow-sm">
-        <div class="feature-icon mb-1">
-          <i class="fab fa-angular"></i>
-        </div>
-        <h5 class="mb-1">Angular</h5>
-        <p class="small text-muted">Modern frontend with Angular for dynamic, responsive user interfaces.</p>
-      </div>
+  </div>
+  <ng-template #loadingBlock>
+    <div class="text-center mt-3" *ngIf="isLoading">
+      <span class="spinner-border text-info" role="status"></span>
+      <span class="ms-2">⏳ Loading user data from cloud...</span>
     </div>
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card feature-card h-100 p-3 text-center border-0 shadow-sm">
-        <div class="feature-icon mb-1">
-          <i class="fas fa-bolt"></i>
-        </div>
-        <h5 class="mb-1">Fast & Secure</h5>
-        <p class="small text-muted">Optimized for speed and security, following best web practices.</p>
+  </ng-template>
+</section>
+<div class="home-container">
+  <!-- Login Section -->
+  <div class="login-card animate__animated animate__fadeInDown" style="background: linear-gradient(120deg, #e0eafc 60%, #f8fafc 100%); border-radius: 2rem; box-shadow: 0 4px 32px 0 rgba(31,38,135,0.18); padding: 2.5rem 2rem 2rem 2rem; position: relative; overflow: hidden; max-width: 400px; margin: 0 auto 2.5rem auto; border: 2px solid #00c6ff;">
+    <div style="position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:radial-gradient(circle,#00c6ff22 60%,transparent 100%);border-radius:50%;z-index:0;"></div>
+    <div style="position:absolute;bottom:-40px;left:-40px;width:120px;height:120px;background:radial-gradient(circle,#00c6ff22 60%,transparent 100%);border-radius:50%;z-index:0;"></div>
+    <h4 class="fw-bold text-center mb-4" style="color:#0072ff;letter-spacing:1px;z-index:1;position:relative;">Sign In <i class="fas fa-sign-in-alt"></i></h4>
+    <form (ngSubmit)="login()" style="z-index:1;position:relative;">
+      <div class="mb-3">
+        <input type="text" class="form-control form-control-lg" [(ngModel)]="loginData.username" name="username" placeholder="Username" required style="border-radius:1.5rem;font-size:1.1rem;box-shadow:0 1px 8px #00c6ff22;">
       </div>
-    </div>
-  </section>
-
-  <!-- Student List Section -->
-  <section class="card shadow-sm p-3 mb-4 mx-auto" style="max-width: 480px;">
-    <h5 class="mb-3 text-primary"><i class="fas fa-users me-2"></i>Student List</h5>
-    <form class="row g-2 align-items-end" (ngSubmit)="addStudent()">
-      <div class="col-6 col-md-4">
-        <input type="text" class="form-control form-control-sm" [(ngModel)]="newStudent.name" name="name" placeholder="Name" required>
+      <div class="mb-3">
+        <input type="password" class="form-control form-control-lg" [(ngModel)]="loginData.password" name="password" placeholder="Password" required style="border-radius:1.5rem;font-size:1.1rem;box-shadow:0 1px 8px #00c6ff22;">
       </div>
-      <div class="col-6 col-md-3">
-        <input type="number" class="form-control form-control-sm" [(ngModel)]="newStudent.age" name="age" placeholder="Age" required>
-      </div>
-      <div class="col-12 col-md-5 mt-2 mt-md-0">
-        <input type="email" class="form-control form-control-sm" [(ngModel)]="newStudent.email" name="email" placeholder="Email" required>
-      </div>
-      <div class="col-12 mt-2">
-        <button type="submit" class="btn btn-primary btn-sm w-100"><i class="fas fa-plus"></i> Add Student</button>
-      </div>
+      <button type="submit" class="btn w-100 py-2" style="background:linear-gradient(90deg,#00c6ff,#0072ff);color:#fff;font-weight:600;border-radius:1.5rem;font-size:1.1rem;box-shadow:0 2px 8px #00c6ff33;transition:background 0.2s;">Login</button>
     </form>
-    <div class="mt-3">
-      <table class="table table-sm table-hover table-bordered align-middle mb-0" *ngIf="students?.length">
-        <thead class="table-light">
-          <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let student of students">
-            <td>{{ student.name }}</td>
-            <td>{{ student.age }}</td>
-            <td>{{ student.email }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div *ngIf="!students?.length" class="text-muted text-center mt-2 small">No students yet.</div>
+      <div *ngIf="loginError" class="alert mt-3 py-1 px-2 small text-center" style="border-radius:1rem; background:#ffeaea; color:#d32f2f; border:1px solid #d32f2f; font-weight:500;">{{ loginError }}</div>
+      <div *ngIf="loginSuccess" class="alert mt-3 py-1 px-2 small text-center" style="border-radius:1rem; background:#e8f5e9; color:#388e3c; border:1px solid #388e3c; font-weight:500;">Login successful!</div>
+  </div>
+
+
+  <section class="about-section mb-5 animate__animated animate__fadeIn animate__delay-1s" style="background: linear-gradient(120deg, #f8fafc 60%, #e0eafc 100%); border-radius: 1.5rem; box-shadow: 0 2px 16px #00c6ff11; padding: 2.5rem 1.5rem; max-width: 900px; margin: 0 auto;">
+    <h1 class="main-title text-center mb-3" style="color:#0072ff; font-weight:700; letter-spacing:1px;">Team 1 Full Stack Portal</h1>
+    <p class="description text-center mb-4" style="font-size:1.2rem; color:#222;">Welcome to the Team 1 Portal! This platform demonstrates a modern full-stack web application using <b>Angular</b> for the frontend and <b>Spring Boot</b> for the backend. Experience seamless integration, secure authentication, and real-time cloud data, all in one place.</p>
+    <div class="row row-cols-1 row-cols-md-2 g-4 align-items-center">
+      <div class="col">
+        <ul class="list-group list-group-flush mb-3">
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-bolt text-primary me-2"></i> Lightning-fast UI with Angular</li>
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-lock text-success me-2"></i> Secure login powered by Spring Boot</li>
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-cloud text-info me-2"></i> Live cloud data fetch & display</li>
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-cogs text-warning me-2"></i> Scalable, maintainable architecture</li>
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-users text-secondary me-2"></i> User management and role-based access</li>
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-chart-line text-primary me-2"></i> Analytics dashboard for insights</li>
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-mobile-alt text-success me-2"></i> Mobile-friendly and responsive design</li>
+        </ul>
+      </div>
+      <div class="col text-center">
+        <img src="assets/fullstack-illustration.svg" alt="Full Stack" style="max-width: 220px; width:100%; border-radius:1rem; box-shadow:0 2px 12px #00c6ff22;" />
+        <div class="mt-3" style="color:#0072ff; font-size:1.1rem;">Empowering developers to build, test, and deploy with confidence.</div>
+      </div>
+    </div>
+    <div class="row mt-4 g-3">
+      <div class="col-md-4">
+        <div class="p-3 rounded shadow-sm h-100" style="background:#e3f2fd;">
+          <h5 class="mb-2" style="color:#0072ff;"><i class="fas fa-code-branch me-2"></i>Version Control</h5>
+          <p class="mb-0" style="color:#333;">Integrated with Git for seamless code collaboration and versioning.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 rounded shadow-sm h-100" style="background:#f1f8e9;">
+          <h5 class="mb-2" style="color:#388e3c;"><i class="fas fa-shield-alt me-2"></i>Security First</h5>
+          <p class="mb-0" style="color:#333;">Best practices for authentication, authorization, and data protection.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 rounded shadow-sm h-100" style="background:#fff3e0;">
+          <h5 class="mb-2" style="color:#f7971e;"><i class="fas fa-rocket me-2"></i>Continuous Delivery</h5>
+          <p class="mb-0" style="color:#333;">Automated CI/CD pipelines for rapid and reliable deployments.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Cloud Data Section -->
-  <section class="card shadow-sm p-3 mb-4 mx-auto cloud-data" style="max-width: 480px;">
-    <h5 class="mb-2 text-info"><i class="fas fa-cloud me-2"></i>Cloud Users (Live JSON)</h5>
-    <div *ngIf="users.length > 0; else loading">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item py-2 px-1 small" *ngFor="let user of users | slice:0:5">
-          <strong>{{ user.name }}</strong> ({{ user.username }})<br />
-          <span class="text-secondary">📧 {{ user.email }}</span><br />
-          <span class="text-secondary">🏙️ {{ user.address.city }}</span>
-        </li>
-      </ul>
-    </div>
-    <ng-template #loading>
-      <p class="text-center text-muted small">⏳ Loading user data from cloud...</p>
+  <!-- Cloud JSON (visible after login) -->
+  <div *ngIf="loginSuccess" class="cloud-section mt-4">
+    <h4 class="mb-3">📦 Cloud Users Data</h4>
+    <ul *ngIf="users.length > 0; else loadingTemplate">
+      <li *ngFor="let user of users | slice:0:5">
+        <strong>{{ user.name }}</strong> ({{ user.username }})<br>
+        📧 {{ user.email }} | 🏙️ {{ user.address.city }}
+        <hr />
+      </li>
+    </ul>
+    <ng-template #loadingTemplate>
+      <div>Loading users...</div>
     </ng-template>
-  </section>
+  </div>
 </div>
-
-<app-footer></app-footer>
