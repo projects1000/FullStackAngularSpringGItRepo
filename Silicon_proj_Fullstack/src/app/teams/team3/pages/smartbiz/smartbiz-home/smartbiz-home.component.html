@@ -1,0 +1,6 @@
+<div class="smartbiz-buttons">
+  <h2>SmartBiz Team Members</h2>
+  <div class="button-row">
+    <button class="btn btn-primary" *ngFor="let member of smartbizMembers" (click)="openLink(member)">{{ member.name }}</button>
+  </div>
+</div>

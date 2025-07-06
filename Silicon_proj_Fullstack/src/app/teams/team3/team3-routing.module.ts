@@ -32,6 +32,7 @@ const routes: Routes = [
       { path: 'work/khushi', component: KhushiComponent },
       { path: 'work/shruti', component: ShrutiComponent },
       { path: 'work/kritidaya', component: KritidayaComponent },
+      { path: 'smartbiz', loadChildren: () => import('./pages/smartbiz/smartbiz.module').then(m => m.SmartbizModule) },
     ]
   }
 ];
