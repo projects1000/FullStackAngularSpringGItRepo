@@ -33,7 +33,7 @@ import { KritidayaComponent } from './pages/work/kritidaya/kritidaya.component';
     AbhisekComponent,
     KhushiComponent,
     ShrutiComponent,
-    KritidayaComponent
+    KritidayaComponent,
   ],
   imports: [
     CommonModule,

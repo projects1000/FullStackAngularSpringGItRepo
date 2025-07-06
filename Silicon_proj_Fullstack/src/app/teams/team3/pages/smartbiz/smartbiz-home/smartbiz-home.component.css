@@ -1,0 +1,66 @@
+/* Professional & Modern SmartBiz Home Styling */
+.smartbiz-buttons {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(30,58,138,0.10), 0 1.5px 8px rgba(56,189,248,0.08);
+  padding: 40px 32px 32px 32px;
+  max-width: 600px;
+  margin: 48px auto;
+  text-align: center;
+  border: 1.5px solid #e5e7eb;
+}
+.smartbiz-buttons h2 {
+  color: #1e293b;
+  font-size: 2.1rem;
+  margin-bottom: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.smartbiz-buttons .button-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+.smartbiz-buttons button {
+  background: linear-gradient(90deg, #2563eb 60%, #38bdf8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 30px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(30,58,138,0.08);
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: 0.2px;
+  width: 80%;
+  min-width: 220px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.smartbiz-buttons button:hover, .smartbiz-buttons button:focus {
+  background: linear-gradient(90deg, #38bdf8 60%, #2563eb 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.045);
+  box-shadow: 0 4px 18px rgba(30,58,138,0.13);
+}
+@media (max-width: 700px) {
+  .smartbiz-buttons {
+    padding: 18px 4px 18px 4px;
+    max-width: 99vw;
+  }
+  .smartbiz-buttons .button-row {
+    gap: 10px;
+  }
+  .smartbiz-buttons button {
+    width: 98%;
+    min-width: 0;
+    max-width: 100%;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+}
